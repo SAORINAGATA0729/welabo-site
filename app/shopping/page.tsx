@@ -1,0 +1,122 @@
+"use client";
+
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+
+const products = [
+  {
+    id: "luxury-nmn-15000",
+    name: "LUXURY NMN 15000",
+    price: "¥88,560",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+    category: "Aging Care"
+  },
+  {
+    id: "luxury-nmn-15000-3set",
+    name: "LUXURY NMN 15000 3個セット",
+    price: "¥239,112",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+    category: "Aging Care"
+  },
+  {
+    id: "luxury-nmn-15000-subscription-1month",
+    name: "LUXURY NMN 15000 定期便（1ヶ月コース）",
+    price: "¥88,560",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+    category: "Aging Care"
+  },
+  {
+    id: "luxury-nmn-15000-subscription-2months",
+    name: "LUXURY NMN 15000 定期便（2ヶ月コース）",
+    price: "¥176,040",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+    category: "Aging Care"
+  },
+  {
+    id: "luxury-probiotics",
+    name: "LUXURY PROBIOTICS+",
+    price: "¥18,360",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
+    category: "Gut Health"
+  },
+  {
+    id: "honsoureishihoushi",
+    name: "本草霊芝胞子",
+    price: "¥91,800",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
+    category: "Oriental Medicine"
+  }
+];
+
+export default function ShoppingPage() {
+  return (
+    <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
+      <SiteHeader />
+
+      <main className="pt-32">
+        {/* Header */}
+        <section className="container mx-auto px-6 md:px-12 mb-24">
+           <div className="text-center max-w-3xl mx-auto">
+              <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
+                 Online Store
+              </span>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">Shopping</h1>
+              <p className="text-sm leading-[2.4] text-gray-600 font-light">
+                we laboの公式オンラインストアへようこそ。<br />
+                あなたのライフスタイルに合わせて、最適な製品をお選びいただけます。
+              </p>
+           </div>
+        </section>
+
+        {/* Product Grid */}
+        <section className="px-6 md:px-12 pb-32">
+           <div className="container mx-auto max-w-[1400px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                {products.map((product) => (
+                   <Link key={product.id} href={`/shopping/${product.id}`} className="group block">
+                      <div className="relative aspect-square bg-[#F9F9F9] mb-6 overflow-hidden">
+                         <div 
+                           className={`w-full h-full bg-center bg-contain bg-no-repeat transition-transform duration-700 group-hover:scale-105 p-8`}
+                           style={{ backgroundImage: `url('${product.img}')` }}
+                         />
+                         {product.category === "Aging Care" && (
+                           <span className="absolute top-4 left-4 bg-[#1A1A1A] text-white text-[10px] px-3 py-1 tracking-widest uppercase">
+                             Best Seller
+                           </span>
+                         )}
+                      </div>
+                      
+                      <div className="text-center">
+                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-2">{product.category}</span>
+                         <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
+                           {product.name}
+                         </h3>
+                         <p className="text-sm font-medium mb-4">{product.price}</p>
+                         <p className="text-xs text-gray-500 leading-relaxed max-w-xs mx-auto mb-6 line-clamp-3">
+                           {product.description}
+                         </p>
+                         <div className="inline-flex items-center justify-center min-w-[140px] h-10 bg-transparent border border-[#1A1A1A] text-[#1A1A1A] group-hover:bg-[#1A1A1A] group-hover:text-white rounded-none text-[10px] tracking-[0.2em] transition-all">
+                           VIEW DETAILS
+                         </div>
+                      </div>
+                   </Link>
+                ))}
+              </div>
+           </div>
+        </section>
+
+        <SiteFooter />
+      </main>
+    </div>
+  );
+}
+

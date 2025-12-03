@@ -2,6 +2,8 @@
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function ConceptPage() {
   return (
@@ -11,18 +13,18 @@ export default function ConceptPage() {
       <main className="pt-32">
         {/* Header Section */}
         <section className="container mx-auto px-6 md:px-12 mb-32">
-          <div className="flex flex-col md:flex-row items-end gap-12 mb-20">
+          <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
             <h1 className="text-6xl md:text-9xl font-thin tracking-wide leading-[0.8]">
               Concept
             </h1>
-            <div className="w-full h-[1px] bg-[#1A1A1A] flex-1 mb-6" />
+            <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-6" />
             <p className="text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">
               Active Aging
             </p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-20">
-            <div className="lg:w-1/3">
+            <div className="lg:w-1/2">
                <h2 className="text-3xl md:text-4xl font-normal leading-relaxed mb-12">
                  年齢を超えて常に躍動し、<br />
                  輝き続ける人生<br />
@@ -37,7 +39,7 @@ export default function ConceptPage() {
                  人生100年時代において、健康で豊かな時間を過ごすためには、老化のメカニズムを理解し、適切な対策を講じることがますます重要になっています。科学の進歩により、老化の過程を解明するために12の老化原因、「エイジングホールマークス」が示されました。
                </p>
             </div>
-            <div className="lg:w-2/3 relative">
+            <div className="lg:w-1/2 relative">
                <div className="aspect-video w-full bg-gray-300"></div>
             </div>
           </div>
@@ -257,7 +259,7 @@ export default function ConceptPage() {
 
         {/* Product Development Section */}
         <section className="py-32 px-6 md:px-12 bg-white">
-           <div className="container mx-auto max-w-[1400px]">
+           <div className="container mx-auto">
               <div className="text-center mb-20">
                  <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                     Product Development
@@ -268,52 +270,82 @@ export default function ConceptPage() {
                  </p>
               </div>
 
-              <div className="space-y-24">
+              <div className="space-y-32">
                  {/* LUXURY NMN 15000 */}
-                 <div className="flex flex-col lg:flex-row gap-12 items-start">
-                    <div className="lg:w-2/3">
-                       <h4 className="text-2xl md:text-3xl font-light mb-6">LUXURY NMN 15000</h4>
-                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-6">
+                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+                    <div className="lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] w-full overflow-hidden group">
+                       <div 
+                         className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-105"
+                         style={{ backgroundImage: "url('https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png')" }}
+                       />
+                    </div>
+                    <div className="lg:w-1/2">
+                       <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-4">Aging Care</span>
+                       <h4 className="text-3xl md:text-5xl font-thin mb-4">LUXURY NMN 15000</h4>
+                       <p className="text-lg italic text-gray-400 font-light mb-8">The Pinnacle of Youth</p>
+                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
                          「NMN」のヒト臨床試験に基づいた理想的な含有量を配合しています。さらに「NMN」の効果を最大限に引き出してくれるPQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。
                        </p>
-                       <p className="text-xs text-gray-500 font-light">
+                       <p className="text-xs text-gray-500 font-light mb-8">
                          共同開発：昭和大学 薬学部 基礎医療薬学講座 佐藤均教授
                        </p>
-                    </div>
-                    <div className="lg:w-1/3">
-                       <div className="aspect-[3/4] w-full bg-gray-300"></div>
+                       <Link href="/products/luxury-nmn-15000">
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
+                              VIEW DETAILS
+                          </Button>
+                       </Link>
                     </div>
                  </div>
 
                  {/* LUXURY PROBIOTICS+ */}
-                 <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
-                    <div className="lg:w-2/3">
-                       <h4 className="text-2xl md:text-3xl font-light mb-6">LUXURY PROBIOTICS+</h4>
-                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-6">
+                 <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center">
+                    <div className="lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] w-full overflow-hidden group">
+                       <div 
+                         className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-105"
+                         style={{ backgroundImage: "url('https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg')" }}
+                       />
+                    </div>
+                    <div className="lg:w-1/2">
+                       <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-4">Gut Health</span>
+                       <h4 className="text-3xl md:text-5xl font-thin mb-4">LUXURY PROBIOTICS+</h4>
+                       <p className="text-lg italic text-gray-400 font-light mb-8">Inner Flora Balance</p>
+                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
                          生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。
                        </p>
-                       <p className="text-xs text-gray-500 font-light">
+                       <p className="text-xs text-gray-500 font-light mb-8">
                          推薦：昭和大学 名誉教授 二木芳人氏 推薦
                        </p>
-                    </div>
-                    <div className="lg:w-1/3">
-                       <div className="aspect-[3/4] w-full bg-gray-300"></div>
+                       <Link href="/products/luxury-probiotics">
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
+                              VIEW DETAILS
+                          </Button>
+                       </Link>
                     </div>
                  </div>
 
                  {/* 本草霊芝胞子 */}
-                 <div className="flex flex-col lg:flex-row gap-12 items-start">
-                    <div className="lg:w-2/3">
-                       <h4 className="text-2xl md:text-3xl font-light mb-6">本草霊芝胞子</h4>
-                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-6">
+                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+                    <div className="lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] w-full overflow-hidden group">
+                       <div 
+                         className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-105"
+                         style={{ backgroundImage: "url('https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg')" }}
+                       />
+                    </div>
+                    <div className="lg:w-1/2">
+                       <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-4">Oriental Medicine</span>
+                       <h4 className="text-3xl md:text-5xl font-thin mb-4">本草霊芝胞子</h4>
+                       <p className="text-lg italic text-gray-400 font-light mb-8">Traditional Masterpiece</p>
+                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
                          190年の歴史を持つ漢方薬局「本草閣」監修・厳選。生薬の質に注目し、徹底的にこだわった商品です。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。
                        </p>
-                       <p className="text-xs text-gray-500 font-light">
+                       <p className="text-xs text-gray-500 font-light mb-8">
                          監修・厳選：190年の歴史を持つ漢方薬局「本草閣」
                        </p>
-                    </div>
-                    <div className="lg:w-1/3">
-                       <div className="aspect-[3/4] w-full bg-gray-300"></div>
+                       <Link href="/products/honsoureishihoushi">
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
+                              VIEW DETAILS
+                          </Button>
+                       </Link>
                     </div>
                  </div>
               </div>
@@ -322,7 +354,7 @@ export default function ConceptPage() {
 
         {/* Quality & Safety Section */}
         <section className="py-32 px-6 md:px-12 bg-[#F9F9F9]">
-           <div className="container mx-auto max-w-[1400px]">
+           <div className="container mx-auto">
               <div className="flex flex-col md:flex-row gap-20 md:gap-40">
                  <div className="md:w-1/2">
                     <div className="sticky top-32">
@@ -355,9 +387,9 @@ export default function ConceptPage() {
               </div>
            </div>
         </section>
-
-        <SiteFooter />
       </main>
+
+      <SiteFooter />
     </div>
   );
 }

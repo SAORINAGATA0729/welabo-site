@@ -1,0 +1,167 @@
+"use client";
+
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import { Trash2, Minus, Plus, ArrowRight } from "lucide-react";
+import { useCart } from "@/lib/context/cart-context";
+
+export default function CartPage() {
+  const { items: cartItems, updateQuantity, removeFromCart: removeItem, subtotal } = useCart();
+
+  const tax = Math.floor(subtotal * 0.1); // Assuming 10% tax included in price or calculated separately. Usually displayed as included.
+  // If price includes tax:
+  // const total = subtotal; 
+  // If price excludes tax (mock implementation assumes tax included for simplicity or total calculation)
+  const total = subtotal;
+
+  return (
+    <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
+      <SiteHeader />
+
+      <main className="pt-32 pb-20">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <div className="text-center mb-16">
+            <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
+              Shopping Bag
+            </span>
+            <h1 className="text-3xl md:text-4xl font-thin">Cart</h1>
+          </div>
+
+          {cartItems.length > 0 ? (
+            <div className="flex flex-col lg:flex-row gap-16">
+              {/* Cart Items */}
+              <div className="lg:w-2/3">
+                <div className="border-b border-gray-200 pb-4 mb-8 hidden md:flex text-xs tracking-widest text-gray-400 uppercase">
+                  <div className="w-1/2">Product</div>
+                  <div className="w-1/6 text-center">Price</div>
+                  <div className="w-1/6 text-center">Quantity</div>
+                  <div className="w-1/6 text-right">Total</div>
+                </div>
+
+                <div className="space-y-8 md:space-y-0">
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex flex-col md:flex-row items-center gap-6 py-6 border-b border-gray-100">
+                      <div className="w-full md:w-1/2 flex items-center gap-6">
+                        <div className="relative w-24 h-32 bg-[#F5F5F5] shrink-0">
+                          <Image
+                            src={item.img}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                            unoptimized
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-light mb-2">{item.name}</h3>
+                          <button 
+                            onClick={() => removeItem(item.id)}
+                            className="text-xs text-gray-400 hover:text-red-400 flex items-center gap-1 transition-colors"
+                          >
+                            <Trash2 className="w-3 h-3" />
+                            <span>Remove</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="w-full md:w-1/6 flex md:justify-center items-center justify-between">
+                        <span className="md:hidden text-xs text-gray-400 uppercase">Price:</span>
+                        <span className="font-light">¥{item.price.toLocaleString()}</span>
+                      </div>
+
+                      <div className="w-full md:w-1/6 flex md:justify-center items-center justify-between">
+                        <span className="md:hidden text-xs text-gray-400 uppercase">Quantity:</span>
+                        <div className="flex items-center border border-gray-200">
+                          <button 
+                            onClick={() => updateQuantity(item.id, -1)}
+                            className="w-8 h-8 flex items-center justify-center hover:bg-gray-50"
+                          >
+                            <Minus className="w-3 h-3" />
+                          </button>
+                          <span className="w-10 text-center text-sm">{item.quantity}</span>
+                          <button 
+                            onClick={() => updateQuantity(item.id, 1)}
+                            className="w-8 h-8 flex items-center justify-center hover:bg-gray-50"
+                          >
+                            <Plus className="w-3 h-3" />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="w-full md:w-1/6 flex md:justify-end items-center justify-between font-medium">
+                        <span className="md:hidden text-xs text-gray-400 uppercase">Total:</span>
+                        <span>¥{(item.price * item.quantity).toLocaleString()}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Summary */}
+              <div className="lg:w-1/3">
+                <div className="bg-[#F9F9F9] p-8 sticky top-32">
+                  <h3 className="text-lg font-light mb-8 border-b border-gray-200 pb-4">Order Summary</h3>
+                  
+                  <div className="space-y-4 mb-8 text-sm">
+                    <div className="flex justify-between text-gray-600">
+                      <span>Subtotal</span>
+                      <span>¥{subtotal.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between text-gray-600">
+                      <span>Shipping</span>
+                      <span>Free</span>
+                    </div>
+                    <div className="flex justify-between font-medium text-lg pt-4 border-t border-gray-200">
+                      <span>Total</span>
+                      <span>¥{total.toLocaleString()}</span>
+                    </div>
+                    <p className="text-right text-xs text-gray-400">(Including Tax)</p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Link href="/checkout" className="block">
+                      <Button className="w-full bg-[#1A1A1A] text-white hover:bg-gray-800 h-14 rounded-none text-xs tracking-[0.2em] uppercase flex items-center justify-between px-6 group">
+                        <span>Proceed to Checkout</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </Link>
+                    
+                    <Link href="/shopping" className="block">
+                      <Button variant="outline" className="w-full border-gray-300 text-gray-600 hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-12 rounded-none text-xs tracking-[0.2em] uppercase">
+                        Continue Shopping
+                      </Button>
+                    </Link>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+                    <p className="text-xs text-gray-500 mb-4">お支払い方法</p>
+                    <div className="flex justify-center gap-3 opacity-60 grayscale">
+                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
+                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
+                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
+                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-20 bg-[#F9F9F9]">
+              <p className="text-gray-500 mb-8 font-light">Your cart is currently empty.</p>
+              <Link href="/shopping">
+                <Button className="bg-[#1A1A1A] text-white hover:bg-gray-800 h-12 px-8 rounded-none text-xs tracking-[0.2em] uppercase">
+                  Start Shopping
+                </Button>
+              </Link>
+            </div>
+          )}
+        </div>
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}
+

@@ -25,9 +25,9 @@ export default function NewsPage() {
         <section className="container mx-auto px-6 md:px-12 mb-32">
            <div className="text-center max-w-3xl mx-auto">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
-                 Updates
+                 Information and Media
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Journal</h1>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">News</h1>
            </div>
         </section>
 

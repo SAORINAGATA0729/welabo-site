@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/lib/context/cart-context";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${shippori.variable} font-serif antialiased bg-stone-50`}
       >
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

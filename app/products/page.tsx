@@ -84,7 +84,7 @@ export default function ProductsPage() {
                             </Button>
                          </Link>
                          <Link href={`/shopping/${product.id}`}>
-                            <Button className="rounded-full px-10 py-6 bg-[#1A1A1A] text-white hover:bg-gray-800 transition-all text-xs tracking-[0.2em]">
+                            <Button className="rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-transparent hover:text-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
                                BUY ONLINE
                             </Button>
                          </Link>

@@ -53,11 +53,10 @@ export default function Home() {
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-20">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">CONCEPT</span>
-              <h2 className="text-3xl md:text-4xl font-thin mb-12 leading-relaxed">
-                年齢を超えて常に躍動し、<br />
-                輝き続ける人生<br />
-                「アクティブエイジング」<br />
-                を価値として提供し続けます
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-thin mb-12 leading-loose tracking-wide">
+                年齢を超えて常に躍動し、<br className="hidden md:inline" />
+                輝き続ける人生「アクティブエイジング」を<br className="hidden md:inline" />
+                価値として提供し続けます
               </h2>
             </div>
 
@@ -286,8 +285,8 @@ export default function Home() {
                          </h4>
                          <p className="text-xs text-gray-500 font-light tracking-wide">
                             {item.en}
-                         </p>
-                      </div>
+          </p>
+        </div>
                    </div>
                  ))}
               </div>
@@ -326,7 +325,7 @@ export default function Home() {
               ].map((item) => (
                 <Link key={item.id} href={`/products/${item.id}`} className="group block bg-white p-8 hover:shadow-xl transition-all duration-500">
                   <div className="relative overflow-hidden mb-6 bg-[#F5F5F5] flex items-center justify-center aspect-[3/4]">
-                    <Image
+            <Image
                       src={item.img}
                       alt={item.name}
                       fill
@@ -387,7 +386,15 @@ export default function Home() {
                  </Link>
                ))}
              </div>
-          </div>
+             
+             <div className="text-center mt-12">
+               <Link href="/news">
+                 <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em] group">
+                   VIEW ALL NEWS <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                 </Button>
+               </Link>
+             </div>
+        </div>
         </section>
 
         <SiteFooter />

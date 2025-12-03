@@ -3,11 +3,12 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
+import { useCart } from "@/lib/context/cart-context";
 
 // Product Data
 const productData: Record<string, any> = {
@@ -43,6 +44,93 @@ const productData: Record<string, any> = {
       "食品のため衛生的な環境でお取り扱いください。",
       "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。",
       "お気づきの点がございましたら、お客様窓口までご連絡ください。"
+    ]
+  },
+  "luxury-nmn-15000-3set": {
+    name: "LUXURY NMN 15000 3個セット",
+    price: "239,112",
+    description: "【10%OFF】継続してケアしたい方向けのお得な3個セットです。通常購入（88,560円×3＝265,680円）より26,568円お得にお求めいただけます。ご家族やパートナーとのシェアにもおすすめです。",
+    images: [
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 3個",
+      expiry: "右側面下部記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "食品のため衛生的な環境でお取り扱いください。",
+      "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。"
+    ]
+  },
+  "luxury-nmn-15000-subscription-1month": {
+    name: "LUXURY NMN 15000 定期便（1ヶ月コース）",
+    price: "88,560",
+    description: "毎月1個お届けする定期コースです。買い忘れの心配がなく、手軽に続けられます。いつでも解約・休止が可能です。",
+    images: [
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）",
+      expiry: "右側面下部記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "定期購入の解約・休止は次回お届け予定日の10日前までにご連絡ください。"
+    ]
+  },
+  "luxury-nmn-15000-subscription-2months": {
+    name: "LUXURY NMN 15000 定期便（2ヶ月コース）",
+    price: "176,040",
+    description: "2ヶ月ごとに2個お届けする定期コースです。ライフスタイルに合わせて無理なく続けられます。配送の手間も減らせてエコフレンドリー。",
+    images: [
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 2個",
+      expiry: "右側面下部記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "定期購入の解約・休止は次回お届け予定日の10日前までにご連絡ください。"
     ]
   },
   "luxury-probiotics": {
@@ -109,7 +197,9 @@ const productData: Record<string, any> = {
 
 export default function ShoppingDetailPage() {
   const params = useParams();
+  const router = useRouter();
   const slug = params?.slug as string | undefined;
+  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   
@@ -239,10 +329,10 @@ export default function ShoppingDetailPage() {
                   </li>
                 </ul>
                 <div className="mt-8 space-y-3">
-                  <Link href="#" className="block w-full text-center text-xs tracking-widest py-3 border border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all">
+                  <Link href="/register" className="block w-full text-center text-xs tracking-widest py-3 border border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all">
                     新規会員登録はこちら
                   </Link>
-                  <Link href="#" className="block w-full text-center text-xs tracking-widest py-3 text-gray-500 hover:text-[#1A1A1A] transition-colors">
+                  <Link href="/login" className="block w-full text-center text-xs tracking-widest py-3 text-gray-500 hover:text-[#1A1A1A] transition-colors">
                     登録済みの方はこちらからログイン
                   </Link>
                 </div>
@@ -259,14 +349,22 @@ export default function ShoppingDetailPage() {
                     className="w-full h-14 text-center border-none focus:ring-0 text-lg font-light"
                   />
                 </div>
-                <Button className="flex-1 h-14 bg-[#1A1A1A] text-white hover:bg-gray-800 rounded-none text-xs tracking-[0.2em]">
+                <Button 
+                  onClick={() => {
+                    addToCart({
+                      id: product.id || slug, // Fallback to slug if id missing
+                      name: product.name,
+                      price: parseInt(product.price.replace(/[^0-9]/g, '')),
+                      quantity: quantity,
+                      img: product.images[0]
+                    });
+                    router.push('/cart');
+                  }}
+                  className="flex-1 h-14 bg-[#1A1A1A] text-white hover:bg-gray-800 rounded-none text-xs tracking-[0.2em]"
+                >
                   ADD TO CART
                 </Button>
               </div>
-
-              <Link href={`/products/${slug}`} className="inline-block text-xs tracking-widest border-b border-[#1A1A1A] pb-1 hover:opacity-60 transition-opacity mb-16">
-                商品詳細はこちら
-              </Link>
 
               {/* Specs */}
               <div className="border-t border-gray-200 pt-12">
