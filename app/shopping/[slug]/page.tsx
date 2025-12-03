@@ -1,4 +1,5 @@
 "use client";
+// Fixed: addToCart now correctly passes quantity as second parameter (not in object)
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -238,7 +239,7 @@ export default function ShoppingDetailPage() {
           <span className="text-[#1A1A1A]">{product.name}</span>
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 max-w-[1400px] pb-32">
+        <div className="container mx-auto px-6 md:px-12 pb-32">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
             {/* Image Section */}
             <div className="lg:w-1/2">
@@ -350,19 +351,22 @@ export default function ShoppingDetailPage() {
                   />
                 </div>
                 <Button 
-                  onClick={() => {
-                    addToCart({
-                      id: product.id || slug, // Fallback to slug if id missing
+                  onClick={async () => {
+                    // Add item to cart with explicit variables
+                    const itemToAdd = {
+                      id: product.id || slug,
                       name: product.name,
                       price: parseInt(product.price.replace(/[^0-9]/g, '')),
-                      quantity: quantity,
                       img: product.images[0]
-                    });
-                    router.push('/cart');
+                    };
+                    addToCart(itemToAdd, quantity);
+                    
+                    await router.push('/cart');
+                    window.scrollTo(0, 0);
                   }}
-                  className="flex-1 h-14 bg-[#1A1A1A] text-white hover:bg-gray-800 rounded-none text-xs tracking-[0.2em]"
+                  className="flex-1 h-14 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all duration-300"
                 >
-                  ADD TO CART
+                  カートに入れる
                 </Button>
               </div>
 
@@ -457,4 +461,3 @@ export default function ShoppingDetailPage() {
     </div>
   );
 }
-

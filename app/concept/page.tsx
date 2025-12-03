@@ -290,8 +290,8 @@ export default function ConceptPage() {
                          共同開発：昭和大学 薬学部 基礎医療薬学講座 佐藤均教授
                        </p>
                        <Link href="/products/luxury-nmn-15000">
-                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                              VIEW DETAILS
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                              詳細を見る
                           </Button>
                        </Link>
                     </div>
@@ -316,8 +316,8 @@ export default function ConceptPage() {
                          推薦：昭和大学 名誉教授 二木芳人氏 推薦
                        </p>
                        <Link href="/products/luxury-probiotics">
-                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                              VIEW DETAILS
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                              詳細を見る
                           </Button>
                        </Link>
                     </div>
@@ -342,8 +342,8 @@ export default function ConceptPage() {
                          監修・厳選：190年の歴史を持つ漢方薬局「本草閣」
                        </p>
                        <Link href="/products/honsoureishihoushi">
-                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                              VIEW DETAILS
+                          <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                              詳細を見る
                           </Button>
                        </Link>
                     </div>
@@ -355,13 +355,12 @@ export default function ConceptPage() {
         {/* Quality & Safety Section */}
         <section className="py-32 px-6 md:px-12 bg-[#F9F9F9]">
            <div className="container mx-auto">
+              <h3 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
+                安全性
+              </h3>
               <div className="flex flex-col md:flex-row gap-20 md:gap-40">
                  <div className="md:w-1/2">
                     <div className="sticky top-32">
-                       <h3 className="text-3xl md:text-4xl font-normal mb-12">
-                         安全性
-                       </h3>
-                       
                        <div className="space-y-16">
                           <div>
                              <h4 className="text-lg tracking-widest mb-6 border-b border-gray-200 pb-2 inline-block">安全な原料</h4>

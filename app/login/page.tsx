@@ -26,12 +26,12 @@ export default function LoginPage() {
             <form className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-xs tracking-widest text-gray-500 uppercase">
-                  Email Address
+                  メールアドレス
                 </Label>
                 <Input 
                   id="email" 
                   type="email" 
-                  placeholder="your@email.com" 
+                  placeholder="例: your@email.com" 
                   className="border-gray-200 focus:border-[#D4C5B0] focus:ring-[#D4C5B0] rounded-none h-12 font-sans"
                 />
               </div>
@@ -39,10 +39,10 @@ export default function LoginPage() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <Label htmlFor="password" className="text-xs tracking-widest text-gray-500 uppercase">
-                    Password
+                    パスワード
                   </Label>
                   <Link href="#" className="text-[10px] text-gray-400 hover:text-[#1A1A1A] transition-colors">
-                    Forgot password?
+                    パスワードをお忘れですか？
                   </Link>
                 </div>
                 <Input 
@@ -52,16 +52,16 @@ export default function LoginPage() {
                 />
               </div>
 
-              <Button className="w-full bg-[#1A1A1A] text-white hover:bg-[#333] rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
-                Sign In
+              <Button className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
+                ログイン
               </Button>
             </form>
 
             <div className="mt-8 pt-8 border-t border-gray-100 text-center">
-              <p className="text-xs text-gray-500 mb-6">Don't have an account?</p>
+              <p className="text-xs text-gray-500 mb-6">アカウントをお持ちでない方は</p>
               <Link href="/register">
-                <Button variant="outline" className="w-full border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
-                  Create Account
+                <Button variant="outline" className="w-full border-[#1A1A1A] text-[#1A1A1A] bg-white hover:bg-[#1A1A1A] hover:text-white rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
+                  新規会員登録
                 </Button>
               </Link>
             </div>

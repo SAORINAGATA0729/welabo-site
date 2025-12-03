@@ -35,10 +35,10 @@ export default function CartPage() {
               {/* Cart Items */}
               <div className="lg:w-2/3">
                 <div className="border-b border-gray-200 pb-4 mb-8 hidden md:flex text-xs tracking-widest text-gray-400 uppercase">
-                  <div className="w-1/2">Product</div>
-                  <div className="w-1/6 text-center">Price</div>
-                  <div className="w-1/6 text-center">Quantity</div>
-                  <div className="w-1/6 text-right">Total</div>
+                  <div className="w-1/2">商品</div>
+                  <div className="w-1/6 text-center">価格</div>
+                  <div className="w-1/6 text-center">数量</div>
+                  <div className="w-1/6 text-right">小計</div>
                 </div>
 
                 <div className="space-y-8 md:space-y-0">
@@ -61,18 +61,18 @@ export default function CartPage() {
                             className="text-xs text-gray-400 hover:text-red-400 flex items-center gap-1 transition-colors"
                           >
                             <Trash2 className="w-3 h-3" />
-                            <span>Remove</span>
+                            <span>削除</span>
                           </button>
                         </div>
                       </div>
 
                       <div className="w-full md:w-1/6 flex md:justify-center items-center justify-between">
-                        <span className="md:hidden text-xs text-gray-400 uppercase">Price:</span>
+                        <span className="md:hidden text-xs text-gray-400 uppercase">価格:</span>
                         <span className="font-light">¥{item.price.toLocaleString()}</span>
                       </div>
 
                       <div className="w-full md:w-1/6 flex md:justify-center items-center justify-between">
-                        <span className="md:hidden text-xs text-gray-400 uppercase">Quantity:</span>
+                        <span className="md:hidden text-xs text-gray-400 uppercase">数量:</span>
                         <div className="flex items-center border border-gray-200">
                           <button 
                             onClick={() => updateQuantity(item.id, -1)}
@@ -91,7 +91,7 @@ export default function CartPage() {
                       </div>
 
                       <div className="w-full md:w-1/6 flex md:justify-end items-center justify-between font-medium">
-                        <span className="md:hidden text-xs text-gray-400 uppercase">Total:</span>
+                        <span className="md:hidden text-xs text-gray-400 uppercase">小計:</span>
                         <span>¥{(item.price * item.quantity).toLocaleString()}</span>
                       </div>
                     </div>
@@ -102,35 +102,34 @@ export default function CartPage() {
               {/* Summary */}
               <div className="lg:w-1/3">
                 <div className="bg-[#F9F9F9] p-8 sticky top-32">
-                  <h3 className="text-lg font-light mb-8 border-b border-gray-200 pb-4">Order Summary</h3>
+                  <h3 className="text-lg font-light mb-8 border-b border-gray-200 pb-4">注文内容</h3>
                   
                   <div className="space-y-4 mb-8 text-sm">
                     <div className="flex justify-between text-gray-600">
-                      <span>Subtotal</span>
+                      <span>小計</span>
                       <span>¥{subtotal.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-gray-600">
-                      <span>Shipping</span>
-                      <span>Free</span>
+                      <span>送料</span>
+                      <span>無料</span>
                     </div>
                     <div className="flex justify-between font-medium text-lg pt-4 border-t border-gray-200">
-                      <span>Total</span>
+                      <span>合計</span>
                       <span>¥{total.toLocaleString()}</span>
                     </div>
-                    <p className="text-right text-xs text-gray-400">(Including Tax)</p>
+                    <p className="text-right text-xs text-gray-400">(税込)</p>
                   </div>
 
                   <div className="space-y-3">
                     <Link href="/checkout" className="block">
-                      <Button className="w-full bg-[#1A1A1A] text-white hover:bg-gray-800 h-14 rounded-none text-xs tracking-[0.2em] uppercase flex items-center justify-between px-6 group">
-                        <span>Proceed to Checkout</span>
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <Button className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
+                        ご購入手続きへ
                       </Button>
                     </Link>
                     
                     <Link href="/shopping" className="block">
-                      <Button variant="outline" className="w-full border-gray-300 text-gray-600 hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-12 rounded-none text-xs tracking-[0.2em] uppercase">
-                        Continue Shopping
+                      <Button variant="outline" className="w-full bg-white border border-gray-300 text-gray-600 hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] h-12 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
+                        買い物を続ける
                       </Button>
                     </Link>
                   </div>
@@ -149,10 +148,10 @@ export default function CartPage() {
             </div>
           ) : (
             <div className="text-center py-20 bg-[#F9F9F9]">
-              <p className="text-gray-500 mb-8 font-light">Your cart is currently empty.</p>
+              <p className="text-gray-500 mb-8 font-light">カートに商品が入っていません。</p>
               <Link href="/shopping">
-                <Button className="bg-[#1A1A1A] text-white hover:bg-gray-800 h-12 px-8 rounded-none text-xs tracking-[0.2em] uppercase">
-                  Start Shopping
+                <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-12 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
+                  買い物をはじめる
                 </Button>
               </Link>
             </div>

@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { Send } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -134,9 +133,9 @@ export default function ContactPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#1A1A1A] text-white hover:bg-gray-800 h-14 rounded-none text-xs tracking-[0.2em] mt-8"
+                  className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 rounded-none text-xs tracking-[0.2em] mt-8 transition-all duration-300"
                 >
-                  SEND MESSAGE <Send className="ml-2 w-4 h-4" />
+                  送信する
                 </Button>
               </form>
           </div>

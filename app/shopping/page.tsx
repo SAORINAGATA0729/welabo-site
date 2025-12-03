@@ -78,39 +78,36 @@ export default function ShoppingPage() {
         </section>
 
         {/* Product Grid */}
-        <section className="px-6 md:px-12 pb-32">
-           <div className="container mx-auto max-w-[1400px]">
+        <section className="container mx-auto px-6 md:px-12 pb-32">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                 {products.map((product) => (
-                   <Link key={product.id} href={`/shopping/${product.id}`} className="group block">
-                      <div className="relative aspect-square bg-[#F9F9F9] mb-6 overflow-hidden">
+                   <Link key={product.id} href={`/shopping/${product.id}`} className="group block" prefetch={true} scroll={true}>
+                      <div className="relative aspect-[4/5] bg-[#F5F5F5] mb-8 overflow-hidden">
                          <div 
-                           className={`w-full h-full bg-center bg-contain bg-no-repeat transition-transform duration-700 group-hover:scale-105 p-8`}
+                           className={`w-full h-full bg-center bg-cover bg-no-repeat transition-all duration-1000 ease-out group-hover:scale-110`}
                            style={{ backgroundImage: `url('${product.img}')` }}
                          />
                          {product.category === "Aging Care" && (
-                           <span className="absolute top-4 left-4 bg-[#1A1A1A] text-white text-[10px] px-3 py-1 tracking-widest uppercase">
+                           <div className="absolute top-0 left-0 p-4">
+                             <span className="inline-block text-[10px] tracking-[0.2em] uppercase border-b border-[#1A1A1A] pb-1">
                              Best Seller
                            </span>
+                           </div>
                          )}
                       </div>
                       
-                      <div className="text-center">
-                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-2">{product.category}</span>
+                      <div className="text-left pl-2">
+                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-3">{product.category}</span>
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}
                          </h3>
-                         <p className="text-sm font-medium mb-4">{product.price}</p>
-                         <p className="text-xs text-gray-500 leading-relaxed max-w-xs mx-auto mb-6 line-clamp-3">
+                         <p className="text-sm font-medium mb-4 font-sans">{product.price}</p>
+                         <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 font-light">
                            {product.description}
                          </p>
-                         <div className="inline-flex items-center justify-center min-w-[140px] h-10 bg-transparent border border-[#1A1A1A] text-[#1A1A1A] group-hover:bg-[#1A1A1A] group-hover:text-white rounded-none text-[10px] tracking-[0.2em] transition-all">
-                           VIEW DETAILS
-                         </div>
                       </div>
                    </Link>
                 ))}
-              </div>
            </div>
         </section>
 

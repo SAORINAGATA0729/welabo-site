@@ -196,10 +196,10 @@ export default function ProductDetailPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-32">
-        <div className="container mx-auto px-6 md:px-12 max-w-[1400px]">
+      <main className="pt-24 md:pt-32">
+        <div className="container mx-auto px-6 md:px-12">
           {/* Product Header */}
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 mb-32">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 mb-16 md:mb-32">
             {/* Image Gallery */}
             <div className="lg:w-1/2">
               <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
@@ -234,7 +234,7 @@ export default function ProductDetailPage() {
               <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-6">
                 we labo Collection
               </span>
-              <h1 className="text-4xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
+              <h1 className="text-3xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
               <p className="text-lg text-gray-600 font-light mb-12">{product.tagline}</p>
               
               <div className="mb-12">
@@ -257,13 +257,13 @@ export default function ProductDetailPage() {
                      <span className="text-xl">{product.price} <span className="text-xs text-gray-400">(inc. tax)</span></span>
                  </div>
                  <Link href={`/shopping/${slug}`}>
-                   <Button className="w-full h-14 bg-[#1A1A1A] text-white hover:bg-gray-800 rounded-none text-xs tracking-[0.2em]">
+                   <Button className="w-full h-14 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all">
                       VISIT ONLINE STORE
                    </Button>
                  </Link>
                  {product.amazonLink && (
                     <Link href={product.amazonLink} target="_blank">
-                        <Button variant="outline" className="w-full h-14 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none text-xs tracking-[0.2em]">
+                        <Button variant="outline" className="w-full h-14 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none text-xs tracking-[0.2em] transition-all">
                             VIEW ON AMAZON
                         </Button>
                     </Link>
@@ -272,7 +272,7 @@ export default function ProductDetailPage() {
 
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="details">
-                  <AccordionTrigger className="text-sm tracking-widest font-light uppercase">Details & Specs</AccordionTrigger>
+                  <AccordionTrigger className="text-sm tracking-widest font-light uppercase">Details and Specs</AccordionTrigger>
                   <AccordionContent>
                     <dl className="py-4">
                       {Object.entries(product.specs).map(([key, value]) => (
@@ -296,10 +296,10 @@ export default function ProductDetailPage() {
 
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
-            <section className="mb-32 py-16 border-t border-gray-100">
-              <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-thin mb-12">Key Ingredients</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
+              <div className="mb-12 md:mb-16">
+                <h2 className="text-2xl md:text-3xl font-thin mb-8 md:mb-12">Key Ingredients</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 md:gap-y-16">
                   {product.ingredientsSections.map((ingredient: any, index: number) => (
                     <div key={index} className="group">
                       <span className="text-xs text-[#D4C5B0] tracking-widest uppercase block mb-2">{ingredient.subtitle}</span>
@@ -316,7 +316,7 @@ export default function ProductDetailPage() {
 
           {/* Professor Section */}
           {product.professor && (
-            <section className="mb-32 bg-[#F9F9F9] p-12 md:p-24">
+            <section className="mb-16 md:mb-32 bg-[#F9F9F9] p-8 md:p-24">
               <div className="max-w-4xl mx-auto">
                 <span className="text-xs text-gray-400 tracking-widest uppercase block mb-4 text-center">{product.professor.title}</span>
                 <h2 className="text-2xl md:text-3xl font-light mb-8 text-center">{product.professor.name}</h2>
@@ -334,7 +334,7 @@ export default function ProductDetailPage() {
 
           {/* Honzokaku Section (Specific to Honsou) */}
           {product.honzokaku && (
-            <section className="mb-32 py-16 border-t border-gray-100">
+            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
               <div className="max-w-4xl">
                 <h2 className="text-2xl md:text-3xl font-thin mb-4">{product.honzokaku.title}</h2>
                 <p className="text-sm text-gray-500 mb-8">{product.honzokaku.subtitle}</p>
@@ -353,7 +353,7 @@ export default function ProductDetailPage() {
 
           {/* Safety / GMP Section */}
           {(product.gmp || product.safety) && (
-             <section className="mb-32 py-16 border-t border-gray-100">
+             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
                <div className="max-w-4xl">
                  <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.safety ? product.safety.title : "安心品質の証「GMP認証」取得工場で製造"}</h2>
                  <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
@@ -365,7 +365,7 @@ export default function ProductDetailPage() {
 
           {/* Aging Hallmarks Section */}
           {product.agingHallmarks && (
-            <section className="mb-32 py-16 border-t border-gray-100">
+            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
               <div className="max-w-4xl">
                 <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKS</h2>
                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
@@ -377,15 +377,15 @@ export default function ProductDetailPage() {
 
           {/* Stores Section */}
           {product.stores && (
-            <section className="mb-32 pt-24 border-t border-gray-200">
-              <div className="text-center mb-16">
+            <section className="mb-16 md:mb-32 pt-16 md:pt-24 border-t border-gray-200">
+              <div className="text-center mb-12 md:mb-16">
                  <h2 className="text-3xl font-thin mb-4">Stockists</h2>
                  <p className="text-sm text-gray-500 tracking-widest uppercase">Available Stores</p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-12">
                 {/* East Japan */}
-                <div className="bg-gray-50 p-12">
+                <div className="bg-gray-50 p-8 md:p-12">
                    <h3 className="text-xl font-light mb-8 flex items-center gap-3">
                       <span className="w-8 h-[1px] bg-[#1A1A1A]"></span>
                       East Japan
@@ -408,7 +408,7 @@ export default function ProductDetailPage() {
                 </div>
 
                 {/* West Japan */}
-                <div className="bg-gray-50 p-12">
+                <div className="bg-gray-50 p-8 md:p-12">
                    <h3 className="text-xl font-light mb-8 flex items-center gap-3">
                       <span className="w-8 h-[1px] bg-[#1A1A1A]"></span>
                       West Japan
@@ -434,21 +434,21 @@ export default function ProductDetailPage() {
           )}
 
           {/* Bottom CTA */}
-          <section className="bg-[#1A1A1A] text-white p-12 md:p-24 text-center mb-12">
+          <section className="bg-[#1A1A1A] text-white p-8 md:p-24 text-center mb-8 md:mb-12">
               <h2 className="text-3xl md:text-4xl font-thin mb-6">Experience {product.name}</h2>
               <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed text-sm">
                  公式オンラインストアで、あなたのライフスタイルに合わせたプランをお選びいただけます。
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
                  <Link href={`/shopping/${slug}`}>
-                   <Button className="h-14 px-12 bg-white text-[#1A1A1A] hover:bg-gray-200 rounded-none text-xs tracking-[0.2em]">
+                   <Button className="h-14 px-12 bg-white text-[#1A1A1A] border border-white hover:bg-[#1A1A1A] hover:text-white hover:border-white rounded-none text-xs tracking-[0.2em] transition-all">
                       <ShoppingBag className="w-4 h-4 mr-2" />
                       ONLINE STORE
                    </Button>
                  </Link>
                  {product.amazonLink && (
                     <Link href={product.amazonLink} target="_blank">
-                        <Button variant="outline" className="h-14 px-12 border-white text-white hover:bg-white hover:text-[#1A1A1A] rounded-none text-xs tracking-[0.2em]">
+                        <Button variant="outline" className="h-14 px-12 border-white text-white bg-transparent hover:bg-white hover:text-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all">
                            <ExternalLink className="w-4 h-4 mr-2" />
                            AMAZON
                         </Button>

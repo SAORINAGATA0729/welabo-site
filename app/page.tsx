@@ -74,10 +74,8 @@ export default function Home() {
                 科学の進歩により、老化の過程を解明するために12の老化原因、「エイジングホールマークス」が示されました。
               </p>
               <div className="text-center">
-                <Link href="/concept">
-                  <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em] group">
-                    READ MORE <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                <Link href="/concept" className="inline-flex items-center gap-2 text-sm tracking-widest text-gray-600 hover:text-[#1A1A1A] transition-colors group">
+                  続きを読む <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -385,14 +383,6 @@ export default function Home() {
                    </div>
                  </Link>
                ))}
-             </div>
-             
-             <div className="text-center mt-12">
-               <Link href="/news">
-                 <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em] group">
-                   VIEW ALL NEWS <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                 </Button>
-               </Link>
              </div>
         </div>
         </section>

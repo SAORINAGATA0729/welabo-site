@@ -135,12 +135,34 @@
   [role="button"]:not([aria-disabled="true"]), 
   input[type="submit"]:not(:disabled), 
   input[type="button"]:not(:disabled),
-  label {
-    cursor: pointer;
+  label,
+  [class*="cursor-pointer"],
+  a[href],
+  button[type="button"],
+  button[type="submit"] {
+    cursor: pointer !important;
   }
   
   button:disabled,
   input:disabled {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
   }
+}
+
+/* Additional cursor styles outside layer for reliability */
+button:not(:disabled),
+a:not([aria-disabled="true"]),
+[role="button"]:not([aria-disabled="true"]),
+input[type="submit"]:not(:disabled),
+input[type="button"]:not(:disabled),
+label,
+a[href],
+button[type="button"],
+button[type="submit"] {
+  cursor: pointer !important;
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed !important;
 }

@@ -25,9 +25,6 @@ export default function CompanyPage() {
             <div className="mb-32">
               {/* Company Details */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-thin mb-12 border-b border-gray-200 pb-4">
-                  Company Information
-                </h2>
                 <dl className="space-y-8">
                   <div>
                     <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">会社名</dt>
@@ -68,9 +65,13 @@ export default function CompanyPage() {
 
             {/* Google Map */}
             <div className="mb-32">
-              <h2 className="text-2xl md:text-3xl font-thin mb-12 border-b border-gray-200 pb-4">
-                Access
-              </h2>
+              <div className="mb-6 text-sm text-gray-600 font-light">
+                <p className="mb-2">〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階</p>
+                <p className="text-xs text-gray-500">
+                  東京メトロ銀座線・丸ノ内線・日比谷線「銀座駅」より徒歩3分<br />
+                  東京メトロ有楽町線「銀座一丁目駅」より徒歩5分
+                </p>
+              </div>
               <div className="w-full aspect-video overflow-hidden bg-gray-100 rounded-sm">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1234567890!2d139.768159!3d35.671252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQwJzE2LjUiTiAxMznCsDQ2JzA1LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp&cid=451804139594713143&q=東京都中央区銀座3丁目10番7号+銀座京屋ビル"
@@ -82,13 +83,6 @@ export default function CompanyPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full h-full"
                 />
-              </div>
-              <div className="mt-6 text-sm text-gray-600 font-light">
-                <p className="mb-2">〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階</p>
-                <p className="text-xs text-gray-500">
-                  東京メトロ銀座線・丸ノ内線・日比谷線「銀座駅」より徒歩3分<br />
-                  東京メトロ有楽町線「銀座一丁目駅」より徒歩5分
-                </p>
               </div>
             </div>
           </div>

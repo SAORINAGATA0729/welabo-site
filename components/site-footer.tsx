@@ -3,10 +3,10 @@ import { Instagram, Facebook } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#FDFCF8] text-[#1A1A1A] pt-32 pb-12 px-6 md:px-12 border-t border-[#E5E5E5]">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-8 mb-24">
-          <div className="lg:col-span-1">
+    <footer className="bg-[#FDFCF8] text-[#1A1A1A] pt-32 pb-12 border-t border-[#E5E5E5]">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-16 lg:gap-8 mb-24">
+          <div className="flex-shrink-0">
              <h2 className="text-2xl tracking-[0.2em] font-thin mb-8">we labo</h2>
              <p className="text-xs text-[#555] leading-loose tracking-wide">
                〒104-0061<br />
@@ -14,43 +14,19 @@ export function SiteFooter() {
              </p>
           </div>
           
-          <div className="lg:col-span-2 flex flex-col md:flex-row gap-16 md:gap-32">
-             <ul className="space-y-6">
-               {["Concept", "Products", "News"].map(item => (
-                 <li key={item}>
-                   <Link href={`/${item.toLowerCase()}`} className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors">
-                     {item}
-                   </Link>
-                 </li>
-               ))}
-             </ul>
-             <ul className="space-y-6">
-               {["Company", "Stockists", "Contact"].map(item => (
-                 <li key={item}>
-                   <Link href={`/${item.toLowerCase()}`} className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors">
-                     {item}
-                   </Link>
-                 </li>
-               ))}
-               <li>
-                 <Link href="/login" className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors">
-                   Login
-                 </Link>
-               </li>
-               <li>
-                 <Link href="/register" className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors">
-                   Register
-                 </Link>
-               </li>
-               <li>
-                 <Link href="#" className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors">
-                   Privacy Policy
-                 </Link>
-               </li>
-             </ul>
+          <div className="flex flex-wrap gap-8 md:gap-10 lg:gap-12 flex-1 lg:justify-center">
+             {["Concept", "Products", "News", "Company", "Stockists", "Contact"].map(item => (
+               <Link 
+                 key={item}
+                 href={`/${item.toLowerCase()}`} 
+                 className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer"
+               >
+                 {item}
+               </Link>
+             ))}
           </div>
 
-          <div className="lg:col-span-1 flex flex-col justify-between h-full">
+          <div className="flex-shrink-0 lg:ml-auto">
              <div className="flex flex-col items-start lg:items-end gap-2">
                 <span className="text-xs text-[#8A8A8A] tracking-widest">＼Follow us!／</span>
                 <div className="flex gap-4">

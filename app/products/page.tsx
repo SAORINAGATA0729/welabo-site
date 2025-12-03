@@ -39,7 +39,8 @@ export default function ProductsPage() {
 
       <main className="pt-32">
         {/* Header */}
-        <section className="container mx-auto px-6 md:px-12 mb-32">
+        <section className="mb-32">
+           <div className="container mx-auto px-6 md:px-12">
            <div className="text-center max-w-3xl mx-auto">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Collection
@@ -50,11 +51,12 @@ export default function ProductsPage() {
                 あなたの人生に、確かな輝きを添える至高のラインナップ。
               </p>
            </div>
+           </div>
         </section>
 
         {/* Product List */}
-        <section className="px-6 md:px-12 pb-32">
-           <div className="container mx-auto max-w-[1400px] space-y-40">
+        <section className="pb-32">
+           <div className="container mx-auto px-6 md:px-12 space-y-40">
               {products.map((product, index) => (
                  <div key={product.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-32 items-center`}>
                     <div className="w-full lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] overflow-hidden group cursor-pointer">
@@ -80,12 +82,12 @@ export default function ProductsPage() {
                        <div className="flex gap-4">
                          <Link href={`/products/${product.id}`}>
                             <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                               VIEW DETAILS
+                               詳細を見る
                             </Button>
                          </Link>
                          <Link href={`/shopping/${product.id}`}>
-                            <Button className="rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-transparent hover:text-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
-                               BUY ONLINE
+                            <Button className="rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                               オンラインで購入
                             </Button>
                          </Link>
                        </div>

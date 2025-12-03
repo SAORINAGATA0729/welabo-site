@@ -2,13 +2,15 @@
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function ShoppingGuidePage() {
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-32">
         {/* Header */}
         <section className="container mx-auto px-6 md:px-12 mb-20">
            <div className="text-center max-w-3xl mx-auto">
@@ -151,19 +153,19 @@ export default function ShoppingGuidePage() {
             </div>
 
             {/* Back to Top */}
-            <div className="mt-20 text-center">
-              <Link href="/shopping">
+            <div className="mt-20 mb-20 flex justify-center">
+              <Link href="/shopping" className="inline-block">
                 <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                  Back to Shopping Top
+                  TOPに戻る
                 </Button>
               </Link>
             </div>
 
           </div>
         </section>
-
-        <SiteFooter />
       </main>
+
+      <SiteFooter />
     </div>
   );
 }

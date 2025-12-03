@@ -48,7 +48,7 @@ export default function RegisterPage() {
             <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
               Membership
             </span>
-            <h1 className="text-3xl md:text-4xl font-thin">Create Account</h1>
+            <h1 className="text-3xl md:text-4xl font-thin">会員登録</h1>
             <p className="text-xs text-gray-500 mt-4 tracking-wide">
               会員登録して、スムーズなお買い物をお楽しみください。
             </p>
@@ -215,16 +215,16 @@ export default function RegisterPage() {
               </div>
 
               <div className="pt-4">
-                <Button className="w-full bg-[#1A1A1A] text-white hover:bg-[#333] rounded-none h-14 tracking-widest text-xs uppercase transition-all duration-300">
-                  Register Account
+                <Button className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none h-14 tracking-widest text-xs uppercase transition-all duration-300">
+                  アカウント登録
                 </Button>
               </div>
             </form>
 
             <div className="mt-8 text-center">
-              <p className="text-xs text-gray-500 mb-4">Already have an account?</p>
+              <p className="text-xs text-gray-500 mb-4">すでにアカウントをお持ちですか？</p>
               <Link href="/login" className="text-xs underline hover:text-[#D4C5B0] transition-colors tracking-wide">
-                Back to Login
+                ログインに戻る
               </Link>
             </div>
           </div>
