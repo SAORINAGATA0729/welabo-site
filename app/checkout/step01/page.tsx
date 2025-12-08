@@ -68,9 +68,9 @@ export default function CheckoutStep01Page() {
                 </div>
               </section>
 
-              {/* Shipping Address */}
+              {/* Orderer Information */}
               <section>
-                <h2 className="text-lg font-light mb-6">配送先住所</h2>
+                <h2 className="text-lg font-light mb-6">注文者情報</h2>
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
