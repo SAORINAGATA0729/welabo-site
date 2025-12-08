@@ -471,8 +471,8 @@ export default function CheckoutStep02Page() {
               </section>
 
               {/* Terms */}
-              <section className="pb-1 text-center">
-                <p className="text-xs text-gray-600 leading-relaxed">
+              <section className="pb-0 text-center">
+                <p className="text-xs text-gray-600 leading-relaxed mb-2">
                   <Link href="/terms" className="underline hover:text-[#1A1A1A]">
                     特定商取引法に基づく表記
                   </Link>
@@ -484,7 +484,7 @@ export default function CheckoutStep02Page() {
                 </p>
               </section>
 
-              <div className="flex justify-center pt-1">
+              <div className="flex justify-center">
                 <Link href="/checkout/step03">
                   <Button 
                     className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-16 rounded-none text-xs tracking-[0.2em] uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
