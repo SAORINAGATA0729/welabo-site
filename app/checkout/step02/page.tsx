@@ -503,8 +503,8 @@ export default function CheckoutStep02Page() {
               <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">ご注文内容</h3>
               
               <div className="space-y-4 mb-8">
-                {items.map((item) => (
-                  <div key={item.id} className="flex gap-4 items-start pb-4 border-b border-gray-200">
+                {items.map((item, index) => (
+                  <div key={item.id} className={`flex gap-4 items-start pb-4 ${index < items.length - 1 ? 'border-b border-gray-200' : ''}`}>
                     <div className="relative w-20 h-20 bg-white border border-gray-100 shrink-0">
                       <Image
                         src={item.img}
