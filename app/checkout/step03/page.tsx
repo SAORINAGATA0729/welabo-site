@@ -1,6 +1,5 @@
 "use client";
 
-import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -51,18 +50,32 @@ export default function CheckoutStep03Page() {
               </p>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-12">
               <Link href="/shopping">
                 <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-16 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
                   TOPへ戻る
                 </Button>
               </Link>
             </div>
+
+            <div className="text-center pt-8 border-t border-gray-200">
+              <p className="text-xs text-gray-600 leading-relaxed mb-4">
+                <Link href="/terms" className="underline hover:text-[#1A1A1A]">
+                  特定商取引法に基づく表記
+                </Link>
+                {" "}と{" "}
+                <Link href="/privacy" className="underline hover:text-[#1A1A1A]">
+                  個人情報の取り扱いについて
+                </Link>
+                {" "}を必ずご確認の上、ご注文ください。
+              </p>
+              <p className="text-xs text-gray-400">
+                © 2025 we labo All Rights Reserved.
+              </p>
+            </div>
           </div>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }
