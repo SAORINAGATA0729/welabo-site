@@ -80,7 +80,19 @@ export default function CheckoutStep02Page() {
   useEffect(() => {
     const saved = localStorage.getItem("checkout_orderer_info");
     if (saved) {
-      setOrdererInfo(JSON.parse(saved));
+      const data = JSON.parse(saved);
+      setOrdererInfo({
+        email: data.email || "",
+        lastName: data.lastName || "",
+        firstName: data.firstName || "",
+        lastNameKana: data.lastNameKana || "",
+        firstNameKana: data.firstNameKana || "",
+        zip: data.zip || "",
+        prefecture: data.prefecture || "",
+        address1: data.address1 || "",
+        address2: data.address2 || "",
+        phone: data.phone || "",
+      });
     }
   }, []);
 
