@@ -133,16 +133,6 @@ export default function CartPage() {
                       </Button>
                     </Link>
                   </div>
-
-                  <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-                    <p className="text-xs text-gray-500 mb-4">お支払い方法</p>
-                    <div className="flex justify-center gap-3 opacity-60 grayscale">
-                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                      <div className="w-10 h-6 bg-gray-200 rounded"></div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

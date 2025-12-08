@@ -50,6 +50,8 @@ export default function CheckoutStep02Page() {
     email: "",
     lastName: "",
     firstName: "",
+    lastNameKana: "",
+    firstNameKana: "",
     zip: "",
     prefecture: "",
     address1: "",
