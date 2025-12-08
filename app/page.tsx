@@ -367,7 +367,6 @@ export default function Home() {
                  <Link key={i} href={`/news/${item.id}`} className="group block">
                    <div className="flex flex-col md:flex-row md:items-center gap-4 py-8 border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors px-4">
                       <div className="md:w-32 shrink-0">
-                        <span className="text-[10px] tracking-widest text-[#D4C5B0] block mb-1">{item.tag}</span>
                         <span className="text-xs font-serif text-[#8A8A8A]">{item.date}</span>
                       </div>
                       

@@ -131,14 +131,9 @@ export default function NewsDetailPage() {
 
           {/* Article Header */}
           <header className="mb-16 pb-8 border-b border-gray-200">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-[10px] tracking-widest text-[#D4C5B0] uppercase px-3 py-1 border border-[#D4C5B0]">
-                {article.tag}
-              </span>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Calendar className="w-4 h-4" />
-                <span>{article.date}</span>
-              </div>
+            <div className="flex items-center gap-2 mb-6">
+              <Calendar className="w-4 h-4 text-gray-500" />
+              <span className="text-sm text-gray-500">{article.date}</span>
             </div>
             <h1 className="text-xl md:text-2xl font-thin leading-tight tracking-wide mb-4">
               {article.title}
