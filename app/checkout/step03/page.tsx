@@ -1,9 +1,9 @@
 "use client";
 
-import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function CheckoutStep03Page() {
@@ -18,9 +18,20 @@ export default function CheckoutStep03Page() {
 
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
-      <SiteHeader />
+      <header className="h-24 flex items-center justify-between px-6 md:px-12 border-b border-gray-100">
+        <Link href="/" className="block relative h-8 w-24">
+          <Image
+            src="https://welabo.jp/wp-content/uploads/logo-header.png"
+            alt="we labo"
+            fill
+            className="object-contain"
+            unoptimized
+          />
+          <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-full text-center text-[8px] tracking-widest text-gray-500 uppercase">Online Store</span>
+        </Link>
+      </header>
 
-      <main className="pt-32 pb-20">
+      <main className="pt-16 pb-20">
         <div className="container mx-auto px-6 md:px-12 max-w-2xl">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-thin mb-8">
