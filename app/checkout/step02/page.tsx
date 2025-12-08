@@ -22,8 +22,23 @@ interface OrdererInfo {
   email: string;
   lastName: string;
   firstName: string;
+  lastNameKana: string;
+  firstNameKana: string;
   zip: string;
   prefecture: string;
+  address1: string;
+  address2: string;
+  phone: string;
+}
+
+interface DeliveryInfo {
+  lastName: string;
+  firstName: string;
+  lastNameKana: string;
+  firstNameKana: string;
+  zip: string;
+  prefecture: string;
+  city: string;
   address1: string;
   address2: string;
   phone: string;
@@ -416,6 +431,11 @@ export default function CheckoutStep02Page() {
                             <p className="mt-3 text-gray-500">お振込確認後、商品を発送いたします。</p>
                             <p className="text-gray-500">※ご注文完了後、5日以内に指定銀行口座へお振り込みください。</p>
                             <p className="text-gray-500">恐れ入りますが、振込手数料はお客様にご負担いただいております。</p>
+                            <p className="text-gray-500 mt-2">
+                              <Link href="/shopping/guide" className="underline hover:text-[#1A1A1A]">
+                                お支払い時期について
+                              </Link>
+                            </p>
                           </div>
                         )}
                       </div>
