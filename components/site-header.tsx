@@ -75,7 +75,7 @@ export function SiteHeader() {
                      )}
                   </div>
                   <span className="text-[9px] tracking-widest">CART</span>
-               </Link>
+              </Link>
             </div>
           ) : (
             <div className="flex items-center ml-10">
@@ -114,10 +114,10 @@ export function SiteHeader() {
                 ))}
                 
                 {!isShopping && (
-                  <Link 
+                <Link 
                     href="/shopping"
                     className="text-3xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group border border-gray-200 p-4 justify-center mt-4"
-                  >
+                >
                     <span className="text-xs font-normal text-gray-400 group-hover:text-[#D4C5B0] mr-4">07</span>
                     SHOPPING
                   </Link>
@@ -127,7 +127,7 @@ export function SiteHeader() {
                   <div className="mt-8 pt-8 border-t border-gray-100">
                      <Link href="/" className="text-sm text-gray-400 hover:text-gray-800 block mb-4">
                         &larr; Back to Official Site
-                     </Link>
+                </Link>
                   </div>
                 )}
               </div>

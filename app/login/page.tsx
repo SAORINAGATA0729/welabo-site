@@ -1,14 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/context/auth-context";
 import { ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { login } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+
+    if (!email || !password) {
+      setError("メールアドレスとパスワードを入力してください。");
+      return;
+    }
+
+    const success = login(email, password);
+    if (success) {
+      router.push("/");
+    } else {
+      setError("メールアドレスまたはパスワードが正しくありません。");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
@@ -23,7 +49,13 @@ export default function LoginPage() {
           </div>
 
           <div className="bg-white p-8 md:p-12 border border-gray-100 shadow-sm">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-4 rounded">
+                  {error}
+                </div>
+              )}
+
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-xs tracking-widest text-gray-500 uppercase">
                   メールアドレス
@@ -33,6 +65,9 @@ export default function LoginPage() {
                   type="email" 
                   placeholder="例: your@email.com" 
                   className="border-gray-200 focus:border-[#D4C5B0] focus:ring-[#D4C5B0] rounded-none h-12 font-sans"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
@@ -49,10 +84,13 @@ export default function LoginPage() {
                   id="password" 
                   type="password" 
                   className="border-gray-200 focus:border-[#D4C5B0] focus:ring-[#D4C5B0] rounded-none h-12 font-sans"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
 
-              <Button className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
+              <Button type="submit" className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none h-12 tracking-widest text-xs uppercase transition-all duration-300">
                 ログイン
               </Button>
             </form>

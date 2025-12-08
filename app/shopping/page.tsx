@@ -84,16 +84,19 @@ export default function ShoppingPage() {
                    <Link key={product.id} href={`/shopping/${product.id}`} className="group block" prefetch={true} scroll={true}>
                       <div className="relative aspect-[4/5] bg-[#F5F5F5] mb-8 overflow-hidden">
                          <div 
-                           className={`w-full h-full bg-center bg-cover bg-no-repeat transition-all duration-1000 ease-out group-hover:scale-110`}
-                           style={{ backgroundImage: `url('${product.img}')` }}
+                           className={`absolute bg-center bg-cover bg-no-repeat transition-all duration-1000 ease-out group-hover:scale-110`}
+                           style={{ 
+                             backgroundImage: `url('${product.img}')`,
+                             backgroundPosition: 'center bottom',
+                             top: '25%',
+                             left: 0,
+                             right: 0,
+                             bottom: 0,
+                             height: '75%'
+                           }}
                          />
-                         {product.category === "Aging Care" && (
-                           <div className="absolute top-0 left-0 p-4">
-                             <span className="inline-block text-[10px] tracking-[0.2em] uppercase border-b border-[#1A1A1A] pb-1">
-                             Best Seller
-                           </span>
-                           </div>
-                         )}
+                         {/* Overlay to hide BEST SELLER text on image */}
+                         <div className="absolute top-0 left-0 w-full h-[25%] bg-[#F5F5F5] z-10 pointer-events-none"></div>
                       </div>
                       
                       <div className="text-left pl-2">

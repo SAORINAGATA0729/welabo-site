@@ -121,7 +121,7 @@ export default function CartPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <Link href="/checkout" className="block">
+                    <Link href="/checkout/step01" className="block">
                       <Button className="w-full bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
                         ご購入手続きへ
                       </Button>

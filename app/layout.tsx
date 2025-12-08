@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/context/cart-context";
+import { AuthProvider } from "@/lib/context/auth-context";
 import { ScrollReset } from "@/components/scroll-reset";
 
 const playfair = Playfair_Display({
@@ -30,10 +31,12 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${shippori.variable} font-serif antialiased bg-stone-50`}
       >
-        <CartProvider>
-          <ScrollReset />
-          {children}
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <ScrollReset />
+            {children}
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
