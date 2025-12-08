@@ -379,7 +379,7 @@ export default function ProductDetailPage() {
           {product.stores && (
             <section className="mb-16 md:mb-32 pt-16 md:pt-24 border-t border-gray-200">
               <div className="text-center mb-12 md:mb-16">
-                 <h2 className="text-3xl font-thin mb-4">Stockists</h2>
+                 <h2 className="text-3xl font-thin mb-4">Shoplist</h2>
                  <p className="text-sm text-gray-500 tracking-widest uppercase">Available Stores</p>
               </div>
               

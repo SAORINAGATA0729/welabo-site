@@ -35,7 +35,7 @@ export default function StockistsPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Retail Locations
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Stockists</h1>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">Shoplist</h1>
            </div>
         </section>
 

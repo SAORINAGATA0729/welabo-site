@@ -15,10 +15,10 @@ export function SiteFooter() {
           </div>
           
           <div className="flex flex-wrap gap-8 md:gap-10 lg:gap-12 flex-1 lg:justify-center">
-             {["Concept", "Products", "News", "Company", "Stockists", "Contact"].map(item => (
+             {["Concept", "Products", "News", "Company", "Shoplist", "Contact"].map(item => (
                <Link 
                  key={item}
-                 href={`/${item.toLowerCase()}`} 
+                 href={item === "Shoplist" ? "/stockists" : `/${item.toLowerCase()}`} 
                  className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer"
                >
                  {item}

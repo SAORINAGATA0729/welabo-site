@@ -43,13 +43,13 @@ export function SiteHeader() {
           <div className="flex items-center gap-10">
             {(isShopping 
               ? ["Products", "Cart", "Guide"] 
-              : ["Concept", "Products", "News", "Company", "Stockists", "Contact"]
+              : ["Concept", "Products", "News", "Company", "Shoplist", "Contact"]
             ).map((item) => (
               <Link 
                 key={item} 
                 href={isShopping 
                   ? (item === "Products" ? "/shopping" : item === "Cart" ? "/cart" : "/shopping/guide")
-                  : `/${item.toLowerCase()}`
+                  : item === "Shoplist" ? "/stockists" : `/${item.toLowerCase()}`
                 } 
                 className="text-[11px] uppercase tracking-[0.2em] text-gray-600 hover:text-[#1A1A1A] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#1A1A1A] after:transition-all hover:after:w-full"
               >
@@ -98,13 +98,13 @@ export function SiteHeader() {
                <div className="flex flex-col gap-8 px-8">
                 {(isShopping 
                   ? ["Products", "Guide", "Login", "Cart"] 
-                  : ["Concept", "Products", "News", "Company", "Stockists", "Contact"]
+                  : ["Concept", "Products", "News", "Company", "Shoplist", "Contact"]
                 ).map((item, i) => (
                   <Link 
                     key={item} 
                     href={isShopping 
                        ? (item === "Products" ? "/shopping" : `/${item.toLowerCase()}`)
-                       : `/${item.toLowerCase()}`
+                       : item === "Shoplist" ? "/stockists" : `/${item.toLowerCase()}`
                     }
                     className="text-3xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group"
                   >
