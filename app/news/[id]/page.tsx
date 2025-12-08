@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // News Data (from scraped markdown files)
@@ -117,11 +117,6 @@ export default function NewsDetailPage() {
     );
   }
 
-  // Get next article ID
-  const newsIds = Object.keys(newsData).sort((a, b) => parseInt(b) - parseInt(a)); // Sort descending (newest first)
-  const currentIndex = newsIds.indexOf(id);
-  const nextId = currentIndex < newsIds.length - 1 ? newsIds[currentIndex + 1] : null;
-
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
@@ -145,7 +140,7 @@ export default function NewsDetailPage() {
                 <span>{article.date}</span>
               </div>
             </div>
-            <h1 className="text-2xl md:text-3xl font-thin leading-tight tracking-wide mb-4">
+            <h1 className="text-xl md:text-2xl font-thin leading-tight tracking-wide mb-4">
               {article.title}
             </h1>
           </header>
@@ -186,14 +181,6 @@ export default function NewsDetailPage() {
                 All News
               </Button>
             </Link>
-            {nextId && (
-              <Link href={`/news/${nextId}`}>
-                <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
-                  次へ進む
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            )}
           </div>
         </div>
 

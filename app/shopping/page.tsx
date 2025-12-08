@@ -40,11 +40,19 @@ const products = [
     category: "Aging Care"
   },
   {
+    id: "luxury-nmn-15000-bag-2months",
+    name: "LUXURY NMN 15000 袋包装（2か月分）",
+    price: "¥176,040",
+    description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+    category: "Aging Care"
+  },
+  {
     id: "luxury-probiotics",
     name: "LUXURY PROBIOTICS+",
     price: "¥18,360",
-    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
-    img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
+    description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/1_000000000001.jpg?1678209904",
     category: "Gut Health"
   },
   {

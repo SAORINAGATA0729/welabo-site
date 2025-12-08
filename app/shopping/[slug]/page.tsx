@@ -134,14 +134,56 @@ const productData: Record<string, any> = {
       "定期購入の解約・休止は次回お届け予定日の10日前までにご連絡ください。"
     ]
   },
+  "luxury-nmn-15000-bag-2months": {
+    name: "LUXURY NMN 15000 袋包装（2か月分）",
+    price: "176,040",
+    description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
+    images: [
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/3_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/4_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/5_000000000007.png?1707984893"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 2個",
+      expiry: "右側面下部記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "食品のため衛生的な環境でお取り扱いください。",
+      "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。"
+    ]
+  },
   "luxury-probiotics": {
     name: "LUXURY PROBIOTICS+",
     price: "18,360",
     description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
     images: [
-      "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
-      "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=1000&auto=format&fit=crop", // Dummy
-      "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=1000&auto=format&fit=crop", // Dummy
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/1_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/2_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/3_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/4_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/5_000000000001.png?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/6_000000000001.png?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/7_000000000001.png?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/8_000000000001.png?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/9_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/10_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/11_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/12_000000000001.jpg?1678209904",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/13_000000000001.jpg?1678209904"
     ],
     specs: {
       name: "乳酸菌含有加工食品",

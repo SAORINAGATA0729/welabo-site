@@ -33,7 +33,9 @@ export default function ConceptPage() {
                </h2>
                <div className="w-12 h-[1px] bg-[#D4C5B0] mb-12" />
                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                 we laboは、美と健康を支える「アクティブエイジング」のために、究極のインナーケア製品をお届けします。私たちは最新の研究成果に基づき、内なる生命力を活性化させることを追求。徹底したエビデンスファーストの姿勢で製品を最適化し、確かな「実感力」を実現しています。各分野のエキスパートとともに、美と健康に欠かせない要素を探求し、独自の成分コンプレックスを活用。安全性と効果を兼ね備えた理想的な製品を妥協なく作り上げました。年齢を超えた輝きと力強さを引き出す、最高峰のインナーケア。新しい可能性に満ちた未来のために、we laboは常に進化を続けます。
+                 we laboは、美と健康を支える「アクティブエイジング」のために、こだわり抜いたインナーケア製品をお届けします。最新の知見に基づき、内側からの健やかさを支えることを追求。徹底したエビデンスファーストの姿勢のもと、"実感"頂ける製品づくりを大切にしております。<br />
+                 各分野のエキスパートと連携し、美と健康に欠かせない要素を探求。独自の成分コンプレックスを活かしながら、上質さと安全性の両立を追求し、理想的な製品づくりに妥協なく取り組んでいます。<br />
+                 年齢を超え、自分らしく輝き続けるために、洗練された品質のインナーケアをお届けします。新しい可能性に満ちた未来のために、we laboはこれからも進化を続けます。
                </p>
                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                  人生100年時代において、健康で豊かな時間を過ごすためには、老化のメカニズムを理解し、適切な対策を講じることがますます重要になっています。科学の進歩により、老化の過程を解明するために12の老化原因、「エイジングホールマークス」が示されました。
@@ -310,7 +312,7 @@ export default function ConceptPage() {
                        <h4 className="text-3xl md:text-5xl font-thin mb-4">LUXURY PROBIOTICS+</h4>
                        <p className="text-lg italic text-gray-400 font-light mb-8">Inner Flora Balance</p>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                         生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。
+                         生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、オリゴ糖、食物繊維）を独自配合。日々のリズムに寄り添い、軽やかで心地よい日々をサポートします。
                        </p>
                        <p className="text-xs text-gray-500 font-light mb-8">
                          推薦：昭和大学 名誉教授 二木芳人氏 推薦
@@ -336,7 +338,7 @@ export default function ConceptPage() {
                        <h4 className="text-3xl md:text-5xl font-thin mb-4">本草霊芝胞子</h4>
                        <p className="text-lg italic text-gray-400 font-light mb-8">Traditional Masterpiece</p>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                         190年の歴史を持つ漢方薬局「本草閣」監修・厳選。生薬の質に注目し、徹底的にこだわった商品です。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。
+                         産地と栽培環境によって大きく差が出るとされる生薬の「質」と「量」に着目し、こだわり抜いた漢方発想のサプリメントです。主成分には、希少な国産（長野県）霊芝胞子を1包あたり1000mg配合。さらに、メシマコブ・アガリクス・冬虫夏草を独自のバランスで組み合わせました。素材本来の力を大切にしながら、日々のコンディションに寄り添う設計を目指しています。
                        </p>
                        <p className="text-xs text-gray-500 font-light mb-8">
                          監修・厳選：190年の歴史を持つ漢方薬局「本草閣」
