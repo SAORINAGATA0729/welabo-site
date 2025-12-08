@@ -38,7 +38,7 @@ export default function ConceptPage() {
                <div className="aspect-video w-full bg-gray-300"></div>
             </div>
           </div>
-          <div className="mt-12 max-w-2xl">
+          <div className="mt-12 lg:ml-[calc(50%+5rem)] lg:w-1/2">
             <div className="space-y-6">
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 we laboは、美と健康を支える「アクティブエイジング」のために、こだわり抜いたインナーケア製品をお届けします。最新の知見に基づき、内側からの健やかさを支えることを追求。徹底したエビデンスファーストの姿勢のもと、"実感"頂ける製品づくりを大切にしております。各分野のエキスパートと連携し、美と健康に欠かせない要素を探求。独自の成分コンプレックスを活かしながら、上質さと安全性の両立を追求し、理想的な製品づくりに妥協なく取り組んでいます。年齢を超え、自分らしく輝き続けるために、洗練された品質のインナーケアをお届けします。新しい可能性に満ちた未来のために、we laboはこれからも進化を続けます。
