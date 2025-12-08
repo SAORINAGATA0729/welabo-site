@@ -78,11 +78,11 @@ export default function CheckoutStep01Page() {
           <div className="flex-1">
             {/* Breadcrumb / Steps */}
             <div className="flex items-center gap-4 text-xs tracking-widest mb-12">
-              <span className="text-[#1A1A1A]">お客様情報</span>
+              <span className="text-[#1A1A1A]">注文者情報入力</span>
               <ChevronRight className="w-3 h-3 text-gray-300" />
-              <span className="text-gray-400">配送</span>
+              <span className="text-gray-400">確認・修正</span>
               <ChevronRight className="w-3 h-3 text-gray-300" />
-              <span className="text-gray-400">お支払い</span>
+              <span className="text-gray-400">完了</span>
             </div>
 
             <div className="space-y-12">
