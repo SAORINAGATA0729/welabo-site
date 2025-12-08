@@ -241,58 +241,50 @@ export default function CheckoutStep02Page() {
 
               {/* Payment Method */}
               <section className="border-b border-gray-200 pb-8">
-                <div className="flex justify-between items-baseline mb-6">
-                  <h2 className="text-lg font-light">お支払い方法</h2>
-                  <button
-                    onClick={() => setPaymentModalOpen(true)}
-                    className="text-xs underline text-gray-500 hover:text-[#1A1A1A] transition-colors"
-                  >
-                    変更する
-                  </button>
-                </div>
-                {paymentMethod ? (
-                  <div className="space-y-2 text-sm">
-                    {paymentMethod === "amazon" && (
-                      <>
-                        <p className="font-medium">Amazon Pay</p>
-                        <p className="text-gray-600">Amazonアカウントでお支払い</p>
-                      </>
-                    )}
-                    {paymentMethod === "credit" && (
-                      <>
-                        <p className="font-medium">クレジットカード</p>
-                        {creditCardType === "registered" ? (
-                          <p className="text-gray-600">登録済みのカードを利用</p>
-                        ) : (
-                          <p className="text-gray-600">新しいカードを利用</p>
-                        )}
-                      </>
-                    )}
-                    {paymentMethod === "bank" && (
-                      <>
-                        <p className="font-medium">銀行振込</p>
-                        <div className="text-gray-600 text-xs mt-2 space-y-1">
-                          <p>楽天銀行 第三営業支店 普通口座</p>
-                          <p>口座番号: 7295115</p>
-                          <p>口座名義: 株式会社we labo</p>
-                        </div>
-                      </>
-                    )}
-                    {paymentMethod === "cod" && (
-                      <>
-                        <p className="font-medium">代金引換</p>
-                        <p className="text-gray-600">商品到着時に現金でお支払い</p>
-                      </>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setPaymentModalOpen(true)}
-                    className="text-sm text-gray-500 hover:text-[#1A1A1A] transition-colors underline"
-                  >
-                    お支払い方法を選ぶ
-                  </button>
-                )}
+                <button
+                  onClick={() => setPaymentModalOpen(true)}
+                  className="w-full text-left"
+                >
+                  <h2 className="text-lg font-light mb-6">お支払い方法</h2>
+                  {paymentMethod ? (
+                    <div className="space-y-2 text-sm">
+                      {paymentMethod === "amazon" && (
+                        <>
+                          <p className="font-medium">Amazon Pay</p>
+                          <p className="text-gray-600">Amazonアカウントでお支払い</p>
+                        </>
+                      )}
+                      {paymentMethod === "credit" && (
+                        <>
+                          <p className="font-medium">クレジットカード</p>
+                          {creditCardType === "registered" ? (
+                            <p className="text-gray-600">登録済みのカードを利用</p>
+                          ) : (
+                            <p className="text-gray-600">新しいカードを利用</p>
+                          )}
+                        </>
+                      )}
+                      {paymentMethod === "bank" && (
+                        <>
+                          <p className="font-medium">銀行振込</p>
+                          <div className="text-gray-600 text-xs mt-2 space-y-1">
+                            <p>楽天銀行 第三営業支店 普通口座</p>
+                            <p>口座番号: 7295115</p>
+                            <p>口座名義: 株式会社we labo</p>
+                          </div>
+                        </>
+                      )}
+                      {paymentMethod === "cod" && (
+                        <>
+                          <p className="font-medium">代金引換</p>
+                          <p className="text-gray-600">商品到着時に現金でお支払い</p>
+                        </>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-gray-500">お支払い方法を選択してください</p>
+                  )}
+                </button>
               </section>
 
               {/* Payment Method Modal */}
