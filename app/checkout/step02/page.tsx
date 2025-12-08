@@ -114,7 +114,6 @@ export default function CheckoutStep02Page() {
           />
           <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-full text-center text-[8px] tracking-widest text-gray-500 uppercase">Online Store</span>
         </Link>
-        <div className="text-xs tracking-widest text-gray-400">SECURE CHECKOUT</div>
       </header>
 
       <main className="container mx-auto px-6 md:px-12 py-16">
@@ -485,10 +484,10 @@ export default function CheckoutStep02Page() {
                 </p>
               </section>
 
-              <div className="flex justify-end pt-8">
+              <div className="flex justify-center pt-8">
                 <Link href="/checkout/step03">
                   <Button 
-                    className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-16 rounded-none text-xs tracking-[0.2em] uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={!paymentMethod}
                   >
                     注文を確定する

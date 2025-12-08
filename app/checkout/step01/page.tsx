@@ -69,7 +69,6 @@ export default function CheckoutStep01Page() {
           />
           <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-full text-center text-[8px] tracking-widest text-gray-500 uppercase">Online Store</span>
         </Link>
-        <div className="text-xs tracking-widest text-gray-400">SECURE CHECKOUT</div>
       </header>
 
       <main className="container mx-auto px-6 md:px-12 py-16">
@@ -207,10 +206,10 @@ export default function CheckoutStep01Page() {
                 </div>
               </section>
 
-              <div className="flex justify-end pt-8">
+              <div className="flex justify-center pt-8">
                 <Button 
                   onClick={handleNext}
-                  className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all"
+                  className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-16 rounded-none text-xs tracking-[0.2em] uppercase transition-all"
                 >
                   次へ進む
                 </Button>
@@ -221,7 +220,7 @@ export default function CheckoutStep01Page() {
           {/* Right Column: Order Summary */}
           <div className="lg:w-[400px] shrink-0">
             <div className="bg-[#F9F9F9] p-8 sticky top-8">
-              <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">Order Summary</h3>
+              <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">ご注文内容</h3>
               
               <div className="space-y-6 mb-8 max-h-[400px] overflow-y-auto px-2 py-2">
                 {items.map((item) => (
@@ -248,25 +247,24 @@ export default function CheckoutStep01Page() {
                   </div>
                 ))}
                 {items.length === 0 && (
-                  <p className="text-sm text-gray-400 text-center py-4">Cart is empty</p>
+                  <p className="text-sm text-gray-400 text-center py-4">カートに商品が入っていません</p>
                 )}
               </div>
 
               <div className="border-t border-gray-200 pt-6 space-y-3">
                 <div className="flex justify-between text-sm text-gray-600">
-                  <span>Subtotal</span>
+                  <span>小計</span>
                   <span>¥{subtotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-sm text-gray-600">
-                  <span>Shipping</span>
-                  <span className="text-xs text-gray-400">Calculated at next step</span>
+                  <span>送料</span>
+                  <span className="text-xs text-gray-400">次ステップで計算</span>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 mt-6 pt-6 flex justify-between items-baseline">
-                <span className="text-base font-medium">Total</span>
+                <span className="text-base font-medium">合計</span>
                 <div className="text-right">
-                  <span className="text-xs text-gray-400 mr-2">JPY</span>
                   <span className="text-xl font-medium">¥{subtotal.toLocaleString()}</span>
                 </div>
               </div>
