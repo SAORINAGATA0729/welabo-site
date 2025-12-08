@@ -51,15 +51,10 @@ export default function CheckoutStep03Page() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/shopping">
-                <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
-                  買い物を続ける
-                </Button>
-              </Link>
-              <Link href="/mypage/orders">
-                <Button variant="outline" className="bg-white border border-gray-300 text-gray-600 hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
-                  注文履歴を見る
+                <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-16 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
+                  TOPへ戻る
                 </Button>
               </Link>
             </div>
