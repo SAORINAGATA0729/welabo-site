@@ -5,19 +5,60 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/context/cart-context";
 import { ChevronRight, Check } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface OrdererInfo {
+  email: string;
+  lastName: string;
+  firstName: string;
+  zip: string;
+  prefecture: string;
+  address1: string;
+  address2: string;
+  phone: string;
+}
 
 export default function CheckoutStep02Page() {
   const { items, subtotal } = useCart();
-  const [shippingMethod, setShippingMethod] = useState<string>("standard");
-  const [paymentMethod, setPaymentMethod] = useState<string>("credit");
+  const [ordererInfo, setOrdererInfo] = useState<OrdererInfo>({
+    email: "",
+    lastName: "",
+    firstName: "",
+    zip: "",
+    prefecture: "",
+    address1: "",
+    address2: "",
+    phone: "",
+  });
+  const [sameAsOrderer, setSameAsOrderer] = useState(true);
+  const [shippingMethod, setShippingMethod] = useState<string>("yamato");
+  const [deliveryTime, setDeliveryTime] = useState<string>("morning");
+  const [paymentMethod, setPaymentMethod] = useState<string>("");
+  const [notes, setNotes] = useState("");
 
-  const shippingCost = shippingMethod === "standard" ? 0 : shippingMethod === "express" ? 1000 : 500;
+  const shippingCost = 930; // ヤマト運輸の送料
+  const tax8 = subtotal; // 8%対象
+  const tax10 = shippingCost; // 10%対象
   const total = subtotal + shippingCost;
+  const points = Math.floor(total * 0.05); // 5%ポイント
+
+  // localStorageから注文者情報を読み込む
+  useEffect(() => {
+    const saved = localStorage.getItem("checkout_orderer_info");
+    if (saved) {
+      setOrdererInfo(JSON.parse(saved));
+    }
+  }, []);
+
+  const handleEditOrderer = () => {
+    // step01に戻る
+    window.location.href = "/checkout/step01";
+  };
 
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
@@ -36,84 +77,129 @@ export default function CheckoutStep02Page() {
       </header>
 
       <main className="container mx-auto px-6 md:px-12 py-16">
+        {/* Steps Indicator */}
+        <div className="flex items-center gap-4 text-xs tracking-widest mb-12 justify-center">
+          <span className="text-gray-400">注文者情報入力</span>
+          <ChevronRight className="w-3 h-3 text-gray-300" />
+          <span className="text-[#1A1A1A]">確認・修正</span>
+          <ChevronRight className="w-3 h-3 text-gray-300" />
+          <span className="text-gray-400">完了</span>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Left Column: Forms */}
           <div className="flex-1">
-            {/* Breadcrumb / Steps */}
-            <div className="flex items-center gap-4 text-xs tracking-widest mb-12">
-              <Link href="/checkout/step01" className="text-gray-400 hover:text-[#1A1A1A] transition-colors">
-                お客様情報
-              </Link>
-              <ChevronRight className="w-3 h-3 text-gray-300" />
-              <span className="text-[#1A1A1A]">配送</span>
-              <ChevronRight className="w-3 h-3 text-gray-300" />
-              <span className="text-gray-400">お支払い</span>
-            </div>
-
             <div className="space-y-12">
-              {/* Shipping Method */}
-              <section>
-                <h2 className="text-lg font-light mb-6">配送方法</h2>
+              {/* Orderer Information */}
+              <section className="border-b border-gray-200 pb-8">
+                <div className="flex justify-between items-baseline mb-6">
+                  <h2 className="text-lg font-light">注文者情報</h2>
+                  <button
+                    onClick={handleEditOrderer}
+                    className="text-xs underline text-gray-500 hover:text-[#1A1A1A] transition-colors"
+                  >
+                    変更する
+                  </button>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <p className="font-medium">{ordererInfo.lastName} {ordererInfo.firstName}</p>
+                  <p className="text-gray-600">{ordererInfo.zip}</p>
+                  <p className="text-gray-600">
+                    {ordererInfo.prefecture} {ordererInfo.address1} {ordererInfo.address2}
+                  </p>
+                  <p className="text-gray-600">{ordererInfo.phone}</p>
+                  <p className="text-gray-600 mt-2">{ordererInfo.email}</p>
+                </div>
+              </section>
+
+              {/* Delivery Address */}
+              <section className="border-b border-gray-200 pb-8">
+                <div className="flex justify-between items-baseline mb-6">
+                  <h2 className="text-lg font-light">お届け先</h2>
+                </div>
                 <div className="space-y-4">
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
-                      name="shipping"
-                      value="standard"
-                      checked={shippingMethod === "standard"}
-                      onChange={(e) => setShippingMethod(e.target.value)}
-                      className="mt-1"
+                      name="delivery"
+                      checked={sameAsOrderer}
+                      onChange={() => setSameAsOrderer(true)}
+                      className="w-4 h-4"
                     />
-                    <div className="flex-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium">通常配送</span>
-                        <span className="text-sm">無料</span>
-                      </div>
-                      <p className="text-xs text-gray-500">3-5営業日でお届け</p>
-                    </div>
+                    <span className="text-sm">注文者情報と同じ</span>
                   </label>
-
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
-                      name="shipping"
-                      value="express"
-                      checked={shippingMethod === "express"}
-                      onChange={(e) => setShippingMethod(e.target.value)}
-                      className="mt-1"
+                      name="delivery"
+                      checked={!sameAsOrderer}
+                      onChange={() => setSameAsOrderer(false)}
+                      className="w-4 h-4"
                     />
-                    <div className="flex-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium">速達配送</span>
-                        <span className="text-sm">¥1,000</span>
-                      </div>
-                      <p className="text-xs text-gray-500">1-2営業日でお届け</p>
-                    </div>
-                  </label>
-
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
-                    <input
-                      type="radio"
-                      name="shipping"
-                      value="scheduled"
-                      checked={shippingMethod === "scheduled"}
-                      onChange={(e) => setShippingMethod(e.target.value)}
-                      className="mt-1"
-                    />
-                    <div className="flex-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium">指定日配送</span>
-                        <span className="text-sm">¥500</span>
-                      </div>
-                      <p className="text-xs text-gray-500">ご希望の日時に配送</p>
-                    </div>
+                    <span className="text-sm">別の住所に送る</span>
                   </label>
                 </div>
               </section>
 
+              {/* Shipping Method */}
+              <section className="border-b border-gray-200 pb-8">
+                <div className="flex justify-between items-baseline mb-6">
+                  <h2 className="text-lg font-light">配送方法</h2>
+                  <button 
+                    onClick={() => {
+                      const newMethod = shippingMethod === "yamato" ? "sagawa" : "yamato";
+                      setShippingMethod(newMethod);
+                    }}
+                    className="text-xs underline text-gray-500 hover:text-[#1A1A1A] transition-colors"
+                  >
+                    変更する
+                  </button>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <p className="font-medium">ヤマト運輸</p>
+                  <p className="text-gray-600">（送料: 930円）</p>
+                  <div className="mt-4 space-y-2">
+                    {items.map((item) => (
+                      <div key={item.id} className="flex items-start gap-2">
+                        <span className="text-gray-600">・{item.name}</span>
+                        <span className="text-gray-400">{item.quantity}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* Delivery Time */}
+              <section className="border-b border-gray-200 pb-8">
+                <div className="flex justify-between items-baseline mb-6">
+                  <h2 className="text-lg font-light">お届け時間帯指定</h2>
+                  <button 
+                    onClick={() => {
+                      const times = ["morning", "afternoon", "evening"];
+                      const currentIndex = times.indexOf(deliveryTime);
+                      const nextIndex = (currentIndex + 1) % times.length;
+                      setDeliveryTime(times[nextIndex]);
+                    }}
+                    className="text-xs underline text-gray-500 hover:text-[#1A1A1A] transition-colors"
+                  >
+                    変更する
+                  </button>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <p className="font-medium">
+                    {deliveryTime === "morning" && "午前中"}
+                    {deliveryTime === "afternoon" && "14時～16時"}
+                    {deliveryTime === "evening" && "16時～18時"}
+                  </p>
+                  <p className="text-gray-600 text-xs mt-2">
+                    お届け目安： 商品はご入金確認後、1～3営業日内に発送となります。
+                  </p>
+                </div>
+              </section>
+
               {/* Payment Method */}
-              <section>
+              <section className="border-b border-gray-200 pb-8">
                 <h2 className="text-lg font-light mb-6">お支払い方法</h2>
                 <div className="space-y-4">
                   <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
@@ -163,32 +249,30 @@ export default function CheckoutStep02Page() {
                 </div>
               </section>
 
-              {/* Credit Card Details (if credit card selected) */}
-              {paymentMethod === "credit" && (
-                <section className="pt-8 border-t border-gray-200">
-                  <h3 className="text-base font-light mb-6">クレジットカード情報</h3>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="cardNumber" className="text-xs tracking-widest text-gray-500 uppercase">カード番号</Label>
-                      <Input id="cardNumber" placeholder="1234 5678 9012 3456" className="h-12 rounded-none border-gray-200" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="expiry" className="text-xs tracking-widest text-gray-500 uppercase">有効期限</Label>
-                        <Input id="expiry" placeholder="MM/YY" className="h-12 rounded-none border-gray-200" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="cvv" className="text-xs tracking-widest text-gray-500 uppercase">CVV</Label>
-                        <Input id="cvv" placeholder="123" className="h-12 rounded-none border-gray-200" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="cardName" className="text-xs tracking-widest text-gray-500 uppercase">カード名義人</Label>
-                      <Input id="cardName" placeholder="TARO YAMADA" className="h-12 rounded-none border-gray-200" />
-                    </div>
-                  </div>
-                </section>
-              )}
+              {/* Notes */}
+              <section className="border-b border-gray-200 pb-8">
+                <h2 className="text-lg font-light mb-6">備考欄</h2>
+                <Textarea
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="ご要望などがございましたらご記入ください"
+                  className="rounded-none border-gray-200 min-h-[100px] resize-none"
+                />
+              </section>
+
+              {/* Terms */}
+              <section className="pb-8">
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  <Link href="/terms" className="underline hover:text-[#1A1A1A]">
+                    特定商取引法に基づく表記
+                  </Link>
+                  {" "}と{" "}
+                  <Link href="/privacy" className="underline hover:text-[#1A1A1A]">
+                    個人情報の取り扱いについて
+                  </Link>
+                  {" "}を必ずご確認の上、ご注文ください。
+                </p>
+              </section>
 
               <div className="flex justify-between pt-8">
                 <Link href="/checkout/step01">
@@ -197,8 +281,11 @@ export default function CheckoutStep02Page() {
                   </Button>
                 </Link>
                 <Link href="/checkout/step03">
-                  <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
-                    注文内容を確認
+                  <Button 
+                    className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={!paymentMethod}
+                  >
+                    注文を確定する
                   </Button>
                 </Link>
               </div>
@@ -208,12 +295,12 @@ export default function CheckoutStep02Page() {
           {/* Right Column: Order Summary */}
           <div className="lg:w-[400px] shrink-0">
             <div className="bg-[#F9F9F9] p-8 sticky top-8">
-              <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">Order Summary</h3>
+              <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">ご注文内容</h3>
               
-              <div className="space-y-6 mb-8 max-h-[400px] overflow-y-auto px-2 py-2">
+              <div className="space-y-4 mb-8">
                 {items.map((item) => (
-                  <div key={item.id} className="flex gap-4 items-center">
-                    <div className="relative w-16 h-16 bg-white border border-gray-100 shrink-0">
+                  <div key={item.id} className="flex gap-4 items-start pb-4 border-b border-gray-200">
+                    <div className="relative w-20 h-20 bg-white border border-gray-100 shrink-0">
                       <Image
                         src={item.img}
                         alt={item.name}
@@ -221,16 +308,14 @@ export default function CheckoutStep02Page() {
                         className="object-cover p-1"
                         unoptimized
                       />
-                      <span className="absolute -top-2 -right-2 w-5 h-5 bg-gray-500 text-white text-[10px] flex items-center justify-center rounded-full">
-                        {item.quantity}
-                      </span>
                     </div>
                     <div className="flex-1">
                       <h4 className="text-sm font-light leading-tight mb-1">{item.name}</h4>
-                      <p className="text-xs text-gray-500">¥{item.price.toLocaleString()}</p>
-                    </div>
-                    <div className="text-sm font-medium">
-                      ¥{(item.price * item.quantity).toLocaleString()}
+                      {item.name.includes("※") && (
+                        <p className="text-xs text-gray-500 mb-1">（※）は軽減税率対象</p>
+                      )}
+                      <p className="text-xs text-gray-500 mb-2">{item.price.toLocaleString()}円</p>
+                      <p className="text-xs text-gray-500">数量: {item.quantity}</p>
                     </div>
                   </div>
                 ))}
@@ -239,29 +324,31 @@ export default function CheckoutStep02Page() {
                 )}
               </div>
 
-              <div className="border-t border-gray-200 pt-6 space-y-3">
-                <div className="flex justify-between text-sm text-gray-600">
-                  <span>Subtotal</span>
-                  <span>¥{subtotal.toLocaleString()}</span>
+              <div className="border-t border-gray-200 pt-6 space-y-3 text-sm">
+                <div className="flex justify-between text-gray-600">
+                  <span>商品の小計</span>
+                  <span>{subtotal.toLocaleString()}円</span>
                 </div>
-                <div className="flex justify-between text-sm text-gray-600">
-                  <span>Shipping</span>
-                  <span>
-                    {shippingCost === 0 ? (
-                      <span className="text-xs text-gray-400">無料</span>
-                    ) : (
-                      <span>¥{shippingCost.toLocaleString()}</span>
-                    )}
-                  </span>
+                <div className="flex justify-between text-gray-600">
+                  <span>配送料</span>
+                  <span>{shippingCost.toLocaleString()}円</span>
+                </div>
+                <div className="pt-4 border-t border-gray-200 space-y-1 text-xs text-gray-500">
+                  <p>消費税8%対象（税込）：{tax8.toLocaleString()}円</p>
+                  <p>消費税10%対象（税込）：{tax10.toLocaleString()}円</p>
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 mt-6 pt-6 flex justify-between items-baseline">
-                <span className="text-base font-medium">Total</span>
-                <div className="text-right">
-                  <span className="text-xs text-gray-400 mr-2">JPY</span>
-                  <span className="text-xl font-medium">¥{total.toLocaleString()}</span>
+              <div className="border-t border-gray-200 mt-6 pt-6">
+                <div className="flex justify-between items-baseline mb-2">
+                  <span className="text-base font-medium">合計</span>
+                  <div className="text-right">
+                    <span className="text-xl font-medium">{total.toLocaleString()}円</span>
+                  </div>
                 </div>
+                <p className="text-xs text-gray-500 text-right mt-2">
+                  {points.toLocaleString()}ポイント獲得予定
+                </p>
               </div>
             </div>
           </div>
@@ -271,4 +358,3 @@ export default function CheckoutStep02Page() {
     </div>
   );
 }
-

@@ -9,11 +9,52 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/context/cart-context";
 import { ChevronRight, Check } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutStep01Page() {
   const { items, subtotal } = useCart();
-  const [sameAsBilling, setSameAsBilling] = useState(true);
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [newsletter, setNewsletter] = useState(false);
+  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [zip, setZip] = useState("");
+  const [prefecture, setPrefecture] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [phone, setPhone] = useState("");
+
+  // Load saved data from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("checkout_orderer_info");
+    if (saved) {
+      const data = JSON.parse(saved);
+      setEmail(data.email || "");
+      setLastName(data.lastName || "");
+      setFirstName(data.firstName || "");
+      setZip(data.zip || "");
+      setPrefecture(data.prefecture || "");
+      setAddress1(data.address1 || "");
+      setAddress2(data.address2 || "");
+      setPhone(data.phone || "");
+    }
+  }, []);
+
+  const handleNext = () => {
+    const ordererInfo = {
+      email,
+      lastName,
+      firstName,
+      zip,
+      prefecture,
+      address1,
+      address2,
+      phone,
+    };
+    localStorage.setItem("checkout_orderer_info", JSON.stringify(ordererInfo));
+    router.push("/checkout/step02");
+  };
 
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
@@ -57,10 +98,24 @@ export default function CheckoutStep01Page() {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-xs tracking-widest text-gray-500 uppercase">メールアドレス</Label>
-                    <Input id="email" type="email" placeholder="例: your@email.com" className="h-12 rounded-none border-gray-200" />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="例: your@email.com" 
+                      className="h-12 rounded-none border-gray-200"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
                   </div>
                   <div className="flex items-center gap-2">
-                    <input type="checkbox" id="newsletter" className="rounded-sm border-gray-300" />
+                    <input 
+                      type="checkbox" 
+                      id="newsletter" 
+                      className="rounded-sm border-gray-300"
+                      checked={newsletter}
+                      onChange={(e) => setNewsletter(e.target.checked)}
+                    />
                     <label htmlFor="newsletter" className="text-xs text-gray-600 cursor-pointer">
                       ニュースやオファーを受け取る
                     </label>
@@ -75,47 +130,90 @@ export default function CheckoutStep01Page() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="lastName" className="text-xs tracking-widest text-gray-500 uppercase">姓</Label>
-                      <Input id="lastName" className="h-12 rounded-none border-gray-200" />
+                      <Input 
+                        id="lastName" 
+                        className="h-12 rounded-none border-gray-200"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="firstName" className="text-xs tracking-widest text-gray-500 uppercase">名</Label>
-                      <Input id="firstName" className="h-12 rounded-none border-gray-200" />
+                      <Input 
+                        id="firstName" 
+                        className="h-12 rounded-none border-gray-200"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="zip" className="text-xs tracking-widest text-gray-500 uppercase">郵便番号</Label>
-                    <Input id="zip" className="h-12 rounded-none border-gray-200 w-40" />
+                    <Input 
+                      id="zip" 
+                      className="h-12 rounded-none border-gray-200 w-40"
+                      value={zip}
+                      onChange={(e) => setZip(e.target.value)}
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="prefecture" className="text-xs tracking-widest text-gray-500 uppercase">都道府県</Label>
-                    <Input id="prefecture" className="h-12 rounded-none border-gray-200" />
+                    <Input 
+                      id="prefecture" 
+                      className="h-12 rounded-none border-gray-200"
+                      value={prefecture}
+                      onChange={(e) => setPrefecture(e.target.value)}
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="address1" className="text-xs tracking-widest text-gray-500 uppercase">市区町村・番地</Label>
-                    <Input id="address1" className="h-12 rounded-none border-gray-200" />
+                    <Input 
+                      id="address1" 
+                      className="h-12 rounded-none border-gray-200"
+                      value={address1}
+                      onChange={(e) => setAddress1(e.target.value)}
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="address2" className="text-xs tracking-widest text-gray-500 uppercase">建物名・部屋番号</Label>
-                    <Input id="address2" className="h-12 rounded-none border-gray-200" />
+                    <Input 
+                      id="address2" 
+                      className="h-12 rounded-none border-gray-200"
+                      value={address2}
+                      onChange={(e) => setAddress2(e.target.value)}
+                    />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-xs tracking-widest text-gray-500 uppercase">電話番号</Label>
-                    <Input id="phone" type="tel" className="h-12 rounded-none border-gray-200" />
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      className="h-12 rounded-none border-gray-200"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                    />
                   </div>
                 </div>
               </section>
 
               <div className="flex justify-end pt-8">
-                <Link href="/checkout/step02">
-                  <Button className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
-                    次へ進む
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={handleNext}
+                  className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all"
+                >
+                  次へ進む
+                </Button>
               </div>
             </div>
           </div>
