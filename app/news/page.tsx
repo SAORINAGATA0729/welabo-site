@@ -39,6 +39,7 @@ export default function NewsPage() {
                  <Link key={i} href={`/news/${item.id}`} className="group block">
                    <div className="flex flex-col md:flex-row md:items-center gap-6 py-12 border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors px-4 relative">
                       <div className="md:w-40 shrink-0">
+                        <span className="text-[10px] tracking-widest text-[#D4C5B0] block mb-2">{item.tag}</span>
                         <span className="text-sm font-serif text-gray-500">{item.date}</span>
                       </div>
                       
