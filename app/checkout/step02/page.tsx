@@ -6,10 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/context/cart-context";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight, Check, HelpCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface OrdererInfo {
@@ -39,6 +45,12 @@ export default function CheckoutStep02Page() {
   const [shippingMethod, setShippingMethod] = useState<string>("yamato");
   const [deliveryTime, setDeliveryTime] = useState<string>("morning");
   const [paymentMethod, setPaymentMethod] = useState<string>("");
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [creditCardType, setCreditCardType] = useState<"registered" | "new">("new");
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardExpiry, setCardExpiry] = useState("");
+  const [cardCvv, setCardCvv] = useState("");
+  const [cardName, setCardName] = useState("");
   const [notes, setNotes] = useState("");
 
   const shippingCost = 930; // ヤマト運輸の送料
@@ -200,54 +212,227 @@ export default function CheckoutStep02Page() {
 
               {/* Payment Method */}
               <section className="border-b border-gray-200 pb-8">
-                <h2 className="text-lg font-light mb-6">お支払い方法</h2>
-                <div className="space-y-4">
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="credit"
-                      checked={paymentMethod === "credit"}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="mt-1"
-                    />
-                    <div className="flex-1">
-                      <span className="text-sm font-medium">クレジットカード</span>
-                      <p className="text-xs text-gray-500 mt-1">Visa, Mastercard, JCB, American Express</p>
-                    </div>
-                  </label>
-
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="bank"
-                      checked={paymentMethod === "bank"}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="mt-1"
-                    />
-                    <div className="flex-1">
-                      <span className="text-sm font-medium">銀行振込</span>
-                      <p className="text-xs text-gray-500 mt-1">ご注文後、振込先をご案内いたします</p>
-                    </div>
-                  </label>
-
-                  <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="cod"
-                      checked={paymentMethod === "cod"}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="mt-1"
-                    />
-                    <div className="flex-1">
-                      <span className="text-sm font-medium">代金引換</span>
-                      <p className="text-xs text-gray-500 mt-1">商品到着時に現金でお支払い</p>
-                    </div>
-                  </label>
+                <div className="flex justify-between items-baseline mb-6">
+                  <h2 className="text-lg font-light">お支払い方法</h2>
+                  <button
+                    onClick={() => setPaymentModalOpen(true)}
+                    className="text-xs underline text-gray-500 hover:text-[#1A1A1A] transition-colors"
+                  >
+                    変更する
+                  </button>
                 </div>
+                {paymentMethod ? (
+                  <div className="space-y-2 text-sm">
+                    {paymentMethod === "amazon" && (
+                      <>
+                        <p className="font-medium">Amazon Pay</p>
+                        <p className="text-gray-600">Amazonアカウントでお支払い</p>
+                      </>
+                    )}
+                    {paymentMethod === "credit" && (
+                      <>
+                        <p className="font-medium">クレジットカード</p>
+                        {creditCardType === "registered" ? (
+                          <p className="text-gray-600">登録済みのカードを利用</p>
+                        ) : (
+                          <p className="text-gray-600">新しいカードを利用</p>
+                        )}
+                      </>
+                    )}
+                    {paymentMethod === "bank" && (
+                      <>
+                        <p className="font-medium">銀行振込</p>
+                        <div className="text-gray-600 text-xs mt-2 space-y-1">
+                          <p>楽天銀行 第三営業支店 普通口座</p>
+                          <p>口座番号: 7295115</p>
+                          <p>口座名義: 株式会社we labo</p>
+                        </div>
+                      </>
+                    )}
+                    {paymentMethod === "cod" && (
+                      <>
+                        <p className="font-medium">代金引換</p>
+                        <p className="text-gray-600">商品到着時に現金でお支払い</p>
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setPaymentModalOpen(true)}
+                    className="text-sm text-gray-500 hover:text-[#1A1A1A] transition-colors underline"
+                  >
+                    お支払い方法を選ぶ
+                  </button>
+                )}
               </section>
+
+              {/* Payment Method Modal */}
+              <Dialog open={paymentModalOpen} onOpenChange={setPaymentModalOpen}>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-lg font-light">お支払い方法</DialogTitle>
+                  </DialogHeader>
+                  
+                  <div className="space-y-4 mt-6">
+                    {/* Amazon Pay */}
+                    <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
+                      <input
+                        type="radio"
+                        name="payment-modal"
+                        value="amazon"
+                        checked={paymentMethod === "amazon"}
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        className="mt-1 w-4 h-4"
+                      />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-sm font-medium">amazon pay</span>
+                          <div className="w-12 h-6 bg-orange-100 rounded flex items-center justify-center">
+                            <span className="text-xs font-bold text-orange-600">amazon</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-gray-500">Amazonアカウントでお支払い</p>
+                        <p className="text-xs text-gray-500 mt-1">Amazonアカウントにご登録の住所・支払手段を利用して簡単にご注文。</p>
+                      </div>
+                    </label>
+
+                    {/* Credit Card */}
+                    <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
+                      <input
+                        type="radio"
+                        name="payment-modal"
+                        value="credit"
+                        checked={paymentMethod === "credit"}
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        className="mt-1 w-4 h-4"
+                      />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-sm font-medium">クレジットカード</span>
+                          <div className="flex gap-1">
+                            <div className="w-8 h-5 bg-blue-600 rounded text-white text-[8px] flex items-center justify-center font-bold">VISA</div>
+                            <div className="w-8 h-5 bg-orange-500 rounded text-white text-[8px] flex items-center justify-center font-bold">MC</div>
+                          </div>
+                        </div>
+                        {paymentMethod === "credit" && (
+                          <div className="mt-4 space-y-4 border-t border-gray-200 pt-4">
+                            <div className="space-y-3">
+                              <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name="card-type"
+                                  value="registered"
+                                  checked={creditCardType === "registered"}
+                                  onChange={(e) => setCreditCardType("registered")}
+                                  className="w-4 h-4"
+                                />
+                                <span className="text-sm">登録済みのカードを利用する</span>
+                              </label>
+                              <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name="card-type"
+                                  value="new"
+                                  checked={creditCardType === "new"}
+                                  onChange={(e) => setCreditCardType("new")}
+                                  className="w-4 h-4"
+                                />
+                                <span className="text-sm">新しいカードを利用する</span>
+                              </label>
+                            </div>
+                            {creditCardType === "new" && (
+                              <div className="space-y-4 pt-4">
+                                <div className="space-y-2">
+                                  <Label htmlFor="card-number" className="text-xs tracking-widest text-gray-500 uppercase">カード番号</Label>
+                                  <Input
+                                    id="card-number"
+                                    placeholder="カード番号 (ハイフンなし)"
+                                    value={cardNumber}
+                                    onChange={(e) => setCardNumber(e.target.value)}
+                                    className="h-12 rounded-none border-gray-200"
+                                  />
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                  <div className="space-y-2">
+                                    <Label htmlFor="card-expiry" className="text-xs tracking-widest text-gray-500 uppercase">有効期限</Label>
+                                    <Input
+                                      id="card-expiry"
+                                      placeholder="有効期限(月/年)"
+                                      value={cardExpiry}
+                                      onChange={(e) => setCardExpiry(e.target.value)}
+                                      className="h-12 rounded-none border-gray-200"
+                                    />
+                                  </div>
+                                  <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                      <Label htmlFor="card-cvv" className="text-xs tracking-widest text-gray-500 uppercase">セキュリティコード</Label>
+                                      <HelpCircle className="w-4 h-4 text-gray-400" />
+                                    </div>
+                                    <Input
+                                      id="card-cvv"
+                                      placeholder="セキュリティコード"
+                                      value={cardCvv}
+                                      onChange={(e) => setCardCvv(e.target.value)}
+                                      className="h-12 rounded-none border-gray-200"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="space-y-2">
+                                  <Label htmlFor="card-name" className="text-xs tracking-widest text-gray-500 uppercase">カード名義人</Label>
+                                  <Input
+                                    id="card-name"
+                                    placeholder="カード名義人"
+                                    value={cardName}
+                                    onChange={(e) => setCardName(e.target.value)}
+                                    className="h-12 rounded-none border-gray-200"
+                                  />
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </label>
+
+                    {/* Bank Transfer */}
+                    <label className="flex items-start gap-4 p-4 border border-gray-200 cursor-pointer hover:border-[#1A1A1A] transition-colors">
+                      <input
+                        type="radio"
+                        name="payment-modal"
+                        value="bank"
+                        checked={paymentMethod === "bank"}
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        className="mt-1 w-4 h-4"
+                      />
+                      <div className="flex-1">
+                        <span className="text-sm font-medium">銀行振込</span>
+                        {paymentMethod === "bank" && (
+                          <div className="mt-4 space-y-2 text-xs text-gray-600 border-t border-gray-200 pt-4">
+                            <p><span className="font-medium">銀行名:</span> 楽天銀行</p>
+                            <p><span className="font-medium">支店名:</span> 第三営業支店</p>
+                            <p><span className="font-medium">口座種別:</span> 普通口座</p>
+                            <p><span className="font-medium">口座番号:</span> 7295115</p>
+                            <p><span className="font-medium">口座名義:</span> 株式会社we labo</p>
+                            <p className="mt-3 text-gray-500">お振込確認後、商品を発送いたします。</p>
+                            <p className="text-gray-500">※ご注文完了後、5日以内に指定銀行口座へお振り込みください。</p>
+                            <p className="text-gray-500">恐れ入りますが、振込手数料はお客様にご負担いただいております。</p>
+                          </div>
+                        )}
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <Button
+                      onClick={() => setPaymentModalOpen(false)}
+                      className="w-full bg-gray-800 text-white border border-gray-800 hover:bg-gray-700 h-12 rounded-none text-sm transition-all"
+                    >
+                      この内容で変更する
+                    </Button>
+                    <p className="text-xs text-gray-500 text-center mt-2">(注文はまだ完了していません)</p>
+                  </div>
+                </DialogContent>
+              </Dialog>
 
               {/* Notes */}
               <section className="border-b border-gray-200 pb-8">
