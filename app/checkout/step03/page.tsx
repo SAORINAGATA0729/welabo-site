@@ -59,7 +59,7 @@ export default function CheckoutStep03Page() {
             </div>
 
             <div className="text-center pt-8 border-t border-gray-200">
-              <p className="text-xs text-gray-600 leading-relaxed mb-4">
+              <p className="text-xs text-gray-600 leading-relaxed">
                 <Link href="/terms" className="underline hover:text-[#1A1A1A]">
                   特定商取引法に基づく表記
                 </Link>
@@ -69,13 +69,16 @@ export default function CheckoutStep03Page() {
                 </Link>
                 {" "}を必ずご確認の上、ご注文ください。
               </p>
-              <p className="text-xs text-gray-400">
-                © 2025 we labo All Rights Reserved.
-              </p>
             </div>
           </div>
         </div>
       </main>
+
+      <footer className="border-t border-gray-200 py-8 text-center">
+        <p className="text-xs text-gray-400">
+          © 2025 we labo All Rights Reserved.
+        </p>
+      </footer>
     </div>
   );
 }
