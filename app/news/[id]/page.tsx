@@ -140,7 +140,7 @@ export default function NewsDetailPage() {
                 <span>{article.date}</span>
               </div>
             </div>
-            <h1 className="text-xl md:text-2xl font-thin leading-tight tracking-wide mb-4">
+            <h1 className="text-2xl md:text-3xl font-thin leading-tight tracking-wide mb-4">
               {article.title}
             </h1>
           </header>
