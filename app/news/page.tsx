@@ -44,7 +44,7 @@ export default function NewsPage() {
                       </div>
                       
                       <div className="flex-1">
-                        <h4 className="text-lg md:text-xl font-light tracking-wide text-[#1A1A1A] group-hover:translate-x-2 transition-transform duration-300">
+                        <h4 className="text-sm md:text-base font-light tracking-wide text-[#1A1A1A] group-hover:translate-x-2 transition-transform duration-300">
                           {item.title}
                         </h4>
                       </div>

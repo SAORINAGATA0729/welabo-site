@@ -130,7 +130,7 @@ export default function NewsDetailPage() {
           </Link>
 
           {/* Article Header */}
-          <header className="mb-16 pb-12 border-b border-gray-200">
+          <header className="mb-16 pb-8 border-b border-gray-200">
             <div className="flex items-center gap-4 mb-6">
               <span className="text-[10px] tracking-widest text-[#D4C5B0] uppercase px-3 py-1 border border-[#D4C5B0]">
                 {article.tag}
@@ -140,7 +140,7 @@ export default function NewsDetailPage() {
                 <span>{article.date}</span>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl font-thin leading-tight tracking-wide mb-8">
+            <h1 className="text-xl md:text-2xl font-thin leading-tight tracking-wide mb-4">
               {article.title}
             </h1>
           </header>
