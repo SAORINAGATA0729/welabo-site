@@ -493,12 +493,7 @@ export default function CheckoutStep02Page() {
                 </p>
               </section>
 
-              <div className="flex justify-between pt-8">
-                <Link href="/checkout/step01">
-                  <Button variant="outline" className="bg-white border border-gray-300 text-gray-600 hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
-                    戻る
-                  </Button>
-                </Link>
+              <div className="flex justify-end pt-8">
                 <Link href="/checkout/step03">
                   <Button 
                     className="bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] h-14 px-8 rounded-none text-xs tracking-[0.2em] uppercase transition-all disabled:opacity-50 disabled:cursor-not-allowed"
