@@ -117,19 +117,19 @@ export default function CheckoutStep02Page() {
       </header>
 
       <main className="container mx-auto px-6 md:px-12 py-16">
-        {/* Steps Indicator */}
-        <div className="flex items-center gap-4 text-xs tracking-widest mb-12 justify-center">
-          <span className="text-gray-400">注文者情報入力</span>
-          <ChevronRight className="w-3 h-3 text-gray-300" />
-          <span className="text-[#1A1A1A]">確認・修正</span>
-          <ChevronRight className="w-3 h-3 text-gray-300" />
-          <span className="text-gray-400">完了</span>
-        </div>
-
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Left Column: Forms */}
           <div className="flex-1">
+            {/* Breadcrumb / Steps */}
+            <div className="flex items-center gap-4 text-xs tracking-widest mb-12">
+              <span className="text-gray-400">注文者情報入力</span>
+              <ChevronRight className="w-3 h-3 text-gray-300" />
+              <span className="text-[#1A1A1A]">確認・修正</span>
+              <ChevronRight className="w-3 h-3 text-gray-300" />
+              <span className="text-gray-400">完了</span>
+            </div>
+
             <div className="space-y-12">
               {/* Orderer Information */}
               <section className="border-b border-gray-200 pb-8">
