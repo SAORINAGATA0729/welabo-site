@@ -77,63 +77,6 @@ const productData: Record<string, any> = {
       "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。"
     ]
   },
-  "luxury-nmn-15000-subscription-1month": {
-    name: "LUXURY NMN 15000 定期便（1ヶ月コース）",
-    price: "88,560",
-    description: "毎月1個お届けする定期コースです。買い忘れの心配がなく、手軽に続けられます。いつでも解約・休止が可能です。",
-    images: [
-      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
-    ],
-    specs: {
-      name: "NMN含有加工食品",
-      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
-      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）",
-      expiry: "右側面下部記載",
-      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
-      nutrition: {
-        energy: "1.53kcal",
-        protein: "0.08g",
-        lipid: "0.05g",
-        carbohydrate: "0.2g",
-        salt: "0.004g"
-      }
-    },
-    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
-    precautions: [
-      "乳幼児の手の届かないところに置いてください。",
-      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
-      "定期購入の解約・休止は次回お届け予定日の10日前までにご連絡ください。"
-    ]
-  },
-  "luxury-nmn-15000-subscription-2months": {
-    name: "LUXURY NMN 15000 定期便（2ヶ月コース）",
-    price: "176,040",
-    description: "2ヶ月ごとに2個お届けする定期コースです。ライフスタイルに合わせて無理なく続けられます。配送の手間も減らせてエコフレンドリー。",
-    images: [
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
-      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
-    ],
-    specs: {
-      name: "NMN含有加工食品",
-      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
-      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 2個",
-      expiry: "右側面下部記載",
-      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
-      nutrition: {
-        energy: "1.53kcal",
-        protein: "0.08g",
-        lipid: "0.05g",
-        carbohydrate: "0.2g",
-        salt: "0.004g"
-      }
-    },
-    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
-    precautions: [
-      "乳幼児の手の届かないところに置いてください。",
-      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
-      "定期購入の解約・休止は次回お届け予定日の10日前までにご連絡ください。"
-    ]
-  },
   "luxury-nmn-15000-bag-2months": {
     name: "LUXURY NMN 15000 袋包装（2か月分）",
     price: "176,040",
