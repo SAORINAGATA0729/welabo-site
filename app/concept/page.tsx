@@ -66,7 +66,7 @@ export default function ConceptPage() {
                  </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
                  {[
                    {
                      en: "Genomic Instability",
@@ -239,8 +239,8 @@ export default function ConceptPage() {
                      )
                    }
                  ].map((item, i) => (
-                   <div key={i} className="bg-white p-8 border border-gray-100 hover:border-[#D4C5B0] hover:shadow-lg transition-all duration-500 group">
-                      <div className="flex items-start justify-between mb-6">
+                   <div key={i} className="bg-white p-6 border border-gray-100 hover:border-[#D4C5B0] hover:shadow-lg transition-all duration-500 group">
+                      <div className="flex items-start justify-between mb-4">
                          <span className="text-xs font-mono text-gray-400 opacity-60 group-hover:opacity-100 transition-opacity">
                             {(i + 1).toString().padStart(2, '0')}
                          </span>
@@ -248,11 +248,11 @@ export default function ConceptPage() {
                             {item.icon}
                          </div>
                       </div>
-                      <div className="space-y-2">
-                         <h4 className="text-sm font-light tracking-wide text-gray-800 group-hover:text-[#1A1A1A] transition-colors">
+                      <div className="space-y-1">
+                         <h4 className="text-xs font-light tracking-wide text-gray-800 group-hover:text-[#1A1A1A] transition-colors">
                             {item.ja}
                          </h4>
-                         <p className="text-xs text-gray-500 font-light tracking-wide">
+                         <p className="text-[10px] text-gray-500 font-light tracking-wide">
                             {item.en}
                          </p>
                       </div>
