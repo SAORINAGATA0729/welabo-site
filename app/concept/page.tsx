@@ -15,7 +15,7 @@ export default function ConceptPage() {
         {/* Header Section */}
         <section className="container mx-auto px-6 md:px-12 mb-32">
           <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
-            <h1 className="text-5xl md:text-9xl font-thin tracking-wide leading-[0.8]">
+            <h1 className="text-3xl md:text-9xl font-thin tracking-wide leading-[0.8]">
               CONCEPT
             </h1>
             <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-6" />

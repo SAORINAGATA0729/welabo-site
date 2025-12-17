@@ -34,7 +34,7 @@ export default function ContactPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Contact Us
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">CONTACT</h1>
+              <h1 className="text-3xl md:text-7xl font-thin mb-8">CONTACT</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 お問い合わせ、ご質問がございましたら、<br />
                 お気軽にご連絡ください。

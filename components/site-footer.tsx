@@ -19,7 +19,7 @@ export function SiteFooter() {
                <Link 
                  key={item}
                  href={item === "Shoplist" ? "/stockists" : `/${item.toLowerCase()}`} 
-                 className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer"
+                 className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer uppercase"
                >
                  {item}
                </Link>

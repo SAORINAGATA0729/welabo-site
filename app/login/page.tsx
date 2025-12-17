@@ -54,7 +54,7 @@ export default function LoginPage() {
               <p className="text-xs text-gray-500 mb-6">Amazonアカウントをお持ちの方はこちら</p>
               <Button 
                 type="button"
-                className="bg-[#F9A825] hover:bg-[#F57F17] text-white w-full max-w-sm mx-auto py-6 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
+                className="bg-[#FFD814] hover:bg-[#F7CA00] text-[#1A1A1A] w-full max-w-sm mx-auto py-6 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
                 onClick={() => alert("Amazonログイン機能はデモ環境のため動作しません。")}
               >
                 <span className="font-bold text-lg">amazon</span>

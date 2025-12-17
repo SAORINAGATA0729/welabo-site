@@ -47,7 +47,7 @@ const products = [
     id: "honsoureishihoushi",
     name: "本草霊芝胞子",
     price: "¥91,800",
-    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
     category: "Oriental Medicine",
     tagline: "「伝統」×「科学」"
@@ -66,7 +66,7 @@ export default function ShoppingPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Online Store
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">SHOPPING</h1>
+              <h1 className="text-3xl md:text-7xl font-thin mb-8">SHOPPING</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 we laboの公式オンラインストア
               </p>

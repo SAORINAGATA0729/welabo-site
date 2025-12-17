@@ -151,7 +151,7 @@ const productData: Record<string, any> = {
   "honsoureishihoushi": {
     name: "本草霊芝胞子",
     price: "91,800",
-    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
+    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分に、メシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     images: [
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_02_0-scaled.jpg",

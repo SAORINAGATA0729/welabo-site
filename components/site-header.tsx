@@ -53,7 +53,7 @@ export function SiteHeader() {
                 } 
                 className="text-[11px] uppercase tracking-[0.2em] text-gray-600 hover:text-[#1A1A1A] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#1A1A1A] after:transition-all hover:after:w-full"
               >
-                {item}
+                {item.toUpperCase()}
               </Link>
             ))}
           </div>
@@ -106,7 +106,7 @@ export function SiteHeader() {
                        ? (item === "Products" ? "/shopping" : `/${item.toLowerCase()}`)
                        : item === "Shoplist" ? "/stockists" : `/${item.toLowerCase()}`
                     }
-                    className="text-3xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group"
+                    className="text-xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group uppercase"
                   >
                     <span className="text-xs font-normal text-gray-400 group-hover:text-[#D4C5B0]">0{i + 1}</span>
                     {item}
@@ -116,7 +116,7 @@ export function SiteHeader() {
                 {!isShopping && (
                 <Link 
                     href="/shopping"
-                    className="text-3xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group border border-gray-200 p-4 justify-center mt-4"
+                    className="text-xl font-light tracking-widest text-gray-900 hover:text-[#D4C5B0] transition-colors flex items-center gap-4 group border border-gray-200 p-4 justify-center mt-4"
                 >
                     <span className="text-xs font-normal text-gray-400 group-hover:text-[#D4C5B0] mr-4">07</span>
                     SHOPPING

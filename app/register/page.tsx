@@ -110,9 +110,9 @@ export default function RegisterPage() {
         <div className="container mx-auto px-6 md:px-12 max-w-2xl">
           <div className="text-center mb-12">
             <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
-              REGISTER
+              MEMBERSHIP
             </span>
-            <h1 className="text-3xl md:text-4xl font-thin">会員登録</h1>
+            <h1 className="text-3xl md:text-4xl font-thin">REGISTER</h1>
             <p className="text-xs text-gray-500 mt-4 tracking-wide">
               会員登録して、スムーズなお買い物をお楽しみください。
             </p>
@@ -124,7 +124,7 @@ export default function RegisterPage() {
               <p className="text-xs text-gray-500 mb-6">Amazonアカウントをお持ちの方はこちら</p>
               <Button 
                 type="button"
-                className="bg-[#F9A825] hover:bg-[#F57F17] text-white w-full max-w-sm mx-auto py-6 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
+                className="bg-[#FFD814] hover:bg-[#F7CA00] text-[#1A1A1A] w-full max-w-sm mx-auto py-6 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
                 onClick={() => alert("Amazonログイン機能はデモ環境のため動作しません。")}
               >
                 <span className="font-bold text-lg">amazon</span>

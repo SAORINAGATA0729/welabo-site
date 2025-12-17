@@ -130,7 +130,7 @@ export default function CartPage() {
                     <div className="text-center py-2">
                        <span className="text-xs text-gray-400 block mb-2">- または -</span>
                        <Button 
-                         className="w-full bg-[#F9A825] hover:bg-[#F57F17] text-white h-12 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
+                         className="w-full bg-[#FFD814] hover:bg-[#F7CA00] text-[#1A1A1A] h-12 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
                          onClick={() => alert("Amazon Pay機能はデモ環境のため動作しません。")}
                        >
                          <span className="font-bold">amazon</span>

@@ -105,8 +105,8 @@ const productData: Record<string, any> = {
   },
   "honsoureishihoushi": {
     name: "本草霊芝胞子",
-    tagline: "190年の歴史を持つ漢方薬局「本草閣」監修・厳選",
-    description: "生薬の質に注目した『本草霊芝胞子』。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分に、メシマコブ、アガリクス、冬虫夏草を独自配合しています。",
+    tagline: "生薬の質に注目した『本草霊芝胞子』",
+    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分に、メシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
     gallery: [
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_02_0-scaled.jpg",
@@ -136,13 +136,6 @@ const productData: Record<string, any> = {
         description: "冬虫夏草は子嚢菌類のキノコの一種で、中国では昔から漢方素材とされています。"
       }
     ],
-    honzokaku: {
-      title: "「本草閣」－本草の本物を伝える－",
-      subtitle: "1830年創業 和薬・漢方の「本草閣」",
-      owner: "「本草閣」9代目当主 秋山あかね氏",
-      description: "現存する日本最古の漢方薬局です。",
-      ownerBio: "1830年創業の和薬・漢方の本草閣を受け継ぐ第九代当主。"
-    },
     gmp: "GMP（Good Manufacturing Practice）=「適正製造規範」とは、原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理することです。",
     agingHallmarks: "老化研究の世界基準であるAGING HALLMARKS（左図）で、12の老化要因が示されています。本草霊芝胞子は12の内、5つの要因にアプローチします。（右図）",
     usage: "健康補助食品として、1日1包を、水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
@@ -234,7 +227,7 @@ export default function ProductDetailPage() {
               <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-6">
                 we labo Collection
               </span>
-              <h1 className="text-3xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
+              <h1 className="text-2xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
               <p className="text-lg text-gray-600 font-light mb-12">{product.tagline}</p>
               
               <div className="mb-12">
@@ -326,25 +319,6 @@ export default function ProductDetailPage() {
                 <div className="pl-6 border-l border-[#D4C5B0]">
                   <p className="text-sm leading-[2.4] text-gray-500 font-light italic">
                     {product.professor.bio}
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Honzokaku Section (Specific to Honsou) */}
-          {product.honzokaku && (
-            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="max-w-4xl">
-                <h2 className="text-2xl md:text-3xl font-thin mb-4">{product.honzokaku.title}</h2>
-                <p className="text-sm text-gray-500 mb-8">{product.honzokaku.subtitle}</p>
-                <p className="text-lg font-light mb-6">{product.honzokaku.owner}</p>
-                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                  {product.honzokaku.description}
-                </p>
-                <div className="pl-6 border-l-2 border-[#D4C5B0]">
-                  <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify italic">
-                    {product.honzokaku.ownerBio}
                   </p>
                 </div>
               </div>

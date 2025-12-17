@@ -318,7 +318,7 @@ export default function Home() {
                   id: "honsoureishihoushi",
                   name: "本草霊芝胞子",
                   img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
-                  description: "190年の歴史を持つ漢方薬局「本草閣」監修・厳選。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。"
+                  description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。"
                 }
               ].map((item) => (
                 <Link key={item.id} href={`/products/${item.id}`} className="group block bg-white p-8 hover:shadow-xl transition-all duration-500">

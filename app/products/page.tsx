@@ -26,7 +26,7 @@ const products = [
     id: "honsoureishihoushi",
     name: "本草霊芝胞子",
     tagline: "「伝統」×「科学」",
-    description: "190年の歴史を持つ漢方薬局「本草閣」監修・厳選。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
+    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
     category: "Oriental Medicine"
   }
@@ -45,7 +45,7 @@ export default function ProductsPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Collection
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">PRODUCTS</h1>
+              <h1 className="text-3xl md:text-7xl font-thin mb-8">PRODUCTS</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light whitespace-pre-line">
                 輝き続ける人生を支える「アクティブエイジング」<br />
                 we laboは、最新の研究成果に基づいたエイジングケア製品を展開しています。
@@ -102,4 +102,3 @@ export default function ProductsPage() {
     </div>
   );
 }
-
