@@ -14,32 +14,33 @@ export default function ConceptPage() {
       <main className="pt-32">
         {/* Header Section */}
         <section className="container mx-auto px-6 md:px-12 mb-32">
-          <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
-            <h1 className="text-3xl md:text-9xl font-thin tracking-wide leading-[0.8]">
-              CONCEPT
-            </h1>
-            <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-6" />
-            <p className="text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">
-              Active Aging
-            </p>
-          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
+              <h1 className="text-3xl md:text-9xl font-thin tracking-wide leading-[0.8]">
+                CONCEPT
+              </h1>
+              <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-6" />
+              <p className="text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">
+                Active Aging
+              </p>
+            </div>
 
-          <div className="flex flex-col lg:flex-row gap-20 items-start">
-            <div className="lg:w-1/2">
-               <h2 className="text-2xl md:text-4xl font-normal leading-relaxed mb-12">
-                 年齢を超えて常に躍動し、<br />
-                 輝き続ける人生<br />
-                 「アクティブエイジング」<br />
-                 を価値として提供し続けます
-               </h2>
-               <div className="w-12 h-[1px] bg-[#D4C5B0] mb-12" />
+            <div className="flex flex-col lg:flex-row gap-20 items-start">
+              <div className="lg:w-1/2">
+                 <h2 className="text-2xl md:text-4xl font-normal leading-relaxed mb-12">
+                   年齢を超えて常に躍動し、<br />
+                   輝き続ける人生<br />
+                   「アクティブエイジング」<br />
+                   を価値として提供し続けます
+                 </h2>
+                 <div className="w-12 h-[1px] bg-[#D4C5B0] mb-12" />
+              </div>
+              <div className="lg:w-1/2 relative">
+                 <div className="aspect-video w-full bg-gray-300"></div>
+              </div>
             </div>
-            <div className="lg:w-1/2 relative">
-               <div className="aspect-video w-full bg-gray-300"></div>
-            </div>
-          </div>
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="space-y-6">
+            <div className="mt-12">
+              <div className="space-y-6">
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 we laboは、美と健康を支える「アクティブエイジング」のために、こだわり抜いたインナーケア製品をお届けします。最新の知見に基づき、内側からの健やかさを支えることを追求。徹底したエビデンスファーストの姿勢のもと、"実感"頂ける製品づくりを大切にしております。各分野のエキスパートと連携し、美と健康に欠かせない要素を探求。独自の成分コンプレックスを活かしながら、上質さと安全性の両立を追求し、理想的な製品づくりに妥協なく取り組んでいます。年齢を超え、自分らしく輝き続けるために、洗練された品質のインナーケアをお届けします。新しい可能性に満ちた未来のために、we laboはこれからも進化を続けます。
               </p>
