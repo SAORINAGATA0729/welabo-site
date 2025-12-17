@@ -14,7 +14,7 @@ export default function ConceptPage() {
       <main className="pt-32">
         {/* Header Section */}
         <section className="container mx-auto px-6 md:px-12 mb-20">
-          <div className="max-w-4xl mx-auto">
+          <div>
             <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-12">
               <h1 className="text-2xl md:text-6xl font-thin tracking-wide leading-[0.8]">
                 CONCEPT
@@ -55,7 +55,7 @@ export default function ConceptPage() {
         {/* Aging Hallmarks Section */}
         <section className="py-16 md:py-32 bg-[#F9F9F9]">
            <div className="container mx-auto px-6 md:px-12">
-              <div className="max-w-4xl mx-auto text-center mb-12 md:mb-24">
+              <div className="w-full text-center mb-12 md:mb-24">
                  <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                     Scientific Approach
                  </span>
@@ -63,12 +63,12 @@ export default function ConceptPage() {
                  <p className="text-sm text-[#555] leading-[2.4] tracking-wide font-bold mb-4">
                    『AGING HALLMARKS（エイジングホールマークス）』とは？
                  </p>
-                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify max-w-3xl mx-auto">
+                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                    2013年、世界で権威のある老化研究家チームによって作られた、老化の進行に関する生物学的な特徴の共通指標です。さらに2023年に3項目が加わり、老化の要因が9種類から12種類へ更新されました。これらの特徴は、老化の進行や老化に伴う疾患の発生に関わる基本的なメカニズムを示し、老化研究において重要な指標となっています。老化のプロセスを遅らせることができる時代となり、年齢に関係なく、健康で充実した生活を送り続けることを目指す考え方（アクティブエイジング）が今、注目されています。
                  </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                  {[
                    {
                      en: "Genomic Instability",
