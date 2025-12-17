@@ -265,8 +265,8 @@ export default function ConceptPage() {
         </section>
 
         {/* Product Development Section */}
-        <section className="py-32 px-6 md:px-12 bg-white">
-           <div className="container mx-auto">
+        <section className="py-32 bg-white">
+           <div className="container mx-auto px-6 md:px-12">
               <div className="text-center mb-20">
                  <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                     Product Development
@@ -366,8 +366,8 @@ export default function ConceptPage() {
         </section>
 
         {/* Quality & Safety Section */}
-        <section className="py-16 md:py-32 px-6 md:px-12 bg-white">
-           <div className="container mx-auto">
+        <section className="py-16 md:py-32 bg-white">
+           <div className="container mx-auto px-6 md:px-12">
               <h2 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
                 安全性
               </h2>
