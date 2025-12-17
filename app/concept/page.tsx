@@ -27,7 +27,7 @@ export default function ConceptPage() {
 
             <div className="flex flex-col lg:flex-row gap-12 items-start">
               <div className="lg:w-1/2">
-                 <h2 className="text-2xl md:text-[35px] font-normal leading-relaxed mb-8">
+                 <h2 className="text-2xl md:text-[40px] font-normal leading-relaxed mb-8">
                    年齢を超えて常に躍動し、<br />
                    輝き続ける人生<br />
                    「アクティブエイジング」<br />
@@ -272,14 +272,14 @@ export default function ConceptPage() {
                     Product Development
                  </span>
                  <h3 className="text-3xl md:text-4xl font-thin mb-8">製品開発</h3>
-                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify max-w-4xl mx-auto">
+                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mx-auto">
                    we laboはすべての製品づくりにおいて最先端科学が解明した老化要因にアプローチし、最先端の科学と確かなエビデンスに基づいて、内なる生命力を最大限に引き出す製品を開発しています。私たちは、妥協のない品質と実感力を追求することで、一人ひとりが豊かで健康な人生を歩むためのサポートをお届けします。
                  </p>
               </div>
 
               <div className="space-y-16">
                  {/* LUXURY NMN 15000 */}
-                 <div className="max-w-4xl mx-auto">
+                 <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
                          LUXURY NMN 15000
                     </h3>
@@ -309,7 +309,7 @@ export default function ConceptPage() {
                  <hr className="border-gray-200" />
 
                  {/* LUXURY PROBIOTICS+ */}
-                 <div className="max-w-4xl mx-auto">
+                 <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
                          LUXURY PROBIOTICS<sup>+</sup>
                     </h3>
@@ -339,7 +339,7 @@ export default function ConceptPage() {
                  <hr className="border-gray-200" />
 
                  {/* 本草霊芝胞子 */}
-                 <div className="max-w-4xl mx-auto">
+                 <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
                          本草霊芝胞子
                     </h3>
@@ -367,7 +367,7 @@ export default function ConceptPage() {
 
         {/* Quality & Safety Section */}
         <section className="py-16 md:py-32 px-6 md:px-12 bg-white">
-           <div className="container mx-auto max-w-4xl">
+           <div className="container mx-auto">
               <h2 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
                 安全性
               </h2>
