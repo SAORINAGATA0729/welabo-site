@@ -279,22 +279,20 @@ export default function ConceptPage() {
                  {/* LUXURY NMN 15000 */}
                  <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
-                       <Link href="/products/luxury-nmn-15000" className="hover:text-[#D4C5B0] transition-colors">
                          LUXURY NMN 15000
-                       </Link>
                     </h3>
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-                       <div className="md:w-1/2">
+                    <div className="space-y-8">
+                       <div className="w-full">
                           <Image
                              src="https://welabo.jp/wp-content/uploads/concept02.jpg"
                              alt="LUXURY NMN 15000"
-                             width={800}
-                             height={500}
+                             width={1200}
+                             height={750}
                              className="w-full h-auto"
                              unoptimized
                           />
                        </div>
-                       <div className="md:w-1/2">
+                       <div className="w-full">
                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-4">
                             「NMN」に関する国内外の研究エビデンスをもとに理想的な含有量を配合しています。<br />
                             さらに、PQQ・コエンザイムQ10・フィセチンなど、近年の老化研究で注目される成分を厳選配合しており、日々の変化を実感いただけるように設計しました。
@@ -311,22 +309,20 @@ export default function ConceptPage() {
                  {/* LUXURY PROBIOTICS+ */}
                  <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
-                       <Link href="/products/luxury-probiotics" className="hover:text-[#D4C5B0] transition-colors">
                          LUXURY PROBIOTICS<sup>+</sup>
-                       </Link>
                     </h3>
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-                       <div className="md:w-1/2">
+                    <div className="space-y-8">
+                       <div className="w-full">
                           <Image
                              src="https://welabo.jp/wp-content/uploads/concept03.jpg"
                              alt="LUXURY PROBIOTICS+"
-                             width={800}
-                             height={500}
+                             width={1200}
+                             height={750}
                              className="w-full h-auto"
                              unoptimized
                           />
                        </div>
-                       <div className="md:w-1/2">
+                       <div className="w-full">
                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-4">
                             生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。<br />
                             4種の生きた善玉菌（納豆菌、ビフィズス菌、有胞子乳酸菌、酪酸菌）に加え、３類の善玉菌の栄養素（59種の植物発酵エキス、オリゴ糖、食物繊維）を独自配合。日々のリズムに寄り添い、軽やかで心地よい日々をサポートします。
@@ -343,22 +339,20 @@ export default function ConceptPage() {
                  {/* 本草霊芝胞子 */}
                  <div>
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
-                       <Link href="/products/honsoureishihoushi" className="hover:text-[#D4C5B0] transition-colors">
                          本草霊芝胞子
-                       </Link>
                     </h3>
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-                       <div className="md:w-1/2">
+                    <div className="space-y-8">
+                       <div className="w-full">
                           <Image
                              src="https://welabo.jp/wp-content/uploads/concept06.jpg"
                              alt="本草霊芝胞子"
-                             width={800}
-                             height={500}
+                             width={1200}
+                             height={750}
                              className="w-full h-auto"
                              unoptimized
                           />
                        </div>
-                       <div className="md:w-1/2">
+                       <div className="w-full">
                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                             産地と栽培環境によって大きく差が出るとされる生薬の「質」と「量」に着目し、こだわり抜いた漢方発想のサプリメントです。主成分には、希少な国産（長野県）霊芝胞子を1包あたり1000mg配合。さらに、メシマコブ・アガリクス・冬虫夏草を独自のバランスで組み合わせました。素材本来の力を大切にしながら、日々のコンディションに寄り添う設計を目指しています。
                           </p>
