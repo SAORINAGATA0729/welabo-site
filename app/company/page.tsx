@@ -10,12 +10,12 @@ export default function CompanyPage() {
 
       <main className="pt-32">
         {/* Header */}
-        <section className="container mx-auto px-6 md:px-12 mb-32">
+        <section className="container mx-auto px-6 md:px-12 mb-20 md:mb-32">
            <div className="text-center max-w-3xl mx-auto">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  About Us
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Company</h1>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">COMPANY</h1>
            </div>
         </section>
 
@@ -24,53 +24,53 @@ export default function CompanyPage() {
           <div className="container mx-auto max-w-4xl">
             <div className="mb-32">
               {/* Company Details */}
-              <div>
-                <dl className="space-y-8">
-                  <div>
-                    <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">会社名</dt>
-                    <dd className="text-base text-gray-800 font-light">株式会社 we labo</dd>
+              <div className="border-t border-gray-200">
+                <dl className="divide-y divide-gray-200">
+                  <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <dt className="text-xs tracking-widest uppercase text-gray-500 md:col-span-1 pt-1">会社名</dt>
+                    <dd className="text-base text-gray-800 font-light md:col-span-3">株式会社 we labo</dd>
                   </div>
-                  <div>
-                    <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">所在地</dt>
-                    <dd className="text-sm text-gray-800 font-light leading-relaxed">
-                      〒104-0061<br />
-                      東京都中央区銀座3丁目10番7号<br />
-                      銀座京屋ビル8階
+                  <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <dt className="text-xs tracking-widest uppercase text-gray-500 md:col-span-1 pt-1">所在地</dt>
+                    <dd className="text-sm text-gray-800 font-light leading-relaxed md:col-span-3">
+                      〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階
                     </dd>
                   </div>
-                  <div>
-                    <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">電話番号</dt>
-                    <dd className="text-sm text-gray-800 font-light">
+                  <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <dt className="text-xs tracking-widest uppercase text-gray-500 md:col-span-1 pt-1">電話番号</dt>
+                    <dd className="text-sm text-gray-800 font-light md:col-span-3">
                       <a href="tel:03-6264-3448" className="hover:text-[#1A1A1A] transition-colors">03-6264-3448</a>
                     </dd>
                   </div>
-                  <div>
-                    <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">事業内容</dt>
-                    <dd className="text-sm text-gray-800 font-light leading-relaxed">
+                  <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <dt className="text-xs tracking-widest uppercase text-gray-500 md:col-span-1 pt-1">事業内容</dt>
+                    <dd className="text-sm text-gray-800 font-light leading-relaxed md:col-span-3">
                       抗老化に関する研究<br />
                       健康食品・サプリメントの開発と製造<br />
                       健康食品・サプリメントの販売および卸売
                     </dd>
                   </div>
-                  <div>
-                    <dt className="text-xs tracking-widest uppercase text-gray-500 mb-2">主要販売先</dt>
-                    <dd className="text-sm text-gray-800 font-light leading-relaxed">
-                      三越、伊勢丹、京王百貨店、松坂屋、<br />
-                      阪神百貨店、あべのハルカス、福屋
+                  <div className="py-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <dt className="text-xs tracking-widest uppercase text-gray-500 md:col-span-1 pt-1">主要販売先</dt>
+                    <dd className="text-sm text-gray-800 font-light leading-relaxed md:col-span-3">
+                      三越、伊勢丹、京王百貨店、松坂屋、阪神百貨店、あべのハルカス、福屋
                     </dd>
                   </div>
                 </dl>
               </div>
             </div>
 
-            {/* Google Map */}
+            {/* Access Map */}
             <div className="mb-32">
-              <div className="mb-6 text-sm text-gray-600 font-light">
-                <p className="mb-2">〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階</p>
-                <p className="text-xs text-gray-500">
-                  東京メトロ銀座線・丸ノ内線・日比谷線「銀座駅」より徒歩3分<br />
-                  東京メトロ有楽町線「銀座一丁目駅」より徒歩5分
-                </p>
+              <div className="mb-8">
+                 <h2 className="text-xl font-thin tracking-wide mb-6">ACCESS</h2>
+                 <div className="text-sm text-gray-600 font-light">
+                   <p className="mb-2">〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階</p>
+                   <p className="text-xs text-gray-500 leading-relaxed">
+                     東京メトロ銀座線・丸ノ内線・日比谷線「銀座駅」より徒歩3分<br />
+                     東京メトロ有楽町線「銀座一丁目駅」より徒歩5分
+                   </p>
+                 </div>
               </div>
               <div className="w-full aspect-video overflow-hidden bg-gray-100 rounded-sm">
                 <iframe
