@@ -29,12 +29,12 @@ export default function ContactPage() {
 
       <main className="pt-32">
         {/* Header */}
-        <section className="container mx-auto px-6 md:px-12 mb-32">
+        <section className="container mx-auto px-6 md:px-12 mb-20">
            <div className="text-center max-w-3xl mx-auto">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
-                 Get in Touch
+                 Contact Us
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Contact</h1>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">CONTACT</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 お問い合わせ、ご質問がございましたら、<br />
                 お気軽にご連絡ください。
@@ -93,11 +93,12 @@ export default function ContactPage() {
 
                 <div>
                   <Label htmlFor="phone" className="text-xs tracking-widest uppercase mb-2 block">
-                    電話番号
+                    電話番号 <span className="text-red-500">※必須</span>
                   </Label>
                   <Input
                     id="phone"
                     type="tel"
+                    required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="rounded-none border-gray-300 focus:border-[#1A1A1A] focus:ring-0 bg-white"
@@ -146,4 +147,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
