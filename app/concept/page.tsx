@@ -49,6 +49,7 @@ export default function ConceptPage() {
               </p>
             </div>
           </div>
+          </div>
         </section>
 
         {/* Aging Hallmarks Section */}
