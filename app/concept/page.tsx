@@ -31,7 +31,7 @@ export default function ConceptPage() {
                    年齢を超えて常に躍動し、<br />
                    輝き続ける人生<br />
                    「アクティブエイジング」<br />
-                   を価値として提供します
+                   を価値として提供し続けます
                  </h2>
                  <div className="w-12 h-[1px] bg-[#D4C5B0] mb-8" />
               </div>
