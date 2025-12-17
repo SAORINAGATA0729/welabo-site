@@ -16,18 +16,18 @@ export default function ConceptPage() {
         <section className="container mx-auto px-6 md:px-12 mb-32">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-start md:items-end gap-6 md:gap-12 mb-20">
-              <h1 className="text-3xl md:text-9xl font-thin tracking-wide leading-[0.8]">
+              <h1 className="text-2xl md:text-6xl font-thin tracking-wide leading-[0.8]">
                 CONCEPT
               </h1>
-              <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-6" />
-              <p className="text-xs tracking-[0.2em] uppercase mb-6 text-gray-500">
+              <div className="w-full h-[1px] bg-[#1A1A1A] md:flex-1 mb-4" />
+              <p className="text-[10px] tracking-[0.2em] uppercase mb-4 text-gray-500">
                 Active Aging
               </p>
             </div>
 
             <div className="flex flex-col lg:flex-row gap-20 items-start">
               <div className="lg:w-1/2">
-                 <h2 className="text-2xl md:text-4xl font-normal leading-relaxed mb-12">
+                 <h2 className="text-lg md:text-2xl font-normal leading-relaxed mb-12">
                    年齢を超えて常に躍動し、<br />
                    輝き続ける人生<br />
                    「アクティブエイジング」<br />
