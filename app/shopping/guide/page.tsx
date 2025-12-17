@@ -15,7 +15,7 @@ export default function ShoppingGuidePage() {
         <section className="container mx-auto px-6 md:px-12 mb-20">
            <div className="text-center max-w-3xl mx-auto">
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
-                 Shopping Guide
+                 SHOPPING GUIDE
               </span>
               <h1 className="text-4xl md:text-5xl font-thin mb-8">お買い物ガイド</h1>
            </div>

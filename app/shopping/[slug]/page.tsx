@@ -28,7 +28,7 @@ const productData: Record<string, any> = {
       name: "NMN含有加工食品",
       ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
       capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）",
-      expiry: "右側面下部記載",
+      expiry: "製品の右側面下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
       nutrition: {
         energy: "1.53kcal",
@@ -59,7 +59,7 @@ const productData: Record<string, any> = {
       name: "NMN含有加工食品",
       ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
       capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 3個",
-      expiry: "右側面下部記載",
+      expiry: "製品の右側面下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
       nutrition: {
         energy: "1.53kcal",
@@ -91,7 +91,7 @@ const productData: Record<string, any> = {
       name: "NMN含有加工食品",
       ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
       capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 2個",
-      expiry: "右側面下部記載",
+      expiry: "製品の右側面下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
       nutrition: {
         energy: "1.53kcal",
@@ -132,7 +132,7 @@ const productData: Record<string, any> = {
       name: "乳酸菌含有加工食品",
       ingredients: "植物発酵エキス末（デキストリン、植物発酵エキス）（国内製造）、有胞子性乳酸菌、酪酸菌末、納豆菌末、酢酸菌末／HPMC、結晶セルロース、ステアリン酸カルシウム、微粒二酸化ケイ素、ジェランガム、（一部に乳成分・大豆・リンゴ・バナナ・ヤマイモ・キウイフルーツを含む）",
       capacity: "30包",
-      expiry: "枠外下部に記載",
+      expiry: "製品の枠外下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。",
       nutrition: {
         energy: "---",
@@ -151,7 +151,7 @@ const productData: Record<string, any> = {
   "honsoureishihoushi": {
     name: "本草霊芝胞子",
     price: "91,800",
-    description: "190年の歴史を持つ漢方薬局「本草閣」監修・厳選。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
+    description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     images: [
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_02_0-scaled.jpg",
@@ -163,7 +163,7 @@ const productData: Record<string, any> = {
       name: "霊芝胞子含有加工食品",
       ingredients: "霊芝胞子末（国内製造）、メシマコブ菌糸体末、アガリクス菌糸体末、冬虫夏草子実体末",
       capacity: "30包",
-      expiry: "枠外下部に記載",
+      expiry: "製品の枠外下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。",
       nutrition: {
         energy: "---",

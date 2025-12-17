@@ -13,7 +13,8 @@ const products = [
     price: "¥88,560",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
-    category: "Aging Care"
+    category: "Aging Care",
+    tagline: "「細胞力」×「実感力」"
   },
   {
     id: "luxury-nmn-15000-3set",
@@ -21,7 +22,8 @@ const products = [
     price: "¥239,112",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
-    category: "Aging Care"
+    category: "Aging Care",
+    tagline: "「細胞力」×「実感力」"
   },
   {
     id: "luxury-nmn-15000-bag-2months",
@@ -29,7 +31,8 @@ const products = [
     price: "¥176,040",
     description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
-    category: "Aging Care"
+    category: "Aging Care",
+    tagline: "「細胞力」×「実感力」"
   },
   {
     id: "luxury-probiotics",
@@ -37,7 +40,8 @@ const products = [
     price: "¥18,360",
     description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/1_000000000001.jpg?1678209904",
-    category: "Gut Health"
+    category: "Gut Health",
+    tagline: "「腸内細菌バランス」×「長寿科学」"
   },
   {
     id: "honsoureishihoushi",
@@ -45,7 +49,8 @@ const products = [
     price: "¥91,800",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
-    category: "Oriental Medicine"
+    category: "Oriental Medicine",
+    tagline: "「伝統」×「科学」"
   }
 ];
 
@@ -61,10 +66,9 @@ export default function ShoppingPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Online Store
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Shopping</h1>
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">SHOPPING</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
-                we laboの公式オンラインストアへようこそ。<br />
-                あなたのライフスタイルに合わせて、最適な製品をお選びいただけます。
+                we laboの公式オンラインストア
               </p>
            </div>
         </section>
@@ -80,23 +84,23 @@ export default function ShoppingPage() {
                            style={{ 
                              backgroundImage: `url('${product.img}')`,
                              backgroundPosition: 'center bottom',
-                             top: '25%',
+                             top: '15%', // Reduced top margin
                              left: 0,
                              right: 0,
                              bottom: 0,
-                             height: '75%'
+                             height: '85%' // Adjusted height
                            }}
                          />
-                         {/* Overlay to hide BEST SELLER text on image */}
-                         <div className="absolute top-0 left-0 w-full h-[25%] bg-[#F5F5F5] z-10 pointer-events-none"></div>
+                         {/* Removed overlay that was hiding part of the image */}
                       </div>
                       
                       <div className="text-left pl-2">
-                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-3">{product.category}</span>
+                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-2">{product.category}</span>
+                         <span className="text-xs tracking-wider text-[#D4C5B0] block mb-2">{product.tagline}</span>
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}
                          </h3>
-                         <p className="text-sm font-medium mb-4 font-sans">{product.price}</p>
+                         <p className="text-sm font-medium mb-4 font-sans">{product.price}<span className="text-xs font-normal text-gray-500 ml-1">（税込）</span></p>
                          <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 font-light">
                            {product.description}
                          </p>
@@ -111,4 +115,3 @@ export default function ShoppingPage() {
     </div>
   );
 }
-

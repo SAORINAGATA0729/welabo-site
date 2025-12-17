@@ -45,10 +45,23 @@ export default function LoginPage() {
             <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
               My Account
             </span>
-            <h1 className="text-3xl md:text-4xl font-thin">Login</h1>
+            <h1 className="text-3xl md:text-4xl font-thin">LOGIN</h1>
           </div>
 
           <div className="bg-white p-8 md:p-12 border border-gray-100 shadow-sm">
+            {/* Amazon Login Mock Button */}
+            <div className="mb-12 text-center border-b border-gray-100 pb-12">
+              <p className="text-xs text-gray-500 mb-6">Amazonアカウントをお持ちの方はこちら</p>
+              <Button 
+                type="button"
+                className="bg-[#F9A825] hover:bg-[#F57F17] text-white w-full max-w-sm mx-auto py-6 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
+                onClick={() => alert("Amazonログイン機能はデモ環境のため動作しません。")}
+              >
+                <span className="font-bold text-lg">amazon</span>
+                <span className="text-xs mt-1">でログイン</span>
+              </Button>
+            </div>
+
             <form className="space-y-6" onSubmit={handleSubmit}>
               {error && (
                 <div className="bg-red-50 border border-red-200 text-red-600 text-sm p-4 rounded">

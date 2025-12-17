@@ -110,7 +110,7 @@ export default function RegisterPage() {
         <div className="container mx-auto px-6 md:px-12 max-w-2xl">
           <div className="text-center mb-12">
             <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
-              Membership
+              REGISTER
             </span>
             <h1 className="text-3xl md:text-4xl font-thin">会員登録</h1>
             <p className="text-xs text-gray-500 mt-4 tracking-wide">

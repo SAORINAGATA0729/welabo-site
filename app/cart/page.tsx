@@ -27,7 +27,7 @@ export default function CartPage() {
             <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-4">
               Shopping Bag
             </span>
-            <h1 className="text-3xl md:text-4xl font-thin">Cart</h1>
+            <h1 className="text-3xl md:text-4xl font-thin">CART</h1>
           </div>
 
           {cartItems.length > 0 ? (
@@ -127,6 +127,17 @@ export default function CartPage() {
                       </Button>
                     </Link>
                     
+                    <div className="text-center py-2">
+                       <span className="text-xs text-gray-400 block mb-2">- または -</span>
+                       <Button 
+                         className="w-full bg-[#F9A825] hover:bg-[#F57F17] text-white h-12 rounded shadow-sm flex items-center justify-center gap-2 transition-colors"
+                         onClick={() => alert("Amazon Pay機能はデモ環境のため動作しません。")}
+                       >
+                         <span className="font-bold">amazon</span>
+                         <span className="text-xs">payでお支払い</span>
+                       </Button>
+                    </div>
+
                     <Link href="/shopping" className="block">
                       <Button variant="outline" className="w-full bg-white border border-gray-300 text-gray-600 hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A] h-12 rounded-none text-xs tracking-[0.2em] uppercase transition-all">
                         買い物を続ける

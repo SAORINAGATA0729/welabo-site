@@ -9,7 +9,7 @@ const products = [
   {
     id: "luxury-nmn-15000",
     name: "LUXURY NMN 15000",
-    tagline: "The Pinnacle of Youth",
+    tagline: "「細胞力」×「実感力」",
     description: "「NMN」のヒト臨床試験に基づいた理想的な含有量を配合。PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
     category: "Aging Care"
@@ -17,7 +17,7 @@ const products = [
   {
     id: "luxury-probiotics",
     name: "LUXURY PROBIOTICS+",
-    tagline: "Inner Flora Balance",
+    tagline: "「腸内細菌バランス」×「長寿科学」",
     description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
     category: "Gut Health"
@@ -25,7 +25,7 @@ const products = [
   {
     id: "honsoureishihoushi",
     name: "本草霊芝胞子",
-    tagline: "Traditional Masterpiece",
+    tagline: "「伝統」×「科学」",
     description: "190年の歴史を持つ漢方薬局「本草閣」監修・厳選。貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
     category: "Oriental Medicine"
@@ -45,10 +45,10 @@ export default function ProductsPage() {
               <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
                  Collection
               </span>
-              <h1 className="text-5xl md:text-7xl font-thin mb-8">Products</h1>
-              <p className="text-sm leading-[2.4] text-gray-600 font-light">
-                we laboの製品はすべて、最先端科学のエビデンスと自然の叡智の融合から生まれます。<br />
-                あなたの人生に、確かな輝きを添える至高のラインナップ。
+              <h1 className="text-5xl md:text-7xl font-thin mb-8">PRODUCTS</h1>
+              <p className="text-sm leading-[2.4] text-gray-600 font-light whitespace-pre-line">
+                輝き続ける人生を支える「アクティブエイジング」<br />
+                we laboは、最新の研究成果に基づいたエイジングケア製品を展開しています。
               </p>
            </div>
            </div>
@@ -79,14 +79,14 @@ export default function ProductsPage() {
                        <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify max-w-md">
                           {product.description}
                        </p>
-                       <div className="flex gap-4">
-                         <Link href={`/products/${product.id}`}>
-                            <Button variant="outline" className="rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
+                       <div className="flex flex-col sm:flex-row gap-4">
+                         <Link href={`/products/${product.id}`} className="w-full sm:w-auto">
+                            <Button variant="outline" className="w-full sm:w-auto rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
                                詳細を見る
                             </Button>
                          </Link>
-                         <Link href={`/shopping/${product.id}`}>
-                            <Button className="rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                         <Link href={`/shopping/${product.id}`} className="w-full sm:w-auto">
+                            <Button className="w-full sm:w-auto rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
                                オンラインで購入
                             </Button>
                          </Link>
