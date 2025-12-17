@@ -257,7 +257,7 @@ export default function ProductDetailPage() {
                  {product.amazonLink && (
                     <Link href={product.amazonLink} target="_blank">
                         <Button variant="outline" className="w-full h-14 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none text-xs tracking-[0.2em] transition-all">
-                            VIEW ON AMAZON
+                            VIEW ON amazon
                         </Button>
                     </Link>
                  )}
@@ -424,7 +424,7 @@ export default function ProductDetailPage() {
                     <Link href={product.amazonLink} target="_blank">
                         <Button variant="outline" className="h-14 px-12 border-white text-white bg-transparent hover:bg-white hover:text-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all">
                            <ExternalLink className="w-4 h-4 mr-2" />
-                           AMAZON
+                           amazon
                         </Button>
                     </Link>
                  )}
