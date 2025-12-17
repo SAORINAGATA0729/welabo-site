@@ -38,7 +38,7 @@ export default function ConceptPage() {
                <div className="aspect-video w-full bg-gray-300"></div>
             </div>
           </div>
-          <div className="mt-12 lg:w-full">
+          <div className="mt-12 max-w-4xl mx-auto">
             <div className="space-y-6">
               <p className="text-sm leading-[2.4] text-gray-600 font-light">
                 we laboは、美と健康を支える「アクティブエイジング」のために、こだわり抜いたインナーケア製品をお届けします。最新の知見に基づき、内側からの健やかさを支えることを追求。徹底したエビデンスファーストの姿勢のもと、"実感"頂ける製品づくりを大切にしております。各分野のエキスパートと連携し、美と健康に欠かせない要素を探求。独自の成分コンプレックスを活かしながら、上質さと安全性の両立を追求し、理想的な製品づくりに妥協なく取り組んでいます。年齢を超え、自分らしく輝き続けるために、洗練された品質のインナーケアをお届けします。新しい可能性に満ちた未来のために、we laboはこれからも進化を続けます。
@@ -66,7 +66,7 @@ export default function ConceptPage() {
                  </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
                  {[
                    {
                      en: "Genomic Instability",
@@ -365,7 +365,7 @@ export default function ConceptPage() {
 
         {/* Quality & Safety Section */}
         <section className="py-16 md:py-32 px-6 md:px-12 bg-white">
-           <div className="container mx-auto">
+           <div className="container mx-auto max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
                 安全性
               </h2>
