@@ -98,7 +98,7 @@ export default function NewsDetailPage() {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <h1 className="text-2xl font-serif mb-4">Article Not Found</h1>
-          <Link href="/news" className="text-sm underline">Return to News</Link>
+          <Link href="/news" className="text-sm underline">RETURN TO NEWS</Link>
         </div>
       </div>
     );
@@ -111,7 +111,7 @@ export default function NewsDetailPage() {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <h1 className="text-2xl font-serif mb-4">Article Not Found</h1>
-          <Link href="/news" className="text-sm underline">Return to News</Link>
+          <Link href="/news" className="text-sm underline">RETURN TO NEWS</Link>
         </div>
       </div>
     );
@@ -126,7 +126,7 @@ export default function NewsDetailPage() {
           {/* Back Button */}
           <Link href="/news" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#1A1A1A] transition-colors mb-12">
             <ArrowLeft className="w-4 h-4" />
-            Back to News
+            BACK TO NEWS
           </Link>
 
           {/* Article Header */}
@@ -150,20 +150,35 @@ export default function NewsDetailPage() {
             <div className="text-sm md:text-base leading-[2.4] text-gray-700 font-light whitespace-pre-line">
               {article.content.split('\n').map((paragraph: string, i: number) => {
                 if (paragraph.trim() === '') return <br key={i} />;
+                
+                // 見出し処理
                 if (paragraph.startsWith('＜') && paragraph.endsWith('＞')) {
                   return (
-                    <h3 key={i} className="text-lg font-medium mt-12 mb-6 text-[#1A1A1A1A]">
+                    <h3 key={i} className="text-lg font-medium mt-12 mb-6 text-[#1A1A1A]">
                       {paragraph}
                     </h3>
                   );
                 }
+                
+                // 特定の見出し（腸からの...）
+                if (paragraph.includes('腸からのエイジングケアに特化した乳酸菌サプリメント')) {
+                  return (
+                    <h3 key={i} className="text-lg font-medium mt-12 mb-6 text-[#1A1A1A]">
+                      {paragraph}
+                    </h3>
+                  );
+                }
+
+                // リスト処理
                 if (paragraph.startsWith('・')) {
                   return (
-                    <li key={i} className="ml-6 mb-2">
-                      {paragraph}
+                    <li key={i} className="ml-6 mb-2 list-none">
+                       {/* 記号が2つある場合の修正 */}
+                      {paragraph.replace(/・+/g, '・')}
                     </li>
                   );
                 }
+                
                 return (
                   <p key={i} className="mb-6">
                     {paragraph}
@@ -178,7 +193,7 @@ export default function NewsDetailPage() {
             <Link href="/news">
               <Button variant="outline" className="rounded-full px-8 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
                 <ArrowLeft className="mr-2 w-4 h-4" />
-                All News
+                ALL NEWS
               </Button>
             </Link>
           </div>
@@ -189,4 +204,3 @@ export default function NewsDetailPage() {
     </div>
   );
 }
-
