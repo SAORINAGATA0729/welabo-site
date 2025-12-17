@@ -78,7 +78,7 @@ export default function ShoppingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                 {products.map((product) => (
                    <Link key={product.id} href={`/shopping/${product.id}`} className="group block" prefetch={true} scroll={true}>
-                      <div className="relative aspect-[4/5] bg-white mb-8 overflow-hidden">
+                      <div className="relative mb-8 overflow-hidden bg-white" style={{ aspectRatio: '4/4.25' }}>
                          <div 
                            className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-all duration-1000 ease-out group-hover:scale-110`}
                            style={{ 
