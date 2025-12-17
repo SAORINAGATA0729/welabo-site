@@ -11,7 +11,7 @@ export default function ConceptPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-24">
+      <main className="pt-32">
         {/* Header Section */}
         <section className="container mx-auto px-6 md:px-12 mb-20">
           <div className="max-w-4xl mx-auto">
