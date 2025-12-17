@@ -64,9 +64,8 @@ export default function CompanyPage() {
             <div className="mb-32">
               <div className="mb-8">
                  <h2 className="text-xl font-thin tracking-wide mb-6">ACCESS</h2>
-                 <div className="text-sm text-gray-600 font-light">
-                   <p className="mb-2">〒104-0061 東京都中央区銀座3丁目10番7号 銀座京屋ビル8階</p>
-                   <p className="text-xs text-gray-500 leading-relaxed">
+                 <div className="text-gray-600 font-light">
+                   <p className="text-sm md:text-base leading-relaxed">
                      東京メトロ銀座線・丸ノ内線・日比谷線「銀座駅」より徒歩3分<br />
                      東京メトロ有楽町線「銀座一丁目駅」より徒歩5分
                    </p>
