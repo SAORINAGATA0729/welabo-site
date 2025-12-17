@@ -25,14 +25,19 @@ export default function ConceptPage() {
               </p>
             </div>
 
-            <div className="w-full">
-               <h2 className="text-xl md:text-3xl font-normal leading-relaxed mb-8">
-                 年齢を超えて常に躍動し、<br />
-                 輝き続ける人生<br />
-                 「アクティブエイジング」<br />
-                 を価値として提供し続けます
-               </h2>
-               <div className="w-12 h-[1px] bg-[#D4C5B0] mb-8" />
+            <div className="flex flex-col lg:flex-row gap-12 items-start mt-20">
+              <div className="lg:w-1/2">
+                 <h2 className="text-2xl md:text-[35px] font-normal leading-relaxed mb-8">
+                   年齢を超えて常に躍動し、<br />
+                   輝き続ける人生<br />
+                   「アクティブエイジング」<br />
+                   を価値として提供し続けます
+                 </h2>
+                 <div className="w-12 h-[1px] bg-[#D4C5B0] mb-8" />
+              </div>
+              <div className="lg:w-1/2 relative">
+                 <div className="aspect-video w-full bg-gray-300"></div>
+              </div>
             </div>
             <div className="mt-12">
               <div className="space-y-6">
