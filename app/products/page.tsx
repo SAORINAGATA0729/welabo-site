@@ -11,24 +11,21 @@ const products = [
     name: "LUXURY NMN 15000",
     tagline: "「細胞力」×「実感力」",
     description: "「NMN」のヒト臨床試験に基づいた理想的な含有量を配合。PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
-    img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
-    category: "Aging Care"
+    img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
   },
   {
     id: "luxury-probiotics",
     name: "LUXURY PROBIOTICS+",
     tagline: "「腸内細菌バランス」×「長寿科学」",
     description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
-    img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
-    category: "Gut Health"
+    img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg"
   },
   {
     id: "honsoureishihoushi",
     name: "本草霊芝胞子",
     tagline: "「伝統」×「科学」",
     description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
-    img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
-    category: "Oriental Medicine"
+    img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg"
   }
 ];
 
@@ -73,7 +70,6 @@ export default function ProductsPage() {
                     </div>
                     
                     <div className="w-full lg:w-1/2">
-                       <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-4">{product.category}</span>
                        <h2 className="text-3xl md:text-5xl font-thin mb-4">{product.name}</h2>
                        <p className="text-lg italic text-gray-400 font-light mb-12">{product.tagline}</p>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify max-w-md">

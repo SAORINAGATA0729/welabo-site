@@ -13,7 +13,6 @@ const products = [
     price: "¥88,560",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
-    category: "Aging Care",
     tagline: "「細胞力」×「実感力」"
   },
   {
@@ -22,7 +21,6 @@ const products = [
     price: "¥239,112",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
-    category: "Aging Care",
     tagline: "「細胞力」×「実感力」"
   },
   {
@@ -31,7 +29,6 @@ const products = [
     price: "¥176,040",
     description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
-    category: "Aging Care",
     tagline: "「細胞力」×「実感力」"
   },
   {
@@ -40,7 +37,6 @@ const products = [
     price: "¥18,360",
     description: "生きて腸まで届く乳酸菌を配合した、お腹の環境について細部まで拘ったサプリメント。59種類の植物発酵エキス、納豆菌、酢酸、酪酸などの生菌が力を合わせ、きれいな腸内フローラ環境を作ります。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/1_000000000001.jpg?1678209904",
-    category: "Gut Health",
     tagline: "「腸内細菌バランス」×「長寿科学」"
   },
   {
@@ -49,7 +45,6 @@ const products = [
     price: "¥91,800",
     description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
-    category: "Oriental Medicine",
     tagline: "「伝統」×「科学」"
   }
 ];
@@ -89,7 +84,6 @@ export default function ShoppingPage() {
                       </div>
                       
                       <div className="text-left pl-2">
-                         <span className="text-[10px] tracking-[0.2em] text-[#8A8A8A] uppercase block mb-2">{product.category}</span>
                          <span className="text-xs tracking-wider text-[#D4C5B0] block mb-2">{product.tagline}</span>
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}

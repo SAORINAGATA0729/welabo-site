@@ -16,7 +16,7 @@ const productData: Record<string, any> = {
   "luxury-nmn-15000": {
     name: "LUXURY NMN 15000",
     tagline: "The Pinnacle of Youth",
-    description: "NMN（ニコチンアミドモノヌクレオチド）は、ビタミンB3を原料としてつくられる成分で、年齢とともに減少する生体内物質「NAD」の元となります。「LUXURY NMN 15000」は、ヒト臨床試験に基づいた理想的な含有量を配合。さらに、フィセチン、PQQ、コエンザイムQ10との組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
+    description: "NMN（ニコチンアミドモノヌクレオチド）は、ビタミンB3を原料としてつくられる成分で、年齢とともに減少する生体内物質「NAD」の元となります。「LUXURY NMN 15000」は、ヒト臨床試験に基づいた理想的な含有量を配合。さらに、PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
     gallery: [
       "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
@@ -27,7 +27,8 @@ const productData: Record<string, any> = {
       "ヒト臨床試験に基づいた理想的なNMN含有量 (15,000mg/瓶)",
       "PQQ、コエンザイムQ10、フィセチンによる相乗効果",
       "昭和大学 薬学部 基礎医療薬学講座 佐藤均教授との共同開発",
-      "NMN最高純度99.9％、国内GMP認定工場製造"
+      "国産の天然成分から発酵抽出した、最高純度99.9％のNMN原料を使用",
+      "国内GMP認定工場にて製造、さらに製品のGMP認証を取得"
     ],
     ingredientsSections: [
         {
@@ -41,15 +42,15 @@ const productData: Record<string, any> = {
             description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。"
         },
         {
-            title: "フィセチン・PQQ・コエンザイムQ10配合",
+            title: "PQQ・コエンザイムQ10・フィセチン配合",
             subtitle: "Synergistic Ingredients",
-            description: "フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。"
+            description: "PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。"
         }
     ],
     professor: {
         name: "昭和大学薬学部基礎医療薬学講座 佐藤均教授",
         title: "共同開発",
-        description: "「LUXURY NMN」は昭和大学薬学部基礎医療薬学講座の佐藤教授と共同開発したNMNサプリメントです。",
+        description: "「LUXURY NMN 15000」は昭和大学薬学部基礎医療薬学講座の佐藤均教授と共同開発したNMNサプリメントです。",
         bio: "1959年生まれ。東京大学薬学系研究科（製剤学教室）修士課程修了後、金沢大学薬学部助手、富山医科薬科大学付属病院薬剤部助手、アメリカ国立衛生研究所（NIH）・癌研究所（NCI）奨励研究員、スイス・バーゼル研究所（Sandoz Pharma）客員研究員を経て、東京大学医学部助教授となる。2000年から昭和大学薬学部教授（臨床分子薬品学教室）。現在は同大学の薬物療法学講座薬物動態学部門を担う。"
     },
     safety: {
@@ -94,12 +95,19 @@ const productData: Record<string, any> = {
       "生きて腸まで届く乳酸菌を配合",
       "59種類の植物発酵エキス、納豆菌、酢酸、酪酸などを配合",
       "AGING HALLMARKSの12の老化要因の内、2つの要因にアプローチ",
-      "昭和大学 名誉教授 二木芳人氏 推薦"
+      "昭和大学 名誉教授 二木芳人氏 推薦",
+      "国内GMP認定工場にて製造"
     ],
     specs: {
       "内容量": "30包",
       "主要成分": "乳酸菌, 植物発酵エキス, 納豆菌, 酪酸菌",
       "原産国": "日本"
+    },
+    usage: "1日1包を目安に、水またはぬるま湯とともにお召し上がりください。",
+    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY PROBIOTICS+は12の内、2つの要因にアプローチします。",
+    safety: {
+      title: "安全性へのこだわり・GMP認証",
+      description: "国内GMP認定工場にて製造。原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理しています。"
     },
     price: "¥18,360"
   },
@@ -136,8 +144,11 @@ const productData: Record<string, any> = {
         description: "冬虫夏草は子嚢菌類のキノコの一種で、中国では昔から漢方素材とされています。"
       }
     ],
-    gmp: "GMP（Good Manufacturing Practice）=「適正製造規範」とは、原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理することです。",
-    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKS（左図）で、12の老化要因が示されています。本草霊芝胞子は12の内、5つの要因にアプローチします。（右図）",
+    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。本草霊芝胞子は12の内、5つの要因にアプローチします。",
+    safety: {
+      title: "安全性へのこだわり・GMP認証",
+      description: "GMP（Good Manufacturing Practice）=「適正製造規範」とは、原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理することです。国内GMP認定工場にて製造しています。"
+    },
     usage: "健康補助食品として、1日1包を、水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
     specs: {
       "内容量": "30包",
@@ -246,18 +257,18 @@ export default function ProductDetailPage() {
               {/* Action Buttons */}
               <div className="flex flex-col gap-4 mb-12">
                  <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-4">
-                     <span className="text-sm font-light">Price</span>
-                     <span className="text-xl">{product.price} <span className="text-xs text-gray-400">(inc. tax)</span></span>
+                     <span className="text-sm font-light">価格</span>
+                     <span className="text-xl">{product.price} <span className="text-xs text-gray-400">(税込)</span></span>
                  </div>
                  <Link href={`/shopping/${slug}`}>
                    <Button className="w-full h-14 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all">
-                      VISIT ONLINE STORE
+                      オンラインストアで購入
                    </Button>
                  </Link>
                  {product.amazonLink && (
                     <Link href={product.amazonLink} target="_blank">
                         <Button variant="outline" className="w-full h-14 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none text-xs tracking-[0.2em] transition-all">
-                            VIEW ON amazon
+                           Amazonで見る
                         </Button>
                     </Link>
                  )}
@@ -265,7 +276,7 @@ export default function ProductDetailPage() {
 
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="details">
-                  <AccordionTrigger className="text-sm tracking-widest font-light uppercase">Details and Specs</AccordionTrigger>
+                  <AccordionTrigger className="text-sm tracking-widest font-light uppercase">詳細・仕様</AccordionTrigger>
                   <AccordionContent>
                     <dl className="py-4">
                       {Object.entries(product.specs).map(([key, value]) => (
@@ -277,12 +288,14 @@ export default function ProductDetailPage() {
                     </dl>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="usage">
-                  <AccordionTrigger className="text-sm tracking-widest font-light uppercase">Usage</AccordionTrigger>
-                  <AccordionContent className="text-sm font-light text-gray-600 leading-relaxed py-4">
-                    {product.usage}
-                  </AccordionContent>
-                </AccordionItem>
+                {product.usage && (
+                  <AccordionItem value="usage">
+                    <AccordionTrigger className="text-sm tracking-widest font-light uppercase">お召し上がり方</AccordionTrigger>
+                    <AccordionContent className="text-sm font-light text-gray-600 leading-relaxed py-4">
+                      {product.usage}
+                    </AccordionContent>
+                  </AccordionItem>
+                )}
               </Accordion>
             </div>
           </div>
@@ -291,7 +304,7 @@ export default function ProductDetailPage() {
           {product.ingredientsSections && (
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
               <div className="mb-12 md:mb-16">
-                <h2 className="text-2xl md:text-3xl font-thin mb-8 md:mb-12">Key Ingredients</h2>
+                <h2 className="text-2xl md:text-3xl font-thin mb-8 md:mb-12">主要成分</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 md:gap-y-16">
                   {product.ingredientsSections.map((ingredient: any, index: number) => (
                     <div key={index} className="group">
@@ -326,12 +339,12 @@ export default function ProductDetailPage() {
           )}
 
           {/* Safety / GMP Section */}
-          {(product.gmp || product.safety) && (
+          {product.safety && (
              <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
                <div className="max-w-4xl">
-                 <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.safety ? product.safety.title : "安心品質の証「GMP認証」取得工場で製造"}</h2>
+                 <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.safety.title}</h2>
                  <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                   {product.safety ? product.safety.description : product.gmp}
+                   {product.safety.description}
                  </p>
                </div>
              </section>
@@ -353,7 +366,7 @@ export default function ProductDetailPage() {
           {product.stores && (
             <section className="mb-16 md:mb-32 pt-16 md:pt-24 border-t border-gray-200">
               <div className="text-center mb-12 md:mb-16">
-                 <h2 className="text-3xl font-thin mb-4">Shoplist</h2>
+                 <h2 className="text-3xl font-thin mb-4">取り扱い店舗</h2>
                  <p className="text-sm text-gray-500 tracking-widest uppercase">Available Stores</p>
               </div>
               
@@ -362,7 +375,7 @@ export default function ProductDetailPage() {
                 <div className="bg-gray-50 p-8 md:p-12">
                    <h3 className="text-xl font-light mb-8 flex items-center gap-3">
                       <span className="w-8 h-[1px] bg-[#1A1A1A]"></span>
-                      East Japan
+                      東日本
                    </h3>
                    <div className="space-y-8">
                      {product.stores.east.map((store: any, index: number) => (
@@ -385,7 +398,7 @@ export default function ProductDetailPage() {
                 <div className="bg-gray-50 p-8 md:p-12">
                    <h3 className="text-xl font-light mb-8 flex items-center gap-3">
                       <span className="w-8 h-[1px] bg-[#1A1A1A]"></span>
-                      West Japan
+                      西日本
                    </h3>
                    <div className="space-y-8">
                      {product.stores.west.map((store: any, index: number) => (
@@ -409,7 +422,7 @@ export default function ProductDetailPage() {
 
           {/* Bottom CTA */}
           <section className="bg-[#1A1A1A] text-white p-8 md:p-24 text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-thin mb-6">Experience {product.name}</h2>
+              <h2 className="text-3xl md:text-4xl font-thin mb-6">{product.name}を体験</h2>
               <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed text-sm">
                  公式オンラインストアで、あなたのライフスタイルに合わせたプランをお選びいただけます。
               </p>
