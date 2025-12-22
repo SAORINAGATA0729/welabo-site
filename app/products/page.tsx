@@ -71,7 +71,6 @@ export default function ProductsPage() {
                     
                     <div className="w-full lg:w-1/2">
                        <h2 className="text-3xl md:text-5xl font-thin mb-4">{product.name}</h2>
-                       <p className="text-lg italic text-gray-400 font-light mb-12">{product.tagline}</p>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify max-w-md">
                           {product.description}
                        </p>

@@ -84,7 +84,6 @@ export default function ShoppingPage() {
                       </div>
                       
                       <div className="text-left pl-2">
-                         <span className="text-xs tracking-wider text-[#D4C5B0] block mb-2">{product.tagline}</span>
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}
                          </h3>
