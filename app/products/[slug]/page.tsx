@@ -435,13 +435,13 @@ export default function ProductDetailPage() {
                  <h2 className="text-3xl md:text-7xl font-thin mb-8">SHOPLIST</h2>
               </div>
               
-              <div className="container mx-auto max-w-[1000px]">
+              <div className="container mx-auto px-6 md:px-12">
                 <div className="grid md:grid-cols-2 gap-12">
-                  {/* West Japan (Left) */}
+                  {/* East Japan (Left) */}
                   <div>
-                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
+                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
-                       {product.stores.west.map((store: any, index: number) => (
+                       {product.stores.east.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
                            <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
                               {/* Image Placeholder */}
@@ -474,11 +474,11 @@ export default function ProductDetailPage() {
                      </div>
                   </div>
 
-                  {/* East Japan (Right) */}
+                  {/* West Japan (Right) */}
                   <div>
-                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
+                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
-                       {product.stores.east.map((store: any, index: number) => (
+                       {product.stores.west.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
                            <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
                               {/* Image Placeholder */}
