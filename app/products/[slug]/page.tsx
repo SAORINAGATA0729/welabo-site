@@ -222,11 +222,6 @@ const productData: Record<string, any> = {
           title: "",
           description: "GMP（Good Manufacturing Practice）=「適正製造規範」とは、原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理することです。第三者機関が品質管理体制を客観的に審査・査察を行い、認められた工場のみが認定されます。",
           image: "https://welabo.jp/wp-content/uploads/concept04.png"
-        },
-        {
-          title: "",
-          description: "「本草霊芝胞子」は、健康食品GMPの認証を受けた日本国内工場で厳重な品質管理、衛生管理のもと、最終包装まで一貫して行っています。",
-          image: "https://welabo.jp/wp-content/uploads/concept05.jpg"
         }
       ]
     },
