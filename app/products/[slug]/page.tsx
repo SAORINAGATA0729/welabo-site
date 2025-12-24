@@ -377,15 +377,11 @@ export default function ProductDetailPage() {
           {/* Safety / GMP Section */}
           {product.safety && product.safety.sections && (
              <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-               <div className="container mx-auto px-6 md:px-12">
-                 <h2 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
-                   安全性
-                 </h2>
-                 
-                 <div className="space-y-16">
-                   {product.safety.sections.map((safetySection: any, index: number) => (
-                     <div key={index}>
-                       <h3 className="text-2xl md:text-3xl font-light mb-8">{safetySection.title}</h3>
+               <div className="space-y-16 md:space-y-24">
+                 {product.safety.sections.map((safetySection: any, index: number) => (
+                   <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
+                     <div className="container mx-auto px-6 md:px-12">
+                       <h2 className="text-2xl md:text-3xl font-thin mb-6">{safetySection.title}</h2>
                        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
                          <div className="md:w-1/2">
                            <Image
@@ -403,12 +399,9 @@ export default function ProductDetailPage() {
                            </p>
                          </div>
                        </div>
-                       {index < product.safety.sections.length - 1 && (
-                         <hr className="border-gray-200 mt-16" />
-                       )}
                      </div>
-                   ))}
-                 </div>
+                   </div>
+                 ))}
                </div>
              </section>
           )}
