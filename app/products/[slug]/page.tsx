@@ -423,13 +423,13 @@ export default function ProductDetailPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-24 md:pt-32">
+      <main className="pt-16 md:pt-32">
         <div className="container mx-auto px-6 md:px-12">
           {/* Product Header */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 mb-16 md:mb-32">
             {/* Product Info - Mobile: Top, Desktop: Right */}
             <div className="lg:w-1/2 lg:pt-12 order-1 lg:order-2">
-              <h1 className="text-2xl md:text-6xl font-thin mb-6 md:mb-4 leading-tight mt-8 md:mt-0">{product.name}</h1>
+              <h1 className="text-2xl md:text-6xl font-thin mb-6 md:mb-4 leading-tight">{product.name}</h1>
               
               {/* Image Gallery - Mobile: After Title, Desktop: Left */}
               <div className="lg:hidden mb-6">
