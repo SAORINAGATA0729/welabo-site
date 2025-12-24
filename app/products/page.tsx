@@ -78,7 +78,7 @@ export default function ProductsPage() {
                     
                     <div className="w-full lg:w-1/2">
                        <h2 className="text-3xl md:text-5xl font-thin mb-4">{product.name}</h2>
-                       <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify max-w-md">
+                       <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify">
                           {product.description}
                        </p>
                        <div className="flex flex-col sm:flex-row gap-4">
