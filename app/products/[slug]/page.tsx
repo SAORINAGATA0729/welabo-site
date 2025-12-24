@@ -21,6 +21,7 @@ const productData: Record<string, any> = {
     gallery: [
       "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
       "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
     ],
     features: [
@@ -35,17 +36,20 @@ const productData: Record<string, any> = {
         {
             title: "NMNとは？",
             subtitle: "Nicotinamide mononucleotide",
-            description: "NMNとは、正式名称「ニコチンアミドモノヌクレオチド」。ビタミンB3を原料としてつくられる成分です。ヒトやあらゆる生物に存在し体内で自然に生成されている物質ですが、年齢とともに減少すると考えられています。NMNは体内で、エネルギーを生み出す際に必須な補酵素NAD（ニコチンアミドアデニンジヌクレオチド）に変換されます。"
+            description: "NMNとは、正式名称「ニコチンアミドモノヌクレオチド」。ビタミンB3を原料としてつくられる成分です。ヒトやあらゆる生物に存在し体内で自然に生成されている物質ですが、年齢とともに減少すると考えられています。NMNは体内で、エネルギーを生み出す際に必須な補酵素NAD（ニコチンアミドアデニンジヌクレオチド）に変換されます。",
+            image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         },
         {
             title: "そこで「NMN」が重要",
             subtitle: "Replenishing NAD",
-            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。また、セノリティクスに注目されている成分フィセチンを1500mg、そら豆や枝豆に含まれるハッキリ成分PQQを1800mg、若々しさをサポートするコエンザイムQ10を4500mg配合しています。快適な毎日をサポートします。"
+            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。また、セノリティクスに注目されている成分フィセチンを1500mg、そら豆や枝豆に含まれるハッキリ成分PQQを1800mg、若々しさをサポートするコエンザイムQ10を4500mg配合しています。快適な毎日をサポートします。",
+            image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         },
         {
             title: "PQQ・コエンザイムQ10・フィセチン配合",
             subtitle: "Synergistic Ingredients",
-            description: "フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。"
+            description: "フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。",
+            image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         },
         {
             title: "胃酸に強い耐酸性カプセル使用",
@@ -316,6 +320,17 @@ export default function ProductDetailPage() {
                     <div key={index} className="group">
                       <span className="text-xs text-[#D4C5B0] tracking-widest uppercase block mb-2">{ingredient.subtitle}</span>
                       <h3 className="text-xl font-light mb-4">{ingredient.title}</h3>
+                      {ingredient.image && (
+                        <div className="relative w-full aspect-square mb-6 bg-[#F5F5F5] overflow-hidden">
+                          <Image
+                            src={ingredient.image}
+                            alt={ingredient.title}
+                            fill
+                            className="object-contain p-4"
+                            unoptimized
+                          />
+                        </div>
+                      )}
                       <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                         {ingredient.description}
                       </p>
