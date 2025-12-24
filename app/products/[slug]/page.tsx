@@ -20,7 +20,8 @@ const productData: Record<string, any> = {
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
     gallery: [
       "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542"
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
     ],
     features: [
       "老化研究の世界基準であるAGING HALLMARKSで示されている、12の老化要因の内、11の要因にアプローチ",
@@ -39,12 +40,17 @@ const productData: Record<string, any> = {
         {
             title: "そこで「NMN」が重要",
             subtitle: "Replenishing NAD",
-            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。"
+            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。また、セノリティクスに注目されている成分フィセチンを1500mg、そら豆や枝豆に含まれるハッキリ成分PQQを1800mg、若々しさをサポートするコエンザイムQ10を4500mg配合しています。快適な毎日をサポートします。"
         },
         {
             title: "PQQ・コエンザイムQ10・フィセチン配合",
             subtitle: "Synergistic Ingredients",
-            description: "PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。"
+            description: "フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。"
+        },
+        {
+            title: "胃酸に強い耐酸性カプセル使用",
+            subtitle: "Acid-Resistant Capsule",
+            description: "胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。胃酸からNMNを保護し、NMNを腸まで届けます。"
         }
     ],
     professor: {
@@ -55,7 +61,7 @@ const productData: Record<string, any> = {
     },
     safety: {
         title: "安全性へのこだわり・GMP認証",
-        description: "「LUXURY NMN」で使用しているNMN原料は、発酵抽出法で作った国産の99.9％高濃度原料を使用しています。放射能・重金属・微生物検査を実施し、異常がないことを確認しています。また、胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。製造は、日本国内でも最高水準を誇るGMP認証工場で行われています。"
+        description: "「LUXURY NMN 15000」で使用しているNMN原料は、発酵抽出法で作った国産の99.9％高濃度原料を使用しています。放射能・重金属・微生物検査を実施し、異常がないことを確認しています。また、胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。お客様に安全で高品質な製品をお届けするため、工場と製品の両方で「GMP認証」を取得しています。GMP（Good Manufacturing Practice）=「適正製造規範」とは、製品の原材料受け入れから最終出荷に至るすべての工程を細かく管理する厳格な基準です。第三者機関が品質管理体制を客観的に審査・査察し、基準を満たした工場と製品だけが認証を受けられます。「LUXURY NMN 15000」は、日本国内でも最高水準を誇るGMP認証工場で、厳密な品質管理と衛生管理のもと製造されています。さらに、製品のGMP認証を取得し、高い品質と安全性を保証しています。製造から最終包装まで一貫して行うことで、安心してご利用いただける信頼の一品をお届けします。"
     },
     agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。",
     specs: {
