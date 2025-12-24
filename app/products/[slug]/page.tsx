@@ -313,30 +313,35 @@ export default function ProductDetailPage() {
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="mb-12 md:mb-16">
-                <h2 className="text-2xl md:text-3xl font-thin mb-8 md:mb-12">主要成分</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 md:gap-y-16">
-                  {product.ingredientsSections.map((ingredient: any, index: number) => (
-                    <div key={index} className="group">
-                      <span className="text-xs text-[#D4C5B0] tracking-widest uppercase block mb-2">{ingredient.subtitle}</span>
-                      <h3 className="text-xl font-light mb-4">{ingredient.title}</h3>
+              <div className="space-y-16 md:space-y-24">
+                {product.ingredientsSections.map((ingredient: any, index: number) => (
+                  <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
+                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                      {/* Left: Text */}
+                      <div className="flex-1">
+                        <span className="text-xs text-[#D4C5B0] tracking-widest uppercase block mb-2">{ingredient.subtitle}</span>
+                        <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
+                        <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                          {ingredient.description}
+                        </p>
+                      </div>
+                      {/* Right: Image */}
                       {ingredient.image && (
-                        <div className="relative w-full aspect-square mb-6 bg-[#F5F5F5] overflow-hidden">
-                          <Image
-                            src={ingredient.image}
-                            alt={ingredient.title}
-                            fill
-                            className="object-contain p-4"
-                            unoptimized
-                          />
+                        <div className="w-full lg:w-1/2">
+                          <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
+                            <Image
+                              src={ingredient.image}
+                              alt={ingredient.title}
+                              fill
+                              className="object-contain p-8"
+                              unoptimized
+                            />
+                          </div>
                         </div>
                       )}
-                      <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                        {ingredient.description}
-                      </p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </section>
           )}
