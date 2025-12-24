@@ -54,7 +54,8 @@ const productData: Record<string, any> = {
         {
             title: "胃酸に強い耐酸性カプセル使用",
             subtitle: "Acid-Resistant Capsule",
-            description: "胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。胃酸からNMNを保護し、NMNを腸まで届けます。"
+            description: "胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。胃酸からNMNを保護し、NMNを腸まで届けます。",
+            image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         }
     ],
     professor: {
@@ -64,8 +65,18 @@ const productData: Record<string, any> = {
         bio: "1959年生まれ。東京大学薬学系研究科（製剤学教室）修士課程修了後、金沢大学薬学部助手、富山医科薬科大学付属病院薬剤部助手、アメリカ国立衛生研究所（NIH）・癌研究所（NCI）奨励研究員、スイス・バーゼル研究所（Sandoz Pharma）客員研究員を経て、東京大学医学部助教授となる。2000年から昭和大学薬学部教授（臨床分子薬品学教室）。現在は同大学の薬物療法学講座薬物動態学部門を担う。"
     },
     safety: {
-        title: "安全性へのこだわり・GMP認証",
-        description: "「LUXURY NMN 15000」で使用しているNMN原料は、発酵抽出法で作った国産の99.9％高濃度原料を使用しています。放射能・重金属・微生物検査を実施し、異常がないことを確認しています。また、胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。お客様に安全で高品質な製品をお届けするため、工場と製品の両方で「GMP認証」を取得しています。GMP（Good Manufacturing Practice）=「適正製造規範」とは、製品の原材料受け入れから最終出荷に至るすべての工程を細かく管理する厳格な基準です。第三者機関が品質管理体制を客観的に審査・査察し、基準を満たした工場と製品だけが認証を受けられます。「LUXURY NMN 15000」は、日本国内でも最高水準を誇るGMP認証工場で、厳密な品質管理と衛生管理のもと製造されています。さらに、製品のGMP認証を取得し、高い品質と安全性を保証しています。製造から最終包装まで一貫して行うことで、安心してご利用いただける信頼の一品をお届けします。"
+        sections: [
+            {
+                title: "安全な原料",
+                description: "「LUXURY NMN 15000」で使用しているNMN原料は、発酵抽出法で作った国産の99.9％高濃度原料を使用しています。放射能・重金属・微生物検査を実施し、異常がないことを確認しています。また、胃酸や唾液でNMNを損なうことなく、貴重な成分をより効率よく届けるために、耐酸性カプセルを採用しました。",
+                image: "https://welabo.jp/wp-content/uploads/concept04.png"
+            },
+            {
+                title: "製造工場",
+                description: "お客様に安全で高品質な製品をお届けするため、工場と製品の両方で「GMP認証」を取得しています。GMP（Good Manufacturing Practice）=「適正製造規範」とは、製品の原材料受け入れから最終出荷に至るすべての工程を細かく管理する厳格な基準です。第三者機関が品質管理体制を客観的に審査・査察し、基準を満たした工場と製品だけが認証を受けられます。「LUXURY NMN 15000」は、日本国内でも最高水準を誇るGMP認証工場で、厳密な品質管理と衛生管理のもと製造されています。さらに、製品のGMP認証を取得し、高い品質と安全性を保証しています。製造から最終包装まで一貫して行うことで、安心してご利用いただける信頼の一品をお届けします。",
+                image: "https://welabo.jp/wp-content/uploads/concept05.jpg"
+            }
+        ]
     },
     agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。",
     specs: {
@@ -319,7 +330,6 @@ export default function ProductDetailPage() {
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                       {/* Left: Text */}
                       <div className="flex-1">
-                        <span className="text-xs text-[#D4C5B0] tracking-widest uppercase block mb-2">{ingredient.subtitle}</span>
                         <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
                         <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                           {ingredient.description}
@@ -327,7 +337,7 @@ export default function ProductDetailPage() {
                       </div>
                       {/* Right: Image */}
                       {ingredient.image && (
-                        <div className="w-full lg:w-1/2">
+                        <div className="w-full lg:w-1/3">
                           <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
                             <Image
                               src={ingredient.image}
@@ -365,13 +375,40 @@ export default function ProductDetailPage() {
           )}
 
           {/* Safety / GMP Section */}
-          {product.safety && (
+          {product.safety && product.safety.sections && (
              <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-               <div className="max-w-4xl">
-                 <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.safety.title}</h2>
-                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                   {product.safety.description}
-                 </p>
+               <div className="container mx-auto px-6 md:px-12">
+                 <h2 className="text-3xl md:text-4xl font-normal mb-12 md:mb-20">
+                   安全性
+                 </h2>
+                 
+                 <div className="space-y-16">
+                   {product.safety.sections.map((safetySection: any, index: number) => (
+                     <div key={index}>
+                       <h3 className="text-2xl md:text-3xl font-light mb-8">{safetySection.title}</h3>
+                       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                         <div className="md:w-1/2">
+                           <Image
+                             src={safetySection.image}
+                             alt={safetySection.title}
+                             width={800}
+                             height={500}
+                             className="w-full h-auto"
+                             unoptimized
+                           />
+                         </div>
+                         <div className="md:w-1/2">
+                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                             {safetySection.description}
+                           </p>
+                         </div>
+                       </div>
+                       {index < product.safety.sections.length - 1 && (
+                         <hr className="border-gray-200 mt-16" />
+                       )}
+                     </div>
+                   ))}
+                 </div>
                </div>
              </section>
           )}
