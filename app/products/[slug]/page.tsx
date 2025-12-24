@@ -151,7 +151,7 @@ const productData: Record<string, any> = {
       "原産国": "日本"
     },
     usage: "健康補助食品として、1日3粒（1袋）を、就寝前に水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
-    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY PROBIOTICS+は12の内、2つの要因にアプローチします。",
+    agingHallmarks: "HALLMARKS に示される 12 の要因に着目し、その多くの要因にアプローチすることが期待される成分構成を目指しています。",
     safety: {
       sections: [
         {
