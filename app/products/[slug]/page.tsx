@@ -430,78 +430,80 @@ export default function ProductDetailPage() {
               </div>
               
               <div className="container mx-auto max-w-[1000px]">
-                {/* East Japan */}
-                <div className="mb-24">
-                   <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
-                   <div className="space-y-0 border-t border-gray-200">
-                     {product.stores.east.map((store: any, index: number) => (
-                       <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
-                         <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
-                            {/* Image Placeholder */}
-                            <div className="w-20 md:w-32 shrink-0">
-                               <div className="w-full aspect-square bg-gray-300"></div>
-                            </div>
-                            
-                            {/* Store Info */}
-                            <div className="flex-1">
-                               <div className="mb-4">
-                                  <h4 className="text-lg md:text-xl font-light tracking-wide text-[#1A1A1A] mb-2">
-                                    {store.name}
-                                  </h4>
-                               </div>
-                               
-                               <div className="space-y-3">
-                                  <div className="flex items-start gap-3">
-                                     <MapPin className="w-4 h-4 text-gray-400 mt-1 shrink-0" />
-                                     <p className="text-sm text-gray-600 leading-relaxed">{store.address}</p>
-                                  </div>
-                                  <div className="flex items-center gap-3">
-                                     <Phone className="w-4 h-4 text-gray-400 shrink-0" />
-                                     <p className="text-sm text-gray-600">TEL: {store.tel}</p>
-                                  </div>
-                               </div>
-                            </div>
+                <div className="grid md:grid-cols-2 gap-12">
+                  {/* West Japan (Left) */}
+                  <div>
+                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
+                     <div className="space-y-0 border-t border-gray-200">
+                       {product.stores.west.map((store: any, index: number) => (
+                         <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
+                           <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
+                              {/* Image Placeholder */}
+                              <div className="w-20 md:w-32 shrink-0">
+                                 <div className="w-full aspect-square bg-gray-300"></div>
+                              </div>
+                              
+                              {/* Store Info */}
+                              <div className="flex-1">
+                                 <div className="mb-4">
+                                    <h4 className="text-lg md:text-xl font-light tracking-wide text-[#1A1A1A] mb-2">
+                                      {store.name}
+                                    </h4>
+                                 </div>
+                                 
+                                 <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                       <MapPin className="w-4 h-4 text-gray-400 mt-1 shrink-0" />
+                                       <p className="text-sm text-gray-600 leading-relaxed">{store.address}</p>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                       <Phone className="w-4 h-4 text-gray-400 shrink-0" />
+                                       <p className="text-sm text-gray-600">TEL: {store.tel}</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                          </div>
-                       </div>
-                     ))}
-                   </div>
-                </div>
+                       ))}
+                     </div>
+                  </div>
 
-                {/* West Japan */}
-                <div>
-                   <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
-                   <div className="space-y-0 border-t border-gray-200">
-                     {product.stores.west.map((store: any, index: number) => (
-                       <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
-                         <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
-                            {/* Image Placeholder */}
-                            <div className="w-20 md:w-32 shrink-0">
-                               <div className="w-full aspect-square bg-gray-300"></div>
-                            </div>
-                            
-                            {/* Store Info */}
-                            <div className="flex-1">
-                               <div className="mb-4">
-                                  <h4 className="text-lg md:text-xl font-light tracking-wide text-[#1A1A1A] mb-2">
-                                    {store.name}
-                                  </h4>
-                               </div>
-                               
-                               <div className="space-y-3">
-                                  <div className="flex items-start gap-3">
-                                     <MapPin className="w-4 h-4 text-gray-400 mt-1 shrink-0" />
-                                     <p className="text-sm text-gray-600 leading-relaxed">{store.address}</p>
-                                  </div>
-                                  <div className="flex items-center gap-3">
-                                     <Phone className="w-4 h-4 text-gray-400 shrink-0" />
-                                     <p className="text-sm text-gray-600">TEL: {store.tel}</p>
-                                  </div>
-                               </div>
-                            </div>
+                  {/* East Japan (Right) */}
+                  <div>
+                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
+                     <div className="space-y-0 border-t border-gray-200">
+                       {product.stores.east.map((store: any, index: number) => (
+                         <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
+                           <div className="flex flex-col md:flex-row md:items-start gap-6 py-12 px-4">
+                              {/* Image Placeholder */}
+                              <div className="w-20 md:w-32 shrink-0">
+                                 <div className="w-full aspect-square bg-gray-300"></div>
+                              </div>
+                              
+                              {/* Store Info */}
+                              <div className="flex-1">
+                                 <div className="mb-4">
+                                    <h4 className="text-lg md:text-xl font-light tracking-wide text-[#1A1A1A] mb-2">
+                                      {store.name}
+                                    </h4>
+                                 </div>
+                                 
+                                 <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                       <MapPin className="w-4 h-4 text-gray-400 mt-1 shrink-0" />
+                                       <p className="text-sm text-gray-600 leading-relaxed">{store.address}</p>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                       <Phone className="w-4 h-4 text-gray-400 shrink-0" />
+                                       <p className="text-sm text-gray-600">TEL: {store.tel}</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                          </div>
-                       </div>
-                     ))}
-                   </div>
+                       ))}
+                     </div>
+                  </div>
                 </div>
               </div>
             </section>
