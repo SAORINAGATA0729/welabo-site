@@ -554,8 +554,8 @@ export default function ProductDetailPage() {
 
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
-            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="space-y-16 md:space-y-24">
+            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              <div className="space-y-12 md:space-y-24">
                 {product.ingredientsSections.map((ingredient: any, index: number) => (
                   <div key={index} className="border-b border-gray-100 pb-12 md:pb-24 last:border-0">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
@@ -580,30 +580,28 @@ export default function ProductDetailPage() {
 
           {/* Professor Section */}
           {product.professor && (
-            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="border-b border-gray-100 pb-12 md:pb-24">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                  {/* Left: Text */}
-                  <div className="flex-1 lg:flex-[2]">
-                    <h2 className="text-2xl md:text-3xl font-thin mb-6">{product.professor.title}</h2>
-                    {product.professor.description && (
-                      <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                        {product.professor.description}
-                      </p>
-                    )}
-                    {product.professor.name && (
-                      <p className="text-sm font-medium text-[#1A1A1A] mb-4">
-                        {product.professor.name}
-                      </p>
-                    )}
-                    <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                      {product.professor.bio}
+            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                {/* Left: Text */}
+                <div className="flex-1 lg:flex-[2]">
+                  <h2 className="text-2xl md:text-3xl font-thin mb-6">{product.professor.title}</h2>
+                  {product.professor.description && (
+                    <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
+                      {product.professor.description}
                     </p>
-                  </div>
-                  {/* Right: Image Placeholder (Gray Background Only) - Half height */}
-                  <div className="w-full lg:w-1/2">
-                    <div className="relative w-full aspect-[2/1] bg-[#F5F5F5] overflow-hidden">
-                    </div>
+                  )}
+                  {product.professor.name && (
+                    <p className="text-sm font-medium text-[#1A1A1A] mb-4">
+                      {product.professor.name}
+                    </p>
+                  )}
+                  <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                    {product.professor.bio}
+                  </p>
+                </div>
+                {/* Right: Image Placeholder (Gray Background Only) - Half height */}
+                <div className="w-full lg:w-1/2">
+                  <div className="relative w-full aspect-[2/1] bg-[#F5F5F5] overflow-hidden">
                   </div>
                 </div>
               </div>
@@ -612,8 +610,8 @@ export default function ProductDetailPage() {
 
           {/* Safety / GMP Section */}
           {product.safety && product.safety.sections && (
-             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-               <div className="space-y-16 md:space-y-24">
+             <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+               <div className="space-y-12 md:space-y-24">
                  {product.safety.sections.map((safetySection: any, index: number) => (
                    <div key={index} className="pb-12 md:pb-24">
                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
@@ -638,25 +636,23 @@ export default function ProductDetailPage() {
 
           {/* Aging Hallmarks Section */}
           {product.agingHallmarks && (
-            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="container mx-auto px-6 md:px-12">
-                <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKSに沿った開発・展開</h2>
-                <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12">
-                  老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。
-                </p>
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Left Image */}
-                  <div>
-                    <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
-                    </div>
-                    <p className="text-sm text-gray-600 font-light text-center">LUXURY NMN 15000</p>
+            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKSに沿った開発・展開</h2>
+              <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12">
+                老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left Image */}
+                <div>
+                  <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
                   </div>
-                  {/* Right Image */}
-                  <div>
-                    <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
-                    </div>
-                    <p className="text-sm text-gray-600 font-light text-center">老化研究の世界基準であるAGING</p>
+                  <p className="text-sm text-gray-600 font-light text-center">LUXURY NMN 15000</p>
+                </div>
+                {/* Right Image */}
+                <div>
+                  <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
                   </div>
+                  <p className="text-sm text-gray-600 font-light text-center">老化研究の世界基準であるAGING</p>
                 </div>
               </div>
             </section>
