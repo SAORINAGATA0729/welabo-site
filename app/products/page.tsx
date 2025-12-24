@@ -65,23 +65,19 @@ export default function ProductsPage() {
            <div className="container mx-auto px-6 md:px-12 space-y-40">
               {products.map((product, index) => (
                  <div key={product.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-32 items-center`}>
-                    <div className="w-full lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] overflow-hidden group cursor-pointer">
-                       <Link href={`/products/${product.id}`}>
-                          <div 
-                            className={`absolute inset-0 transition-transform duration-[1.5s] group-hover:scale-105 ${
-                              ['honsoureishihoushi', 'luxury-nmn-15000', 'luxury-probiotics', 'luxury-nmn-15000-packet', 'luxury-nmn-15000-3p'].includes(product.id)
-                                ? 'bg-cover bg-center' 
-                                : 'bg-contain bg-no-repeat bg-center p-8'
-                            }`}
-                            style={{ backgroundImage: `url('${product.img}')` }}
-                          />
-                       </Link>
+                    <div className="w-full lg:w-1/2 aspect-[4/5] relative bg-[#F5F5F5] overflow-hidden group">
+                       <div 
+                         className={`absolute inset-0 transition-transform duration-[1.5s] group-hover:scale-105 ${
+                           ['honsoureishihoushi', 'luxury-nmn-15000', 'luxury-probiotics', 'luxury-nmn-15000-packet', 'luxury-nmn-15000-3p'].includes(product.id)
+                             ? 'bg-cover bg-center' 
+                             : 'bg-contain bg-no-repeat bg-center p-8'
+                         }`}
+                         style={{ backgroundImage: `url('${product.img}')` }}
+                       />
                     </div>
                     
                     <div className="w-full lg:w-1/2">
-                       <Link href={`/products/${product.id}`}>
-                          <h2 className="text-3xl md:text-5xl font-thin mb-4 hover:opacity-70 transition-opacity cursor-pointer">{product.name}</h2>
-                       </Link>
+                       <h2 className="text-3xl md:text-5xl font-thin mb-4">{product.name}</h2>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify max-w-md">
                           {product.description}
                        </p>
