@@ -380,23 +380,17 @@ export default function ProductDetailPage() {
                <div className="space-y-16 md:space-y-24">
                  {product.safety.sections.map((safetySection: any, index: number) => (
                    <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
-                     <div className="container mx-auto px-6 md:px-12">
-                       <h2 className="text-2xl md:text-3xl font-thin mb-6">{safetySection.title}</h2>
-                       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-                         <div className="md:w-1/2">
-                           <Image
-                             src={safetySection.image}
-                             alt={safetySection.title}
-                             width={800}
-                             height={500}
-                             className="w-full h-auto"
-                             unoptimized
-                           />
-                         </div>
-                         <div className="md:w-1/2">
-                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                             {safetySection.description}
-                           </p>
+                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                       {/* Left: Text */}
+                       <div className="flex-1 lg:flex-[2]">
+                         <h2 className="text-2xl md:text-3xl font-thin mb-6">{safetySection.title}</h2>
+                         <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                           {safetySection.description}
+                         </p>
+                       </div>
+                       {/* Right: Image Placeholder (Gray Background Only) - Same width as button */}
+                       <div className="w-full lg:w-1/2">
+                         <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
                          </div>
                        </div>
                      </div>
