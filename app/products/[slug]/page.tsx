@@ -547,39 +547,43 @@ export default function ProductDetailPage() {
                 </h2>
               )}
               <div className="space-y-12 md:space-y-24">
-                {product.ingredientsSections.map((ingredient: any, index: number) => (
-                  <div key={index}>
-                    <div className={`border-b border-gray-100 ${index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0'} last:border-0`}>
-                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                        {/* Left: Text */}
-                        <div className="flex-1 lg:flex-[2]">
-                          {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") ? (
-                            <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
-                          ) : (
-                            <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
-                          )}
-                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                            {ingredient.description}
-                          </p>
-                        </div>
-                        {/* Right: Image Placeholder (Gray Background Only) - Same width as button (w-full) */}
-                        <div className="w-full lg:w-1/2">
-                          <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                {product.ingredientsSections.map((ingredient: any, index: number) => {
+                  const isAfterSporeLacticAcid = slug === "luxury-probiotics" && index > 0 && product.ingredientsSections[index - 1].title === "有胞子乳酸菌";
+                  const shouldShowBorderBottom = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌" ? false : (index < product.ingredientsSections.length - 1);
+                  return (
+                    <div key={index}>
+                      <div className={`${isAfterSporeLacticAcid ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : 'pb-0 md:pb-0'} last:border-0`}>
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                          {/* Left: Text */}
+                          <div className="flex-1 lg:flex-[2]">
+                            {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") ? (
+                              <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
+                            ) : (
+                              <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
+                            )}
+                            <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                              {ingredient.description}
+                            </p>
+                          </div>
+                          {/* Right: Image Placeholder (Gray Background Only) - Same width as button (w-full) */}
+                          <div className="w-full lg:w-1/2">
+                            <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                            </div>
                           </div>
                         </div>
                       </div>
+                      {/* Special wide images after "有胞子乳酸菌" section for luxury-probiotics */}
+                      {slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌" && (
+                        <div className="mt-12 md:mt-24 space-y-8 md:space-y-12">
+                          <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
+                          </div>
+                          <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    {/* Special wide images after "有胞子乳酸菌" section for luxury-probiotics */}
-                    {slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌" && (
-                      <div className="mt-12 md:mt-24 space-y-8 md:space-y-12">
-                        <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
-                        </div>
-                        <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           )}
