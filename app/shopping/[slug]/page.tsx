@@ -77,7 +77,41 @@ const productData: Record<string, any> = {
       "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。"
     ]
   },
-  "luxury-nmn-15000-bag-2months": {
+  "luxury-nmn-15000-3p": {
+    name: "LUXURY NMN 15000 3本SET 〔3ヶ月体感セット〕",
+    price: "239,112",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    images: [
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "131.4g（120粒×3瓶×1粒の重量365mg、1粒の内容量290mg）",
+      expiry: "製品の右側面下部に記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "食品のため衛生的な環境でお取り扱いください。",
+      "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。",
+      "お気づきの点がございましたら、お客様窓口までご連絡ください。"
+    ]
+  },
+  "luxury-nmn-15000-packet": {
     name: "LUXURY NMN 15000 袋包装（2か月分）",
     price: "176,040",
     description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
