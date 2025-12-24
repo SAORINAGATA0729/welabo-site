@@ -214,7 +214,7 @@ const productData: Record<string, any> = {
         description: "冬虫夏草は子嚢菌類のキノコの一種で、中国では昔から漢方素材として珍重されてきました。冬虫夏草には、有害成分をアポトーシス（細胞の自然死）に導く働きがあるとされ、健康維持に役立つ素材として注目されています。本製品では、厳選された冬虫夏草を配合し、その有効成分を最大限に活かしています。"
       }
     ],
-    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。本草霊芝胞子は12の内、5つの要因にアプローチします。",
+    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因に着目し、その多くの要因にアプローチすることが期待される成分構成を目指しています。",
     safety: {
       sections: [
         {
@@ -555,13 +555,20 @@ export default function ProductDetailPage() {
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
             <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              {slug === "honsoureishihoushi" && (
+                <h2 className="text-2xl md:text-3xl font-thin mb-12">配合成分と働きについて</h2>
+              )}
               <div className="space-y-12 md:space-y-24">
                 {product.ingredientsSections.map((ingredient: any, index: number) => (
                   <div key={index} className={`border-b border-gray-100 ${index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0'} last:border-0`}>
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                       {/* Left: Text */}
                       <div className="flex-1 lg:flex-[2]">
-                        <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
+                        {slug === "honsoureishihoushi" ? (
+                          <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
+                        ) : (
+                          <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
+                        )}
                         <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                           {ingredient.description}
                         </p>
@@ -639,20 +646,24 @@ export default function ProductDetailPage() {
             <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
               <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKSに沿った開発・展開</h2>
               <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12">
-                老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。
+                {product.agingHallmarks}
               </p>
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Left Image */}
                 <div>
                   <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
                   </div>
-                  <p className="text-sm text-gray-600 font-light text-center">LUXURY NMN 15000</p>
+                  <p className="text-sm text-gray-600 font-light text-center">
+                    {slug === "honsoureishihoushi" ? "老化研究の世界基準であるAGING" : "LUXURY NMN 15000"}
+                  </p>
                 </div>
                 {/* Right Image */}
                 <div>
                   <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
                   </div>
-                  <p className="text-sm text-gray-600 font-light text-center">老化研究の世界基準であるAGING</p>
+                  <p className="text-sm text-gray-600 font-light text-center">
+                    {slug === "honsoureishihoushi" ? "本草霊芝胞子" : "老化研究の世界基準であるAGING"}
+                  </p>
                 </div>
               </div>
             </section>
