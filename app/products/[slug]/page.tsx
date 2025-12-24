@@ -416,11 +416,25 @@ export default function ProductDetailPage() {
           {/* Aging Hallmarks Section */}
           {product.agingHallmarks && (
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="max-w-4xl">
-                <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKS</h2>
-                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                  {product.agingHallmarks}
+              <div className="container mx-auto px-6 md:px-12">
+                <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKSに沿った開発・展開</h2>
+                <p className="text-sm leading-[2.4] text-gray-600 font-light whitespace-nowrap mb-12">
+                  老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。
                 </p>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left Image */}
+                  <div>
+                    <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
+                    </div>
+                    <p className="text-sm text-gray-600 font-light text-center">LUXURY NMN 15000</p>
+                  </div>
+                  {/* Right Image */}
+                  <div>
+                    <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
+                    </div>
+                    <p className="text-sm text-gray-600 font-light text-center">老化研究の世界基準であるAGING</p>
+                  </div>
+                </div>
               </div>
             </section>
           )}
