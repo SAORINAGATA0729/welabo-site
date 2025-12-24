@@ -612,7 +612,7 @@ export default function ProductDetailPage() {
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
               <div className="container mx-auto px-6 md:px-12">
                 <h2 className="text-2xl md:text-3xl font-thin mb-8">AGING HALLMARKSに沿った開発・展開</h2>
-                <p className="text-sm leading-[2.4] text-gray-600 font-light whitespace-nowrap mb-12">
+                <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12">
                   老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、11の要因にアプローチします。
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
@@ -647,7 +647,7 @@ export default function ProductDetailPage() {
                 <div className="grid md:grid-cols-2 gap-12">
                   {/* East Japan (Left) */}
                   <div>
-                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
+                     <h3 className="text-xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
                        {product.stores.east.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
