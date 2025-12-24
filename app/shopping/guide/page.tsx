@@ -10,7 +10,7 @@ export default function ShoppingGuidePage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-32 pb-32">
+      <main className="pt-24 md:pt-32 pb-32">
         {/* Header */}
         <section className="container mx-auto px-6 md:px-12 mb-20">
            <div className="text-center max-w-3xl mx-auto">
