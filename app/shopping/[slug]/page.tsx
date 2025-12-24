@@ -152,15 +152,7 @@ const productData: Record<string, any> = {
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/2_000000000001.jpg?1678209904",
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/3_000000000001.jpg?1678209904",
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/4_000000000001.jpg?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/5_000000000001.png?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/6_000000000001.png?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/7_000000000001.png?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/8_000000000001.png?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/9_000000000001.jpg?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/10_000000000001.jpg?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/11_000000000001.jpg?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/12_000000000001.jpg?1678209904",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/13_000000000001.jpg?1678209904"
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/01/00/5_000000000001.png?1678209904"
     ],
     specs: {
       name: "乳酸菌含有加工食品",
