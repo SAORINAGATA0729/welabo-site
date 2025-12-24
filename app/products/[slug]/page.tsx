@@ -343,16 +343,26 @@ export default function ProductDetailPage() {
 
           {/* Professor Section */}
           {product.professor && (
-            <section className="mb-16 md:mb-32 bg-[#F9F9F9] p-8 md:p-24">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.professor.title}</h2>
-                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
-                  {product.professor.description}
-                </p>
-                <div className="pl-6 border-l border-[#D4C5B0]">
-                  <p className="text-sm leading-[2.4] text-gray-500 font-light italic">
-                    {product.professor.bio}
-                  </p>
+            <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
+              <div className="border-b border-gray-100 pb-16 md:pb-24">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                  {/* Left: Text */}
+                  <div className="flex-1 lg:flex-[2]">
+                    <h2 className="text-2xl md:text-3xl font-thin mb-6">{product.professor.title}</h2>
+                    <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
+                      {product.professor.description}
+                    </p>
+                    <div className="pl-6 border-l border-[#D4C5B0]">
+                      <p className="text-sm leading-[2.4] text-gray-500 font-light italic">
+                        {product.professor.bio}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Right: Image Placeholder (Gray Background Only) - Half height */}
+                  <div className="w-full lg:w-1/2">
+                    <div className="relative w-full aspect-[2/1] bg-[#F5F5F5] overflow-hidden">
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
