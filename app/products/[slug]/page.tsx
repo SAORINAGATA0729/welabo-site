@@ -423,7 +423,7 @@ export default function ProductDetailPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-24 md:pt-32">
+      <main className="pt-32 md:pt-32">
         <div className="container mx-auto px-6 md:px-12">
           {/* Product Header */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 mb-16 md:mb-32">
