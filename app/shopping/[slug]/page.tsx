@@ -214,9 +214,9 @@ export default function ShoppingDetailPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-32">
-        {/* Breadcrumb */}
-        <div className="container mx-auto px-6 md:px-12 py-8 text-[10px] tracking-widest uppercase text-gray-400 flex items-center gap-2">
+      <main className="pt-16 md:pt-32">
+        {/* Breadcrumb - Hidden on Mobile */}
+        <div className="hidden md:block container mx-auto px-6 md:px-12 py-8 text-[10px] tracking-widest uppercase text-gray-400 flex items-center gap-2">
           <Link href="/" className="hover:text-[#1A1A1A]">HOME</Link>
           <ChevronRight className="w-3 h-3" />
           <Link href="/products" className="hover:text-[#1A1A1A]">SHOPPING</Link>
