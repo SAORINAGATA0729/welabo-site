@@ -522,8 +522,8 @@ export default function ProductDetailPage() {
               </Accordion>
             </div>
 
-            {/* Image Gallery - Mobile: Bottom, Desktop: Left */}
-            <div className="lg:w-1/2 order-2 lg:order-1">
+            {/* Image Gallery - Desktop: Left (Hidden on Mobile) */}
+            <div className="hidden lg:block lg:w-1/2 order-2 lg:order-1">
               <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
                 <Image
                   src={product.img}
