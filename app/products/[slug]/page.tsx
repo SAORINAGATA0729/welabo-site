@@ -335,20 +335,11 @@ export default function ProductDetailPage() {
                           {ingredient.description}
                         </p>
                       </div>
-                      {/* Right: Image */}
-                      {ingredient.image && (
-                        <div className="w-full lg:w-1/3">
-                          <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
-                            <Image
-                              src={ingredient.image}
-                              alt={ingredient.title}
-                              fill
-                              className="object-contain p-8"
-                              unoptimized
-                            />
-                          </div>
+                      {/* Right: Image Placeholder (Gray Background Only) */}
+                      <div className="w-full lg:w-1/3">
+                        <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
                 ))}
