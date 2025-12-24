@@ -548,11 +548,13 @@ export default function ProductDetailPage() {
               )}
               <div className="space-y-12 md:space-y-24">
                 {product.ingredientsSections.map((ingredient: any, index: number) => {
+                  const isSporeLacticAcid = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌";
                   const isAfterSporeLacticAcid = slug === "luxury-probiotics" && index > 0 && product.ingredientsSections[index - 1].title === "有胞子乳酸菌";
-                  const shouldShowBorderBottom = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌" ? false : (index < product.ingredientsSections.length - 1);
+                  const shouldShowBorderBottom = isSporeLacticAcid ? false : (index < product.ingredientsSections.length - 1);
+                  const shouldShowBorderTop = isAfterSporeLacticAcid || (index > 0 && !isSporeLacticAcid && slug !== "luxury-probiotics");
                   return (
                     <div key={index}>
-                      <div className={`${isAfterSporeLacticAcid ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : 'pb-0 md:pb-0'} last:border-0`}>
+                      <div className={`${shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                           {/* Left: Text */}
                           <div className="flex-1 lg:flex-[2]">
