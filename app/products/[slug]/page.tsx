@@ -676,7 +676,7 @@ export default function ProductDetailPage() {
                 <div className="grid md:grid-cols-2 gap-12">
                   {/* East Japan (Left) */}
                   <div>
-                     <h3 className="text-xl md:text-3xl font-thin mb-12 text-gray-700">東日本地方</h3>
+                     <h3 className="text-xl md:text-3xl font-thin mb-6 text-gray-700">東日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
                        {product.stores.east.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
@@ -713,7 +713,7 @@ export default function ProductDetailPage() {
 
                   {/* West Japan (Right) */}
                   <div>
-                     <h3 className="text-xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
+                     <h3 className="text-xl md:text-3xl font-thin mb-6 text-gray-700">西日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
                        {product.stores.west.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
