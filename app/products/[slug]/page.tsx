@@ -433,7 +433,36 @@ export default function ProductDetailPage() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 mb-16 md:mb-32">
             {/* Product Info - Mobile: Top, Desktop: Right */}
             <div className="lg:w-1/2 lg:pt-12 order-1 lg:order-2">
-              <h1 className="text-2xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
+              <h1 className="text-2xl md:text-6xl font-thin mb-6 md:mb-4 leading-tight mt-8 md:mt-0">{product.name}</h1>
+              
+              {/* Image Gallery - Mobile: After Title, Desktop: Left */}
+              <div className="lg:hidden mb-6">
+                <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
+                  <Image
+                    src={product.img}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-4"
+                    unoptimized
+                  />
+                </div>
+                {/* Thumbnail Gallery */}
+                {product.gallery && (
+                  <div className="grid grid-cols-4 gap-4">
+                    {product.gallery.map((thumbImg: string, index: number) => (
+                      <div key={index} className="relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border border-transparent hover:border-gray-200">
+                        <Image
+                          src={thumbImg}
+                          alt={`${product.name} ${index + 1}`}
+                          fill
+                          className="object-contain p-2"
+                          unoptimized
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
               
               <div className="mb-12">
                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
