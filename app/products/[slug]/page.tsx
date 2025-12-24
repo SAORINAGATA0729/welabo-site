@@ -549,14 +549,13 @@ export default function ProductDetailPage() {
               <div>
                 {product.ingredientsSections.map((ingredient: any, index: number) => {
                   const isSporeLacticAcid = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌";
-                  const isAfterSporeLacticAcid = slug === "luxury-probiotics" && index > 0 && product.ingredientsSections[index - 1].title === "有胞子乳酸菌";
                   // 有胞子乳酸菌の下の線は削除、それ以外は通常通り表示
                   const shouldShowBorderBottom = isSporeLacticAcid ? false : (index < product.ingredientsSections.length - 1);
                   // すべてのセクション間（最初のセクション以外）に線を表示
                   const shouldShowBorderTop = index > 0;
                   return (
-                    <div key={index}>
-                      <div className={`${shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
+                    <div key={index} className={shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
+                      <div className={`${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                           {/* Left: Text */}
                           <div className="flex-1 lg:flex-[2]">
