@@ -214,7 +214,7 @@ export default function ShoppingDetailPage() {
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
       <SiteHeader />
 
-      <main className="pt-20 md:pt-32">
+      <main className="pt-24 md:pt-32">
         {/* Breadcrumb - Hidden on Mobile */}
         <div className="hidden md:block container mx-auto px-6 md:px-12 py-8 text-[10px] tracking-widest uppercase text-gray-400 flex items-center gap-2">
           <Link href="/" className="hover:text-[#1A1A1A]">HOME</Link>
@@ -224,7 +224,7 @@ export default function ShoppingDetailPage() {
           <span className="text-[#1A1A1A]">{product.name}</span>
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 pb-32 mt-6 md:mt-0">
+        <div className="container mx-auto px-6 md:px-12 pb-32 mt-8 md:mt-0">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
             {/* Image Section */}
             <div className="lg:w-1/2">
