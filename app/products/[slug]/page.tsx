@@ -431,37 +431,8 @@ export default function ProductDetailPage() {
         <div className="container mx-auto px-6 md:px-12">
           {/* Product Header */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 mb-16 md:mb-32">
-            {/* Image Gallery */}
-            <div className="lg:w-1/2">
-              <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
-                <Image
-                  src={product.img}
-                  alt={product.name}
-                  fill
-                  className="object-contain p-4"
-                  unoptimized
-                />
-              </div>
-              {/* Thumbnail Gallery */}
-              {product.gallery && (
-                <div className="grid grid-cols-4 gap-4">
-                  {product.gallery.map((thumbImg: string, index: number) => (
-                    <div key={index} className="relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border border-transparent hover:border-gray-200">
-                      <Image
-                        src={thumbImg}
-                        alt={`${product.name} ${index + 1}`}
-                        fill
-                        className="object-contain p-2"
-                        unoptimized
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Product Info */}
-            <div className="lg:w-1/2 pt-12">
+            {/* Product Info - Mobile: Top, Desktop: Right */}
+            <div className="lg:w-1/2 lg:pt-12 order-1 lg:order-2">
               <h1 className="text-2xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
               
               <div className="mb-12">
@@ -521,6 +492,35 @@ export default function ProductDetailPage() {
                 )}
               </Accordion>
             </div>
+
+            {/* Image Gallery - Mobile: Bottom, Desktop: Left */}
+            <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
+                <Image
+                  src={product.img}
+                  alt={product.name}
+                  fill
+                  className="object-contain p-4"
+                  unoptimized
+                />
+              </div>
+              {/* Thumbnail Gallery */}
+              {product.gallery && (
+                <div className="grid grid-cols-4 gap-4">
+                  {product.gallery.map((thumbImg: string, index: number) => (
+                    <div key={index} className="relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border border-transparent hover:border-gray-200">
+                      <Image
+                        src={thumbImg}
+                        alt={`${product.name} ${index + 1}`}
+                        fill
+                        className="object-contain p-2"
+                        unoptimized
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Ingredient Sections (Common for both) */}
@@ -528,7 +528,7 @@ export default function ProductDetailPage() {
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
               <div className="space-y-16 md:space-y-24">
                 {product.ingredientsSections.map((ingredient: any, index: number) => (
-                  <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
+                  <div key={index} className="border-b border-gray-100 pb-12 md:pb-24 last:border-0">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                       {/* Left: Text */}
                       <div className="flex-1 lg:flex-[2]">
@@ -552,7 +552,7 @@ export default function ProductDetailPage() {
           {/* Professor Section */}
           {product.professor && (
             <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
-              <div className="border-b border-gray-100 pb-16 md:pb-24">
+              <div className="border-b border-gray-100 pb-12 md:pb-24">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                   {/* Left: Text */}
                   <div className="flex-1 lg:flex-[2]">
@@ -586,7 +586,7 @@ export default function ProductDetailPage() {
              <section className="mb-16 md:mb-32 py-12 md:py-16 border-t border-gray-100">
                <div className="space-y-16 md:space-y-24">
                  {product.safety.sections.map((safetySection: any, index: number) => (
-                   <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
+                   <div key={index} className="border-b border-gray-100 pb-12 md:pb-24 last:border-0">
                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                        {/* Left: Text */}
                        <div className="flex-1 lg:flex-[2]">
@@ -684,7 +684,7 @@ export default function ProductDetailPage() {
 
                   {/* West Japan (Right) */}
                   <div>
-                     <h3 className="text-2xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
+                     <h3 className="text-xl md:text-3xl font-thin mb-12 text-gray-700">西日本地方</h3>
                      <div className="space-y-0 border-t border-gray-200">
                        {product.stores.west.map((store: any, index: number) => (
                          <div key={index} className="group border-b border-gray-200 hover:bg-[#FAFAFA] transition-colors">
