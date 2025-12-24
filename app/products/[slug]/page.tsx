@@ -59,8 +59,7 @@ const productData: Record<string, any> = {
         }
     ],
     professor: {
-        name: "昭和大学薬学部基礎医療薬学講座 佐藤均教授",
-        title: "共同開発",
+        title: "大学教授と共同開発",
         description: "「LUXURY NMN 15000」は昭和大学薬学部基礎医療薬学講座の佐藤均教授と共同開発したNMNサプリメントです。",
         bio: "1959年生まれ。東京大学薬学系研究科（製剤学教室）修士課程修了後、金沢大学薬学部助手、富山医科薬科大学付属病院薬剤部助手、アメリカ国立衛生研究所（NIH）・癌研究所（NCI）奨励研究員、スイス・バーゼル研究所（Sandoz Pharma）客員研究員を経て、東京大学医学部助教授となる。2000年から昭和大学薬学部教授（臨床分子薬品学教室）。現在は同大学の薬物療法学講座薬物動態学部門を担う。"
     },
@@ -351,8 +350,7 @@ export default function ProductDetailPage() {
           {product.professor && (
             <section className="mb-16 md:mb-32 bg-[#F9F9F9] p-8 md:p-24">
               <div className="max-w-4xl mx-auto">
-                <span className="text-xs text-gray-400 tracking-widest uppercase block mb-4 text-center">{product.professor.title}</span>
-                <h2 className="text-2xl md:text-3xl font-light mb-8 text-center">{product.professor.name}</h2>
+                <h2 className="text-2xl md:text-3xl font-thin mb-8">{product.professor.title}</h2>
                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
                   {product.professor.description}
                 </p>
