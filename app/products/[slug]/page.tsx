@@ -328,15 +328,15 @@ export default function ProductDetailPage() {
                   <div key={index} className="border-b border-gray-100 pb-16 md:pb-24 last:border-0">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                       {/* Left: Text */}
-                      <div className="flex-1">
+                      <div className="flex-1 lg:flex-[2]">
                         <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
                         <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                           {ingredient.description}
                         </p>
                       </div>
-                      {/* Right: Image Placeholder (Gray Background Only) */}
-                      <div className="w-full lg:w-1/3">
-                        <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
+                      {/* Right: Image Placeholder (Gray Background Only) - Same width as button */}
+                      <div className="w-full lg:w-auto lg:min-w-[280px]">
+                        <div className="relative w-full lg:w-[280px] aspect-square bg-[#F5F5F5] overflow-hidden">
                         </div>
                       </div>
                     </div>
