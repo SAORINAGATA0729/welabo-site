@@ -613,7 +613,7 @@ export default function ProductDetailPage() {
              <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
                <div className="space-y-12 md:space-y-24">
                  {product.safety.sections.map((safetySection: any, index: number) => (
-                   <div key={index} className="border-b border-gray-100 pb-12 md:pb-24 last:border-0">
+                   <div key={index} className={`border-b border-gray-100 ${index < product.safety.sections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0'}`}>
                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                        {/* Left: Text */}
                        <div className="flex-1 lg:flex-[2]">
