@@ -551,7 +551,7 @@ export default function ProductDetailPage() {
                   const isSporeLacticAcid = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌";
                   const isAfterSporeLacticAcid = slug === "luxury-probiotics" && index > 0 && product.ingredientsSections[index - 1].title === "有胞子乳酸菌";
                   const shouldShowBorderBottom = isSporeLacticAcid ? false : (index < product.ingredientsSections.length - 1);
-                  const shouldShowBorderTop = isAfterSporeLacticAcid || (index > 0 && !isSporeLacticAcid && slug !== "luxury-probiotics");
+                  const shouldShowBorderTop = isAfterSporeLacticAcid || (index > 0 && !isSporeLacticAcid);
                   return (
                     <div key={index}>
                       <div className={`${shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
