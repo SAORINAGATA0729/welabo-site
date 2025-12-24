@@ -658,7 +658,7 @@ export default function ProductDetailPage() {
                   <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden mb-4">
                   </div>
                   <p className="text-sm text-gray-600 font-light text-center">
-                    {slug === "honsoureishihoushi" ? "老化研究の世界基準であるAGING" : "LUXURY NMN 15000"}
+                    {slug === "honsoureishihoushi" ? "老化研究の世界基準であるAGING" : slug === "luxury-probiotics" ? "LUXURY PROBIOTICS+" : "LUXURY NMN 15000"}
                   </p>
                 </div>
                 {/* Right Image */}
