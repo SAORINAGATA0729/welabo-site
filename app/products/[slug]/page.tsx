@@ -442,14 +442,14 @@ export default function ProductDetailPage() {
           {/* Stores Section */}
           {product.stores && (
             <section className="mb-16 md:mb-32 pt-16 md:pt-24 border-t border-gray-200">
-              <div className="text-center mb-12 md:mb-16">
-                 <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
-                    Retail Locations
-                 </span>
-                 <h2 className="text-3xl md:text-7xl font-thin mb-8">SHOPLIST</h2>
-              </div>
-              
               <div className="container mx-auto px-6 md:px-12">
+                <div className="text-center mb-12 md:mb-16">
+                   <span className="text-[10px] tracking-[0.3em] text-[#8A8A8A] uppercase block mb-6">
+                      Retail Locations
+                   </span>
+                   <h2 className="text-3xl md:text-7xl font-thin mb-8">SHOPLIST</h2>
+                </div>
+                
                 <div className="grid md:grid-cols-2 gap-12">
                   {/* East Japan (Left) */}
                   <div>
