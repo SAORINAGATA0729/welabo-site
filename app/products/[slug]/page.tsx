@@ -523,15 +523,15 @@ export default function ProductDetailPage() {
                  公式オンラインストアで、あなたのライフスタイルに合わせたプランをお選びいただけます。
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
-                 <Link href={`/shopping/${slug}`}>
-                   <Button className="h-14 px-12 bg-white text-[#1A1A1A] border border-white hover:bg-[#1A1A1A] hover:text-white hover:border-white rounded-none text-xs tracking-[0.2em] transition-all whitespace-nowrap w-full md:w-auto">
+                 <Link href={`/shopping/${slug}`} className="w-full md:w-auto md:min-w-[280px]">
+                   <Button className="h-14 w-full md:w-[280px] px-12 bg-white text-[#1A1A1A] border border-white hover:bg-[#1A1A1A] hover:text-white hover:border-white rounded-none text-xs tracking-[0.2em] transition-all whitespace-nowrap">
                       <ShoppingBag className="w-4 h-4 mr-2" />
                       ONLINE STORE
                    </Button>
                  </Link>
                  {product.amazonLink && (
-                    <Link href={product.amazonLink} target="_blank" className="w-full md:w-auto">
-                        <Button variant="outline" className="h-14 px-12 border-white text-white bg-transparent hover:bg-white hover:text-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all whitespace-nowrap w-full">
+                    <Link href={product.amazonLink} target="_blank" className="w-full md:w-auto md:min-w-[280px]">
+                        <Button variant="outline" className="h-14 w-full md:w-[280px] px-12 border-white text-white bg-transparent hover:bg-white hover:text-[#1A1A1A] rounded-none text-xs tracking-[0.2em] transition-all whitespace-nowrap">
                            <ExternalLink className="w-4 h-4 mr-2" />
                            amazon
                         </Button>
