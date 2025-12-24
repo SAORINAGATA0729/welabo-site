@@ -216,14 +216,15 @@ const productData: Record<string, any> = {
     ],
     agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因に着目し、その多くの要因にアプローチすることが期待される成分構成を目指しています。",
     safety: {
+      title: "安心品質の証「GMP認証」取得工場で製造",
       sections: [
         {
-          title: "安全な原料",
+          title: "",
           description: "GMP（Good Manufacturing Practice）=「適正製造規範」とは、原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理することです。第三者機関が品質管理体制を客観的に審査・査察を行い、認められた工場のみが認定されます。",
           image: "https://welabo.jp/wp-content/uploads/concept04.png"
         },
         {
-          title: "製造工場",
+          title: "",
           description: "「本草霊芝胞子」は、健康食品GMPの認証を受けた日本国内工場で厳重な品質管理、衛生管理のもと、最終包装まで一貫して行っています。",
           image: "https://welabo.jp/wp-content/uploads/concept05.jpg"
         }
@@ -618,13 +619,18 @@ export default function ProductDetailPage() {
           {/* Safety / GMP Section */}
           {product.safety && product.safety.sections && (
              <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+               {product.safety.title && (
+                 <h2 className="text-2xl md:text-3xl font-thin mb-12">{product.safety.title}</h2>
+               )}
                <div className="space-y-12 md:space-y-24">
                  {product.safety.sections.map((safetySection: any, index: number) => (
                    <div key={index} className={`${index < product.safety.sections.length - 1 ? 'border-b border-gray-100 pb-12 md:pb-24' : 'pb-0 md:pb-0'}`}>
                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                        {/* Left: Text */}
                        <div className="flex-1 lg:flex-[2]">
-                         <h2 className="text-2xl md:text-3xl font-thin mb-6">{safetySection.title}</h2>
+                         {safetySection.title && (
+                           <h2 className="text-2xl md:text-3xl font-thin mb-6">{safetySection.title}</h2>
+                         )}
                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
                            {safetySection.description}
                          </p>
