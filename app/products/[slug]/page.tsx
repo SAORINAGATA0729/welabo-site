@@ -15,7 +15,6 @@ import { MapPin, Phone, ExternalLink, ShoppingBag } from "lucide-react";
 const productData: Record<string, any> = {
   "luxury-nmn-15000": {
     name: "LUXURY NMN 15000",
-    tagline: "The Pinnacle of Youth",
     description: "NMN（ニコチンアミドモノヌクレオチド）は、ビタミンB3を原料としてつくられる成分で、年齢とともに減少する生体内物質「NAD」の元となります。「LUXURY NMN 15000」は、ヒト臨床試験に基づいた理想的な含有量を配合。さらに、PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
     gallery: [
@@ -255,11 +254,7 @@ export default function ProductDetailPage() {
 
             {/* Product Info */}
             <div className="lg:w-1/2 pt-12">
-              <span className="text-xs tracking-[0.2em] text-[#D4C5B0] uppercase block mb-6">
-                we labo Collection
-              </span>
               <h1 className="text-2xl md:text-6xl font-thin mb-4 leading-tight">{product.name}</h1>
-              <p className="text-lg text-gray-600 font-light mb-12">{product.tagline}</p>
               
               <div className="mb-12">
                 <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-8">
