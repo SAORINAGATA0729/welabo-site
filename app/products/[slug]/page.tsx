@@ -332,7 +332,7 @@ export default function ProductDetailPage() {
                       </div>
                       {/* Right: Image Placeholder (Gray Background Only) - Same width as button (w-full) */}
                       <div className="w-full lg:w-1/2">
-                        <div className="relative w-full aspect-square bg-[#F5F5F5] overflow-hidden">
+                        <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
                         </div>
                       </div>
                     </div>
