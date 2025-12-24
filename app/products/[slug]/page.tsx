@@ -550,8 +550,10 @@ export default function ProductDetailPage() {
                 {product.ingredientsSections.map((ingredient: any, index: number) => {
                   const isSporeLacticAcid = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌";
                   const isAfterSporeLacticAcid = slug === "luxury-probiotics" && index > 0 && product.ingredientsSections[index - 1].title === "有胞子乳酸菌";
+                  // 有胞子乳酸菌の下の線は削除、それ以外は通常通り表示
                   const shouldShowBorderBottom = isSporeLacticAcid ? false : (index < product.ingredientsSections.length - 1);
-                  const shouldShowBorderTop = isAfterSporeLacticAcid || (index > 0 && !isSporeLacticAcid);
+                  // 有胞子乳酸菌の次のセクション（酪酸菌）の上に線を表示、それ以外は通常通り
+                  const shouldShowBorderTop = isAfterSporeLacticAcid ? true : (index > 0);
                   return (
                     <div key={index}>
                       <div className={`${shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''} ${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
