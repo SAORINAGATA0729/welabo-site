@@ -324,27 +324,34 @@ export default function Home() {
                   description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。"
                 }
               ].map((item) => (
-                <Link key={item.id} href={`/products/${item.id}`} className="group block bg-white p-8 hover:shadow-xl transition-all duration-500">
-                  <div className="relative overflow-hidden mb-6 bg-[#F5F5F5] flex items-center justify-center aspect-[3/4]">
-            <Image
-                      src={item.img}
-                      alt={item.name}
-                      fill
-                      className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                      unoptimized
-                    />
+                <div key={item.id} className="group block bg-white p-8 hover:shadow-xl transition-all duration-500">
+                  <Link href={`/products/${item.id}`}>
+                    <div className="relative overflow-hidden mb-6 bg-[#F5F5F5] flex items-center justify-center aspect-[3/4]">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        fill
+                        className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                        unoptimized
+                      />
+                    </div>
+                    <h3 className="text-xl font-light tracking-wide mb-2 text-[#1A1A1A] group-hover:text-[#D4C5B0] transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="text-xs text-[#D4C5B0] mb-4 font-light tracking-wider">{item.tagline}</p>
+                    <p className="text-xs text-[#666] leading-relaxed line-clamp-4 mb-6">
+                      {item.description}
+                    </p>
+                  </Link>
+                  <div className="flex flex-col gap-2">
+                    <Link href={`/products/${item.id}`} className="text-[10px] tracking-widest text-[#8A8A8A] group-hover:text-[#1A1A1A] transition-colors inline-flex items-center gap-2">
+                      商品詳細はこちら <ArrowRight className="w-3 h-3" />
+                    </Link>
+                    <Link href={`/shopping/${item.id}`} className="text-[10px] tracking-widest text-[#8A8A8A] group-hover:text-[#1A1A1A] transition-colors inline-flex items-center gap-2">
+                      オンラインで購入 <ArrowRight className="w-3 h-3" />
+                    </Link>
                   </div>
-                  <h3 className="text-xl font-light tracking-wide mb-2 text-[#1A1A1A] group-hover:text-[#D4C5B0] transition-colors">
-                    {item.name}
-                  </h3>
-                  <p className="text-xs text-[#D4C5B0] mb-4 font-light tracking-wider">{item.tagline}</p>
-                  <p className="text-xs text-[#666] leading-relaxed line-clamp-4 mb-6">
-                    {item.description}
-                  </p>
-                  <span className="text-[10px] tracking-widest text-[#8A8A8A] group-hover:text-[#1A1A1A] transition-colors inline-flex items-center gap-2">
-                    商品詳細はこちら <ArrowRight className="w-3 h-3" />
-                  </span>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
