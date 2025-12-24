@@ -86,13 +86,13 @@ export default function ProductsPage() {
                           {product.description}
                        </p>
                        <div className="flex flex-col sm:flex-row gap-4">
-                         <Link href={`/products/${product.id}`} className="w-full sm:w-auto">
-                            <Button variant="outline" className="w-full sm:w-auto rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
+                         <Link href={`/products/${product.id}`} className="w-full sm:w-auto sm:flex-1">
+                            <Button variant="outline" className="w-full rounded-full px-10 py-6 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all text-xs tracking-[0.2em]">
                                詳細を見る
                             </Button>
                          </Link>
-                         <Link href={`/shopping/${product.id}`} className="w-full sm:w-auto">
-                            <Button className="w-full sm:w-auto rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
+                         <Link href={`/shopping/${product.id}`} className="w-full sm:w-auto sm:flex-1">
+                            <Button className="w-full rounded-full px-10 py-6 bg-[#1A1A1A] text-white border border-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A] hover:border-[#1A1A1A] transition-all text-xs tracking-[0.2em]">
                                オンラインで購入
                             </Button>
                          </Link>
