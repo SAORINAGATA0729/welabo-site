@@ -152,20 +152,6 @@ const productData: Record<string, any> = {
     },
     usage: "健康補助食品として、1日3粒（1袋）を、就寝前に水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
     agingHallmarks: "HALLMARKS に示される 12 の要因に着目し、その多くの要因にアプローチすることが期待される成分構成を目指しています。",
-    safety: {
-      sections: [
-        {
-          title: "安全な原料",
-          description: "国内GMP認定工場にて製造。原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理しています。",
-          image: "https://welabo.jp/wp-content/uploads/concept04.png"
-        },
-        {
-          title: "製造工場",
-          description: "国内GMP認定工場にて製造。原材料の受入から製品出荷までの全製造工程において、きめ細かく具体的に管理しています。",
-          image: "https://welabo.jp/wp-content/uploads/concept05.jpg"
-        }
-      ]
-    },
     price: "¥18,360",
     amazonLink: "https://www.amazon.co.jp/",
     stores: {
