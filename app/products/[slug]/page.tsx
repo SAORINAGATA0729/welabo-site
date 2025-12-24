@@ -551,8 +551,10 @@ export default function ProductDetailPage() {
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
             <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
-              {slug === "honsoureishihoushi" && (
-                <h2 className="text-2xl md:text-3xl font-thin mb-12">配合成分と働きについて</h2>
+              {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") && (
+                <h2 className="text-2xl md:text-3xl font-thin mb-12">
+                  {slug === "honsoureishihoushi" ? "配合成分と働きについて" : "配合成分と各菌の働きについて"}
+                </h2>
               )}
               <div className="space-y-12 md:space-y-24">
                 {product.ingredientsSections.map((ingredient: any, index: number) => (
@@ -560,7 +562,7 @@ export default function ProductDetailPage() {
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                       {/* Left: Text */}
                       <div className="flex-1 lg:flex-[2]">
-                        {slug === "honsoureishihoushi" ? (
+                        {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") ? (
                           <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
                         ) : (
                           <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
