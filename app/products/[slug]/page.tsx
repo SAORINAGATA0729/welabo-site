@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/lib/context/cart-context";
-import { MapPin, Phone, ExternalLink, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, ExternalLink, ShoppingBag, ChevronRight } from "lucide-react";
 
 // Product Data
 const productData: Record<string, any> = {
@@ -395,6 +395,7 @@ export default function ProductDetailPage() {
   const slug = params?.slug as string | undefined;
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   
   if (!slug || !productData[slug]) {
     return (
@@ -408,6 +409,19 @@ export default function ProductDetailPage() {
   }
   
   const product = productData[slug];
+  
+  // Create images array from img and gallery (max 5 images)
+  const allImages = product.gallery 
+    ? [product.img, ...product.gallery].slice(0, 5)
+    : [product.img];
+  
+  const handlePrevImage = () => {
+    setSelectedImageIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setSelectedImageIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <div className="min-h-screen bg-white text-[#1A1A1A] font-serif selection:bg-[#D4C5B0] selection:text-white">
@@ -423,22 +437,46 @@ export default function ProductDetailPage() {
               
               {/* Image Gallery - Mobile: After Title, Desktop: Left */}
               <div className="lg:hidden mb-6">
-                <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
+                <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden group">
                   <Image
-                    src={product.img}
+                    src={allImages[selectedImageIndex]}
                     alt={product.name}
                     fill
-                    className="object-contain p-4"
+                    className="object-contain p-4 transition-all duration-500"
                     unoptimized
                   />
+                  
+                  {/* Navigation Arrows */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button 
+                        onClick={handlePrevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-sm"
+                      >
+                        <ChevronRight className="w-6 h-6 rotate-180 text-gray-800" />
+                      </button>
+                      <button 
+                        onClick={handleNextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-sm"
+                      >
+                        <ChevronRight className="w-6 h-6 text-gray-800" />
+                      </button>
+                    </>
+                  )}
                 </div>
-                {/* Thumbnail Gallery */}
-                {product.gallery && (
-                  <div className="grid grid-cols-4 gap-4">
-                    {product.gallery.map((thumbImg: string, index: number) => (
-                      <div key={index} className="relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border border-transparent hover:border-gray-200">
+                {/* Thumbnail Gallery - Max 5 images */}
+                {allImages.length > 1 && (
+                  <div className="grid grid-cols-5 gap-4">
+                    {allImages.slice(0, 5).map((img: string, index: number) => (
+                      <div 
+                        key={index} 
+                        className={`relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer transition-all duration-300 ${
+                          selectedImageIndex === index ? 'ring-1 ring-[#1A1A1A] opacity-100' : 'opacity-60 hover:opacity-100'
+                        }`}
+                        onClick={() => setSelectedImageIndex(index)}
+                      >
                         <Image
-                          src={thumbImg}
+                          src={img}
                           alt={`${product.name} ${index + 1}`}
                           fill
                           className="object-contain p-2"
@@ -510,22 +548,46 @@ export default function ProductDetailPage() {
 
             {/* Image Gallery - Desktop: Left (Hidden on Mobile) */}
             <div className="hidden lg:block lg:w-1/2 order-2 lg:order-1">
-              <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden">
+              <div className="relative aspect-square w-full bg-[#F5F5F5] mb-4 overflow-hidden group">
                 <Image
-                  src={product.img}
+                  src={allImages[selectedImageIndex]}
                   alt={product.name}
                   fill
-                  className="object-contain p-4"
+                  className="object-contain p-4 transition-all duration-500"
                   unoptimized
                 />
+                
+                {/* Navigation Arrows */}
+                {allImages.length > 1 && (
+                  <>
+                    <button 
+                      onClick={handlePrevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-sm"
+                    >
+                      <ChevronRight className="w-6 h-6 rotate-180 text-gray-800" />
+                    </button>
+                    <button 
+                      onClick={handleNextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-sm"
+                    >
+                      <ChevronRight className="w-6 h-6 text-gray-800" />
+                    </button>
+                  </>
+                )}
               </div>
-              {/* Thumbnail Gallery */}
-              {product.gallery && (
-                <div className="grid grid-cols-4 gap-4">
-                  {product.gallery.map((thumbImg: string, index: number) => (
-                    <div key={index} className="relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border border-transparent hover:border-gray-200">
+              {/* Thumbnail Gallery - Max 5 images */}
+              {allImages.length > 1 && (
+                <div className="grid grid-cols-5 gap-4">
+                  {allImages.slice(0, 5).map((img: string, index: number) => (
+                    <div 
+                      key={index} 
+                      className={`relative aspect-square w-full bg-[#F9F9F9] overflow-hidden cursor-pointer transition-all duration-300 ${
+                        selectedImageIndex === index ? 'ring-1 ring-[#1A1A1A] opacity-100' : 'opacity-60 hover:opacity-100'
+                      }`}
+                      onClick={() => setSelectedImageIndex(index)}
+                    >
                       <Image
-                        src={thumbImg}
+                        src={img}
                         alt={`${product.name} ${index + 1}`}
                         fill
                         className="object-contain p-2"
