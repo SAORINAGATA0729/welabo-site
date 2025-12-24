@@ -752,7 +752,8 @@ export default function ProductDetailPage() {
           <section className="bg-[#1A1A1A] text-white p-8 md:p-24 text-center mb-8 md:mb-12">
               <h2 className="text-3xl md:text-4xl font-thin mb-6">{product.name}を体験</h2>
               <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed text-sm">
-                 あなたのライフスタイルに合わせて商品をお選びいただけます。
+                 あなたのライフスタイルに合わせて商品を<br />
+                 お選びいただけます。
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
                  <Link href={`/shopping/${slug}`} className="w-full md:w-auto md:min-w-[280px]">
