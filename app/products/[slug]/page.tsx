@@ -41,13 +41,13 @@ const productData: Record<string, any> = {
         {
             title: "そこで「NMN」が重要",
             subtitle: "Replenishing NAD",
-            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。また、セノリティクスに注目されている成分フィセチンを1500mg、そら豆や枝豆に含まれるハッキリ成分PQQを1800mg、若々しさをサポートするコエンザイムQ10を4500mg配合しています。快適な毎日をサポートします。",
+            description: "年齢とともに体内で減少するNAD量。減少したNADを補うため、体内でNADに変化されるNMNを摂取することが大切です。NMNはあらゆる生物の細胞に存在しており緑黄色野菜やフルーツなどにも含まれていますが、その含有量はごくわずかです。1瓶に国産NMNを15000mg配合し、NMNの摂取目安量としては、500mg/日 摂ることができます。また、そら豆や枝豆に含まれるハッキリ成分PQQを1800mg、若々しさをサポートするコエンザイムQ10を4500mg、セノリティクスに注目されている成分フィセチンを1500mgを配合しています。快適な毎日をサポートします。",
             image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         },
         {
             title: "PQQ・コエンザイムQ10・フィセチン配合",
             subtitle: "Synergistic Ingredients",
-            description: "フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。",
+            description: "PQQ（1800mg配合）は、ビタミン様物質で、冴えや記憶にかかわる、たんぱく質「NGF」を助けるはたらきがあります。コエンザイムQ10（4500mg配合）は、エネルギーづくりに欠かせない成分です。さらにPQQと一緒に摂ることで、より高いパワーが期待されます。フィセチン（1500mg配合）は、ポリフェノール類の一種で、カラダの内側からキレイにしてくれます。",
             image: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
         },
         {
@@ -834,10 +834,18 @@ export default function ProductDetailPage() {
 
           {/* Bottom CTA */}
           <section className="bg-[#1A1A1A] text-white p-8 md:p-24 text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-thin mb-6">{product.name}を体験</h2>
+              <h2 className="text-3xl md:text-4xl font-thin mb-6">
+                {(slug === "luxury-nmn-15000" || slug === "luxury-nmn-15000-packet" || slug === "luxury-nmn-15000-3p") ? product.name : `${product.name}を体験`}
+              </h2>
               <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed text-sm">
-                 あなたのライフスタイルに合わせて商品を<br className="md:hidden" />
-                 お選びいただけます。
+                {(slug === "luxury-nmn-15000" || slug === "luxury-nmn-15000-packet" || slug === "luxury-nmn-15000-3p") ? (
+                  <>こちらからご購入いただけます。  ※乳酸菌、霊芝も同様に</>
+                ) : (
+                  <>
+                    あなたのライフスタイルに合わせて商品を<br className="md:hidden" />
+                    お選びいただけます。
+                  </>
+                )}
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
                  <Link href={`/shopping/${slug}`} className="w-full md:w-auto md:min-w-[280px]">
