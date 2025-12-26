@@ -14,12 +14,12 @@ export function SiteFooter() {
              </p>
           </div>
           
-          <div className="flex flex-wrap gap-8 md:gap-10 lg:gap-12 flex-1 lg:justify-center">
+          <div className="flex flex-wrap gap-6 md:gap-6 lg:gap-8 xl:gap-12 flex-1 lg:justify-center">
              {["Concept", "Products", "News", "Company", "Shoplist", "Contact", "Shopping"].map(item => (
                <Link 
                  key={item}
                  href={item === "Shoplist" ? "/stockists" : item === "Shopping" ? "/shopping" : `/${item.toLowerCase()}`} 
-                 className="text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer uppercase"
+                 className="text-xs md:text-sm font-light tracking-[0.1em] hover:text-[#D4C5B0] transition-colors cursor-pointer uppercase whitespace-nowrap"
                >
                  {item}
                </Link>
