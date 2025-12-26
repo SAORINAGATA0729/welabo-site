@@ -53,6 +53,9 @@ const productData: Record<string, any> = {
     description: "【10%OFF】継続してケアしたい方向けのお得な3個セットです。通常購入（88,560円×3＝265,680円）より26,568円お得にお求めいただけます。ご家族やパートナーとのシェアにもおすすめです。",
     images: [
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png",
       "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
     ],
     specs: {
