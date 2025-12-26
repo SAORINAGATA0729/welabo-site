@@ -122,7 +122,41 @@ const productData: Record<string, any> = {
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/3_000000000007.png?1707984893",
       "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/4_000000000007.png?1707984893",
-      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/5_000000000007.png?1707984893"
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/5_000000000007.png?1707984893",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
+    ],
+    specs: {
+      name: "NMN含有加工食品",
+      ingredients: "β-NMN（国内製造）、コエンザイムQ10、でん粉、デキストリン、ピロロキノリンキノンニナトリウム塩（PQQ）、フィセチン/HPMC、ステアリン酸カルシウム、リン酸三カルシウム、二酸化ケイ素",
+      capacity: "43.8g（120粒×1粒の重量365mg、1粒の内容量290mg）× 2個",
+      expiry: "製品の右側面下部に記載",
+      storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。本品のβ-NMNは日本国内で製造したものを使用しています。",
+      nutrition: {
+        energy: "1.53kcal",
+        protein: "0.08g",
+        lipid: "0.05g",
+        carbohydrate: "0.2g",
+        salt: "0.004g"
+      }
+    },
+    usage: "健康補助食品として、1日4粒を、昼食後に水などでお召し上がりください。",
+    precautions: [
+      "乳幼児の手の届かないところに置いてください。",
+      "食物アレルギーのある方、薬を服用したり通院中の方は、お召し上がりになる前にお医者様とご相談ください。",
+      "食品のため衛生的な環境でお取り扱いください。",
+      "本品は原材料の性質上、外観やにおいに多少の違いが生じる場合がございます。"
+    ]
+  },
+  "luxury-nmn-15000-bag-2months": {
+    name: "LUXURY NMN 15000 袋包装（2か月分）",
+    price: "176,040",
+    description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
+    images: [
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/3_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/4_000000000007.png?1707984893",
+      "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/5_000000000007.png?1707984893",
+      "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
     ],
     specs: {
       name: "NMN含有加工食品",
@@ -402,7 +436,12 @@ export default function ShoppingDetailPage() {
 
                 {product.specs.nutrition && (
                   <div className="mt-8 bg-gray-50 p-6">
-                    <h4 className="text-sm font-medium mb-4">栄養成分表示（1粒380mg当たり）</h4>
+                    <h4 className="text-sm font-medium mb-4">
+                      栄養成分表示
+                      {slug === "luxury-probiotics" || slug === "honsoureishihoushi" 
+                        ? "（1包当たり）" 
+                        : "（1粒380mg当たり）"}
+                    </h4>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-xs text-gray-600">
                       <div>
                         <span className="block text-gray-400 mb-1">エネルギー</span>
