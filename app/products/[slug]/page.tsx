@@ -838,7 +838,7 @@ export default function ProductDetailPage() {
                 {product.name}
               </h2>
               <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed text-sm">
-                こちらからご購入いただけます。  ※乳酸菌、霊芝も同様に
+                こちらからご購入いただけます。
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
                  <Link href={`/shopping/${slug}`} className="w-full md:w-auto md:min-w-[280px]">
