@@ -25,14 +25,14 @@ const products = [
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg"
   },
   {
-    id: "luxury-nmn-15000-packet",
-    name: "LUXURY NMN 15000 袋包装（2か月分）",
+    id: "luxury-nmn-15000-3p",
+    name: "LUXURY NMN 15000 3本SET 〔3ヶ月体感セット〕",
     description: "「NMN」のヒト臨床試験に基づいた理想的な含有量を配合。PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
   },
   {
-    id: "luxury-nmn-15000-3p",
-    name: "LUXURY NMN 15000 3本SET 〔3ヶ月体感セット〕",
+    id: "luxury-nmn-15000-packet",
+    name: "LUXURY NMN 15000 袋包装（2か月分）",
     description: "「NMN」のヒト臨床試験に基づいた理想的な含有量を配合。PQQ、コエンザイムQ10、フィセチンとの組み合わせで、よりパワフルに、かつてない「実感力」を実現しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_NMN_15000_01.png"
   }
