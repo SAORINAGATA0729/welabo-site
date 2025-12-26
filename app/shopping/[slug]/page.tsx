@@ -182,8 +182,7 @@ const productData: Record<string, any> = {
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_02_0-scaled.jpg",
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_03.jpg",
-      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_04.jpg",
-      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_img05.jpg"
+      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_04.jpg"
     ],
     specs: {
       name: "霊芝胞子含有加工食品",

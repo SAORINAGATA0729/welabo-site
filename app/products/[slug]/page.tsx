@@ -183,8 +183,7 @@ const productData: Record<string, any> = {
     gallery: [
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_02_0-scaled.jpg",
       "https://welabo.jp/wp-content/uploads/honsoureishihoushi_03.jpg",
-      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_04.jpg",
-      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_img05.jpg"
+      "https://welabo.jp/wp-content/uploads/honsoureishihoushi_04.jpg"
     ],
     ingredientsSections: [
       {
@@ -204,7 +203,7 @@ const productData: Record<string, any> = {
         description: "冬虫夏草は子嚢菌類のキノコの一種で、中国では昔から漢方素材として珍重されてきました。冬虫夏草には、有害成分をアポトーシス（細胞の自然死）に導く働きがあるとされ、健康維持に役立つ素材として注目されています。本製品では、厳選された冬虫夏草を配合し、その有効成分を最大限に活かしています。"
       }
     ],
-    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因に着目し、その多くの要因にアプローチすることが期待される成分構成を目指しています。",
+    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、5の要因にアプローチします。",
     safety: {
       title: "安心品質の証「GMP認証」取得工場で製造",
       sections: [
