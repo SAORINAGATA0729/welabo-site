@@ -198,11 +198,11 @@ const productData: Record<string, any> = {
       expiry: "製品の枠外下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。",
       nutrition: {
-        energy: "---",
-        protein: "---",
-        lipid: "---",
-        carbohydrate: "---",
-        salt: "---"
+        energy: "3.91kcal",
+        protein: "0.03g",
+        lipid: "0.04g",
+        carbohydrate: "0.86g",
+        salt: "0.002g"
       }
     },
     usage: "1日1包を目安に、水またはぬるま湯とともにお召し上がりください。",
@@ -228,11 +228,11 @@ const productData: Record<string, any> = {
       expiry: "製品の枠外下部に記載",
       storage: "高温多湿及び直射日光を避け、涼しい所に保存してください。",
       nutrition: {
-        energy: "---",
-        protein: "---",
-        lipid: "---",
-        carbohydrate: "---",
-        salt: "---"
+        energy: "16.4kcal",
+        protein: "0.67g",
+        lipid: "0.27g",
+        carbohydrate: "2.82g",
+        salt: "0.009g"
       }
     },
     usage: "健康補助食品として、1日1包を、水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
@@ -438,8 +438,10 @@ export default function ShoppingDetailPage() {
                   <div className="mt-8 bg-gray-50 p-6">
                     <h4 className="text-sm font-medium mb-4">
                       栄養成分表示
-                      {slug === "luxury-probiotics" || slug === "honsoureishihoushi" 
-                        ? "（1包当たり）" 
+                      {slug === "luxury-probiotics" 
+                        ? "（1包 3粒当たり）" 
+                        : slug === "honsoureishihoushi"
+                        ? "（1包4000mgあたり）"
                         : "（1粒380mg当たり）"}
                     </h4>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-xs text-gray-600">
