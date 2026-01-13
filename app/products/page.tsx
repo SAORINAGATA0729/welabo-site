@@ -53,7 +53,7 @@ export default function ProductsPage() {
               </span>
               <h1 className="text-3xl md:text-7xl font-thin mb-8">PRODUCTS</h1>
               <p className="text-sm leading-[2.4] text-gray-600 font-light whitespace-pre-line">
-                輝き続ける人生を支える「アクティブエイジング」<br />
+                輝き続ける人生を支える<span className="inline-block">「アクティブエイジング」</span><br />
                 we laboは、最新の研究成果に基づいたエイジングケア製品を展開しています。
               </p>
            </div>

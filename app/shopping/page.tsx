@@ -16,22 +16,6 @@ const products = [
     tagline: "「細胞力」×「実感力」"
   },
   {
-    id: "luxury-nmn-15000-3p",
-    name: "LUXURY NMN 15000 3本SET 〔3ヶ月体感セット〕",
-    price: "¥239,112",
-    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
-    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
-    tagline: ""
-  },
-  {
-    id: "luxury-nmn-15000-packet",
-    name: "LUXURY NMN 15000 袋包装（2か月分）",
-    price: "¥176,040",
-    description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
-    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
-    tagline: ""
-  },
-  {
     id: "luxury-probiotics",
     name: "LUXURY PROBIOTICS+",
     price: "¥18,360",
@@ -46,6 +30,22 @@ const products = [
     description: "貴重な国産（長野県）霊芝胞子の1包1000mgを主成分にメシマコブ、アガリクス、冬虫夏草を独自配合しています。",
     img: "https://welabo.jp/wp-content/uploads/honsoureishihoushi_01_0-scaled.jpg",
     tagline: "「伝統」×「科学」"
+  },
+  {
+    id: "luxury-nmn-15000-3p",
+    name: "LUXURY NMN 15000 3本SET 〔3ヶ月体感セット〕",
+    price: "¥239,112",
+    description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
+    tagline: ""
+  },
+  {
+    id: "luxury-nmn-15000-packet",
+    name: "LUXURY NMN 15000 袋包装（2か月分）",
+    price: "¥176,040",
+    description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
+    img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
+    tagline: ""
   }
 ];
 

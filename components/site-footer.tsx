@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-16 lg:gap-8 mb-24">
           <div className="flex-shrink-0">
-             <h2 className="text-2xl tracking-[0.2em] font-thin mb-8">we labo</h2>
+             <h2 className="text-2xl tracking-[0.2em] font-thin mb-8">株式会社 we labo</h2>
              <p className="text-xs text-[#555] leading-loose tracking-wide">
                〒104-0061<br />
                東京都中央区銀座3丁目10番7号 銀座京屋ビル8階
