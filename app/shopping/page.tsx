@@ -37,7 +37,7 @@ const products = [
     price: "¥239,112",
     description: "LUXURY NMN 15000は、高濃度のNMNとあわせて、PQQ・コエンザイムQ10・フィセチンを配合しています。その相乗効果で、より高いパワーが期待されるサプリメントです。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/06/00/1_000000000006.png?1694410542",
-    tagline: ""
+    tagline: "「細胞力」×「実感力」"
   },
   {
     id: "luxury-nmn-15000-packet",
@@ -45,7 +45,7 @@ const products = [
     price: "¥176,040",
     description: "2ヶ月分のLUXURY NMN 15000を袋包装でお届けします。ライフスタイルに合わせて無理なく続けられます。",
     img: "https://makeshop-multi-images.akamaized.net/welabo/shopimages/07/00/2_000000000007.png?1707984893",
-    tagline: ""
+    tagline: "「細胞力」×「実感力」"
   }
 ];
 
@@ -87,6 +87,7 @@ export default function ShoppingPage() {
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}
                          </h3>
+                         <p className="text-xs text-[#D4C5B0] mb-2 font-light tracking-wider">{product.tagline}</p>
                          <p className="text-sm font-medium mb-4 font-sans">{product.price}<span className="text-xs font-normal text-gray-500 ml-1">（税込）</span></p>
                          <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 font-light">
                            {product.description}
