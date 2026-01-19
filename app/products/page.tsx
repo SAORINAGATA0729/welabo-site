@@ -82,8 +82,8 @@ export default function ProductsPage() {
                     </div>
                     
                     <div className="w-full lg:w-1/2">
-                       <h2 className="text-3xl md:text-5xl font-thin mb-4">{product.name}</h2>
-                       <p className="text-sm text-[#D4C5B0] mb-4 font-light tracking-wider">{product.tagline}</p>
+                       <h2 className="text-3xl md:text-5xl font-thin mb-6">{product.name}</h2>
+                       <p className="text-base md:text-lg text-[#D4C5B0] mb-6 font-light tracking-wider">{product.tagline}</p>
                        <p className="text-sm leading-[2.4] text-gray-600 font-light mb-12 text-justify">
                           {product.description}
                        </p>
