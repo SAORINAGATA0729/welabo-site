@@ -87,7 +87,7 @@ export default function ShoppingPage() {
                          <h3 className="text-lg font-light tracking-wide mb-2 group-hover:text-[#D4C5B0] transition-colors">
                            {product.name}
                          </h3>
-                         <p className="text-base md:text-lg text-[#D4C5B0] mb-4 font-light tracking-wider">{product.tagline}</p>
+                         <p className="text-lg text-[#D4C5B0] mb-4 font-light tracking-wider">{product.tagline}</p>
                          <p className="text-sm font-medium mb-4 font-sans">{product.price}<span className="text-xs font-normal text-gray-500 ml-1">（税込）</span></p>
                          <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 font-light">
                            {product.description}
