@@ -117,26 +117,59 @@ const productData: Record<string, any> = {
       "昭和大学 名誉教授 二木芳人氏 推薦",
       "国内GMP認定工場にて製造"
     ],
+    introSections: [
+      {
+        title: "善玉菌とは？",
+        description: "善玉菌は、腸内環境を良好に保ち、有害物質の排出を助ける働きをします。健康的には、腸内細菌のバランスが重要となり、ストレスや食生活の変化で悪玉菌が増殖する場合があります。腸内環境を整えるためには、善玉菌は必須の存在です。"
+      },
+      {
+        title: "「LUXURY PROBIOTICS+」による善玉菌の働き",
+        description: "LUXURY PROBIOTICS+では、腸内細菌を整えることで、腸内フローラのバランスを整え、腸内環境を改善します。腸内細菌が生成する短鎖脂肪酸などの物質が、肌の美しさにも関わる重要な役割を果たしているのです。"
+      },
+      {
+        title: "短鎖脂肪酸とは？",
+        description: "短鎖脂肪酸は、腸内細菌が生成する物質で、腸内環境改善に関わる腸のエネルギー源となり、悪玉菌を抑制するなど、老化現象を防ぐ働きがあります。短鎖脂肪酸を増やすには、腸内環境に合わせ、腸の働きに必要な善玉菌を増やし、腸内環境を整える環境を作ることが必要です。善玉菌が短鎖脂肪酸を生成し、腸から体全体へ、その働きが広がります。"
+      },
+      {
+        title: "「LUXURY PROBIOTICS+」による腸内フローラへの働き",
+        description: "腸全体に広がる腸内フローラの形成に、善玉菌の活性化が必要です。LUXURY PROBIOTICS+では、腸から大腸まで、腸内フローラ形成に必要な環境を作り、善玉菌を活性化させ、腸内環境を整える環境を作るために、59種の植物発酵エキス、植物性成分、食物繊維が配合され、腸内フローラの安定化を実現しています。"
+      }
+    ],
     ingredientsSections: [
       {
-        title: "植物発酵エキス末",
-        description: "59種類の植物性原料を使用し、3年間かけて発酵・熟成させたエキス末です。植物はアブラナ科の野菜を中心に、旬の収穫・露地栽培にこだわり、科学肥料や農薬を使わず育てられたものを採用しています。"
-      },
-      {
         title: "納豆菌",
-        description: "納豆菌（枯草菌）は、納豆を作るのに欠かせないもの。脂肪やタンパク質を強力に分解する酵素をつくる有用菌です。胃酸に強く腸まで届き、消化を助けながらアミノ酸などの栄養生成をサポートします。腸内環境を整える働きし、代謝やスッキリに役立つ菌として注目されています。"
-      },
-      {
-        title: "ビフィズス菌B-3",
-        description: "ヒトや動物の腸内に存在する乳酸菌の仲間で、腸内で働く代表的な善玉菌で、特に腸内バランスを整える働きが高く、スッキリ感や健康維持に役立つ菌として注目されています。乳酸や酪酸などの短鎖脂肪酸をつくって悪玉菌の増殖をしっかり抑える力が特長です。"
+        description: "納豆菌（枯草菌）は、納豆を作るのに欠かせないもの。脂肪やタンパク質を強力に分解する酵素をつくる有用菌です。胃酸に強く腸まで届き、消化を助けながらアミノ酸などの栄養生成をサポートします。腸内環境を整える働きし、代謝やスッキリに役立つ菌として注目されています。",
+        group: "4つの生きた善玉菌"
       },
       {
         title: "有胞子乳酸菌",
-        description: "普通の乳酸菌と異なり、強い殻で守られた「胞子」という状態になるのが特徴です。熱や酸に非常に強く、しっかり腸まで届く乳酸菌です。腸内では悪玉菌を抑える短鎖脂肪酸である乳酸をつくり、ビフィズス菌など善玉菌の働きを力強くサポートします。確かな働きを発揮する機能性乳酸菌です。"
+        description: "普通の乳酸菌と異なり、強い殻で守られた「胞子」という状態になるのが特徴です。熱や酸に非常に強く、しっかり腸まで届く乳酸菌です。腸内では悪玉菌を抑える短鎖脂肪酸である乳酸をつくり、ビフィズス菌など善玉菌の働きを力強くサポートします。確かな働きを発揮する機能性乳酸菌です。",
+        group: "4つの生きた善玉菌"
+      },
+      {
+        title: "ビフィズス菌B-3",
+        description: "善玉菌の活動を促進し、腸内で増殖します。腸のバリア機能の向上、腸の弾力性向上など、複数の機能が報告されており、ヒト由来菌の活動強化、体の機能向上をサポートしています。",
+        group: "4つの生きた善玉菌"
       },
       {
         title: "酪酸菌",
-        description: "酪酸菌は、腸の健康に欠かせない短鎖脂肪酸「酪酸」を唯一つくり出せる特別な菌です。酪酸は腸のエネルギー源となり、腸内環境のバランス維持やバリア機能のサポートにも関わります。乳酸菌やビフィズス菌では生み出せない酪酸を補うことで、腸のコンディションをより根本から整えることが期待できます。"
+        description: "酪酸菌は、腸の健康に欠かせない短鎖脂肪酸「酪酸」を唯一つくり出せる特別な菌です。酪酸は腸のエネルギー源となり、腸内環境のバランス維持やバリア機能のサポートにも関わります。乳酸菌やビフィズス菌では生み出せない酪酸を補うことで、腸のコンディションをより根本から整えることが期待できます。",
+        group: "4つの生きた善玉菌"
+      },
+      {
+        title: "植物発酵エキス",
+        description: "59種の植物が配合され、腸内環境と善玉菌の活動が必要となり、植物成分が腸内細菌のエネルギー源となり、善玉菌の活動を促進しています。",
+        group: "善玉菌の栄養素"
+      },
+      {
+        title: "オリゴ糖",
+        description: "短鎖脂肪酸の生成にあたり、腸のエネルギー源となり、善玉菌が活性化します。腸内環境に適した物質であり、整腸作用もあります。腸内環境を整え、腸の健康な状態が、善玉菌の発生を促し、複数の機能と腸内細菌環境に働きかけ、腸内環境改善や腸内機能向上、複数の相互作用が期待できます。",
+        group: "善玉菌の栄養素"
+      },
+      {
+        title: "食物繊維",
+        description: "複数の食物繊維が、腸内での善玉菌の活動を促進し、腸の状態をおだやかにしています。腸内では、菌が、体と腸の健康な状態を保つ働きをしています。",
+        group: "善玉菌の栄養素"
       },
       {
         title: "胃酸に強い耐酸性カプセル使用",
@@ -149,6 +182,14 @@ const productData: Record<string, any> = {
       description: "「良好な腸内環境を維持する事は、健康な生活の基本です」",
       bio: "昭和大学 名誉教授 1976年川崎医科大学卒業。同大学呼吸器内科を経て、1988年から米国ニューヨーク・Memorial Sloan-Kettering Cancer Centerに留学。1990年に帰国後は、川崎医科大学、倉敷第一病院呼吸器センターを経て、2006年より昭和大学医学部 臨床感染症学講座 教授。2017年より同特任教授、2020年より同客員教授、2024年より現職。日本化学療法学会、日本感染症学会、日本呼吸器学会等、多数の学会に所属。"
     },
+    safety: {
+      sections: [
+        {
+          title: "製造工場",
+          description: "GMP（Good Manufacturing Practice）は、製造品質管理などの基準のことで、製造から出荷までの全プロセスに対して、厳密な質管理が行われることで、認定製品のみが認可されます。LUXURY PROBIOTICS+は、GMP認定工場で製造され、複数の成分が組み合わされた最先端処方として、品質までを厳密にしている独自の処方を使用しています。"
+        }
+      ]
+    },
     specs: {
       "内容量": "30包",
       "主要成分": "乳酸菌, 植物発酵エキス, 納豆菌, 酪酸菌",
@@ -156,7 +197,7 @@ const productData: Record<string, any> = {
       "原産国": "日本"
     },
     usage: "健康補助食品として、1日3粒（1袋）を、就寝前に水などでお召し上がりください。※寝る1時間くらい前がおすすめです。",
-    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY NMN 15000は12の内、2の要因にアプローチします。",
+    agingHallmarks: "老化研究の世界基準であるAGING HALLMARKSで、12の老化要因が示されています。LUXURY PROBIOTICS+は12の内、2の要因にアプローチします。",
     price: "¥18,360",
     amazonLink: "https://www.amazon.co.jp/",
     stores: {
@@ -601,52 +642,75 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
+          {/* Intro Sections (luxury-probiotics only) */}
+          {product.introSections && (
+            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              <div>
+                {product.introSections.map((section: any, index: number) => (
+                  <div key={index} className={index > 0 ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
+                    <div className={index < product.introSections.length - 1 ? 'pb-12 md:pb-24' : ''}>
+                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                        <div className="flex-1 lg:flex-[2]">
+                          <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
+                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                            {section.description}
+                          </p>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                          <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (
             <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
               {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") && (
                 <h2 className="text-2xl md:text-3xl font-thin mb-12">
-                  {slug === "honsoureishihoushi" ? "配合成分と働きについて" : "配合成分と各菌の働きについて"}
+                  配合成分と働きについて
                 </h2>
               )}
               <div>
                 {product.ingredientsSections.map((ingredient: any, index: number) => {
-                  const isSporeLacticAcid = slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌";
-                  // 有胞子乳酸菌の下の線は削除、それ以外は通常通り表示
-                  const shouldShowBorderBottom = isSporeLacticAcid ? false : (index < product.ingredientsSections.length - 1);
-                  // すべてのセクション間（最初のセクション以外）に線を表示
-                  const shouldShowBorderTop = index > 0;
+                  const prevGroup = index > 0 ? product.ingredientsSections[index - 1].group : null;
+                  const showGroupHeader = ingredient.group && ingredient.group !== prevGroup;
+                  const shouldShowBorderTop = index > 0 && !showGroupHeader;
                   return (
-                    <div key={index} className={shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
-                      <div className={`${shouldShowBorderBottom ? 'border-b border-gray-100 pb-12 md:pb-24' : (index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : 'pb-0 md:pb-0')} last:border-0`}>
-                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                          {/* Left: Text */}
-                          <div className="flex-1 lg:flex-[2]">
-                            {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") ? (
-                              <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
-                            ) : (
-                              <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
-                            )}
-                            <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                              {ingredient.description}
-                            </p>
-                          </div>
-                          {/* Right: Image Placeholder (Gray Background Only) - Same width as button (w-full) */}
-                          <div className="w-full lg:w-1/2">
-                            <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                    <div key={index}>
+                      {/* Group sub-header */}
+                      {showGroupHeader && (
+                        <div className={index > 0 ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
+                          <h3 className="text-xl md:text-2xl font-thin mb-8 text-[#8A8A8A] tracking-widest">{ingredient.group}</h3>
+                        </div>
+                      )}
+                      <div className={shouldShowBorderTop ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
+                        <div className={index < product.ingredientsSections.length - 1 ? 'pb-12 md:pb-24' : ''}>
+                          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                            {/* Left: Text */}
+                            <div className="flex-1 lg:flex-[2]">
+                              {(slug === "honsoureishihoushi" || slug === "luxury-probiotics") ? (
+                                <h3 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h3>
+                              ) : (
+                                <h2 className="text-2xl md:text-3xl font-thin mb-6">{ingredient.title}</h2>
+                              )}
+                              <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                                {ingredient.description}
+                              </p>
+                            </div>
+                            {/* Right: Image Placeholder (Gray Background Only) */}
+                            <div className="w-full lg:w-1/2">
+                              <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {/* Special wide images after "有胞子乳酸菌" section for luxury-probiotics */}
-                      {slug === "luxury-probiotics" && ingredient.title === "有胞子乳酸菌" && (
-                        <div className="mt-12 md:mt-24 space-y-8 md:space-y-12">
-                          <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
-                          </div>
-                          <div className="relative w-full aspect-[16/9] bg-[#F5F5F5] overflow-hidden">
-                          </div>
-                        </div>
-                      )}
                     </div>
                   );
                 })}
