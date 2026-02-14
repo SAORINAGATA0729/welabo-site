@@ -656,12 +656,12 @@ export default function ProductDetailPage() {
                           <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-12">
                             {section.description}
                           </p>
-                          <div className="relative w-full bg-[#F5F5F5] overflow-hidden">
+                          <div className="relative w-full max-w-2xl mx-auto bg-[#F5F5F5] overflow-hidden">
                             <Image
                               src={section.fullWidthImage}
                               alt={section.title}
-                              width={1200}
-                              height={1600}
+                              width={800}
+                              height={1000}
                               className="w-full h-auto object-contain"
                               unoptimized
                             />
