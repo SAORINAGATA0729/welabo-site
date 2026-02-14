@@ -132,7 +132,8 @@ const productData: Record<string, any> = {
       },
       {
         title: "「LUXURY PROBIOTICS+」による腸内フローラへの働き",
-        description: "腸全体に広がる腸内フローラの形成に、善玉菌の活性化が必要です。LUXURY PROBIOTICS+では、腸から大腸まで、腸内フローラ形成に必要な環境を作り、善玉菌を活性化させ、腸内環境を整える環境を作るために、59種の植物発酵エキス、植物性成分、食物繊維が配合され、腸内フローラの安定化を実現しています。"
+        description: "腸全体に広がる腸内フローラの形成に、善玉菌の活性化が必要です。LUXURY PROBIOTICS+では、腸から大腸まで、腸内フローラ形成に必要な環境を作り、善玉菌を活性化させ、腸内環境を整える環境を作るために、59種の植物発酵エキス、植物性成分、食物繊維が配合され、腸内フローラの安定化を実現しています。",
+        fullWidthImage: "https://welabo.jp/msimg/LUXURY_PROBIOTICS/lp/lfflow02.png"
       }
     ],
     ingredientsSections: [
@@ -649,18 +650,37 @@ export default function ProductDetailPage() {
                 {product.introSections.map((section: any, index: number) => (
                   <div key={index} className={index > 0 ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
                     <div className={index < product.introSections.length - 1 ? 'pb-12 md:pb-24' : ''}>
-                      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                        <div className="flex-1 lg:flex-[2]">
+                      {section.fullWidthImage ? (
+                        <div>
                           <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
-                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-12">
                             {section.description}
                           </p>
-                        </div>
-                        <div className="w-full lg:w-1/2">
-                          <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                          <div className="relative w-full bg-[#F5F5F5] overflow-hidden">
+                            <Image
+                              src={section.fullWidthImage}
+                              alt={section.title}
+                              width={1200}
+                              height={1600}
+                              className="w-full h-auto object-contain"
+                              unoptimized
+                            />
                           </div>
                         </div>
-                      </div>
+                      ) : (
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                          <div className="flex-1 lg:flex-[2]">
+                            <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
+                            <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                              {section.description}
+                            </p>
+                          </div>
+                          <div className="w-full lg:w-1/2">
+                            <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
