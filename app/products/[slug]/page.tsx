@@ -740,7 +740,7 @@ export default function ProductDetailPage() {
 
           {/* Capsule Section (luxury-probiotics only) */}
           {product.capsuleSection && (
-            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+            <section className="mb-12 md:mb-24 pt-16 md:pt-32 mt-8 md:mt-16 border-t-2 border-gray-200">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                 <div className="flex-1 lg:flex-[2]">
                   <h2 className="text-2xl md:text-3xl font-thin mb-6">{product.capsuleSection.title}</h2>
