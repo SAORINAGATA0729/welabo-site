@@ -171,12 +171,12 @@ const productData: Record<string, any> = {
         title: "食物繊維",
         description: "複数の食物繊維が、腸内での善玉菌の活動を促進し、腸の状態をおだやかにしています。腸内では、菌が、体と腸の健康な状態を保つ働きをしています。",
         group: "善玉菌の栄養素"
-      },
-      {
-        title: "胃酸に強い耐酸性カプセル使用",
-        description: "貴重な成分を効果的に腸まで届けるため、胃酸や唾液の影響を受けない耐酸性カプセルを採用しています。このカプセルにより、菌は胃酸で死滅することなく、生きたまま腸に到達し、より高い効果を発揮します。"
       }
     ],
+    capsuleSection: {
+      title: "胃酸に強い耐酸性カプセル使用",
+      description: "貴重な成分を効果的に腸まで届けるため、胃酸や唾液の影響を受けない耐酸性カプセルを採用しています。このカプセルにより、菌は胃酸で死滅することなく、生きたまま腸に到達し、より高い効果を発揮します。"
+    },
     professor: {
       title: "推薦の言葉",
       name: "昭和大学 名誉教授 二木芳人",
@@ -734,6 +734,24 @@ export default function ProductDetailPage() {
                     </div>
                   );
                 })}
+              </div>
+            </section>
+          )}
+
+          {/* Capsule Section (luxury-probiotics only) */}
+          {product.capsuleSection && (
+            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                <div className="flex-1 lg:flex-[2]">
+                  <h2 className="text-2xl md:text-3xl font-thin mb-6">{product.capsuleSection.title}</h2>
+                  <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                    {product.capsuleSection.description}
+                  </p>
+                </div>
+                <div className="w-full lg:w-1/2">
+                  <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                  </div>
+                </div>
               </div>
             </section>
           )}
