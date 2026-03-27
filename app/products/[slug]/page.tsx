@@ -9,7 +9,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/lib/context/cart-context";
-import { MapPin, Phone, ExternalLink, ShoppingBag, ChevronRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  ExternalLink,
+  ShoppingBag,
+  ChevronRight,
+  Wine,
+  UtensilsCrossed,
+  UserRound,
+  Brain,
+  ArrowDown,
+} from "lucide-react";
 
 // Product Data
 const productData: Record<string, any> = {
@@ -108,7 +119,7 @@ const productData: Record<string, any> = {
   },
   "luxury-probiotics": {
     name: "LUXURY PROBIOTICS+",
-    description: "「LUXURY PROBIOTICS+」は、生きて腸まで届く乳酸菌を※配合した、お腹の環境について細部まで拘ったサプリメントです。※有胞子乳酸菌",
+    description: "老化を加速させる一因とされる「腸内細菌バランスの崩れ」に着目した、腸からのエイジングケアに特化した乳酸菌サプリメントです。腸内フローラの流れに合わせ、4種の生きた善玉菌と、その善玉菌の定着をサポートする3種のプレバイオティクス（善玉菌の栄養素）を独自配合しています。三越伊勢丹が選出する「ISETAN BEAUTYベストコスメ2025年間」において、インナーサポート部門 第1位を受賞しました。",
     img: "https://welabo.jp/wp-content/uploads/LUXURY_PROBIOTICS_00.jpg",
     features: [
       "生きて腸まで届く乳酸菌を配合",
@@ -119,21 +130,49 @@ const productData: Record<string, any> = {
     ],
     introSections: [
       {
+        title: "腸内細菌のバランスの崩れ",
+        stepLabel: "①",
+        paragraphs: [
+          "2013年、老化研究の世界基準であるAGING HALLMARKSにおいて、「慢性炎症」「腸内細菌のバランス崩れ」が老化要因として示されました。",
+          "「腸内細菌のバランスの崩れ」は「慢性炎症」を引き起こし、健康や老化に深く関わります。",
+        ],
+        factors: [
+          { label: "お酒", icon: "wine" as const },
+          { label: "偏った食事", icon: "food" as const },
+          { label: "年齢（腸の運動、善玉菌の減少）", icon: "age" as const },
+          { label: "ストレス", icon: "brain" as const },
+        ],
+        outcomeNotes: [
+          "緊張でおなかが緩くなる",
+          "1回の飲酒でバランスが崩れる",
+        ],
+        outcomeLead: "腸内環境バランスの崩れは",
+        outcomeEmphasis: "現代人は誰にでも起こる",
+        ctaQuestion: "「腸内細菌バランス崩れ」を整えるにはどうしたらいい？",
+        ctaHint: "腸内環境を全体的に改善するカギは",
+        ctaHighlight: "善玉菌と短鎖脂肪酸を増やすこと",
+        role: "question"
+      },
+      {
         title: "善玉菌とは？",
-        description: "善玉菌は、腸内環境を良好に保ち、有害物質の排出を助ける働きをします。健康的には、腸内細菌のバランスが重要となり、ストレスや食生活の変化で悪玉菌が増殖する場合があります。腸内環境を整えるためには、善玉菌は必須の存在です。"
+        description: "腸内環境を整える働きを持つ細菌の総称です。腸内で善玉菌が優勢な状態になることで、腸内フローラのバランスが保たれ、体のコンディションを内側から支える存在として知られています。",
+        role: "answer"
       },
       {
         title: "「LUXURY PROBIOTICS+」による善玉菌の働き",
-        description: "LUXURY PROBIOTICS+では、腸内細菌を整えることで、腸内フローラのバランスを整え、腸内環境を改善します。腸内細菌が生成する短鎖脂肪酸などの物質が、肌の美しさにも関わる重要な役割を果たしているのです。"
+        description: "LUXURY PROBIOTICS+は、腸内の善玉菌の数を優位に保つことで腸内フローラのバランスを整え、腸内環境改善に期待ができます。腸内細菌が生成する短鎖脂肪酸などの物質が、肌の美しさにも関わる重要な役割を果たしています。",
+        role: "answer"
       },
       {
         title: "短鎖脂肪酸とは？",
-        description: "短鎖脂肪酸は、腸内細菌が生成する物質で、腸内環境改善に関わる腸のエネルギー源となり、悪玉菌を抑制するなど、老化現象を防ぐ働きがあります。短鎖脂肪酸を増やすには、腸内環境に合わせ、腸の働きに必要な善玉菌を増やし、腸内環境を整える環境を作ることが必要です。善玉菌が短鎖脂肪酸を生成し、腸から体全体へ、その働きが広がります。"
+        description: "短鎖脂肪酸は、腸内細菌が食物繊維やオリゴ糖などを発酵・分解して生成する物質で、腸内を酸性に保ち悪玉菌の繁殖を抑制、腸のバリア機能を高める、さらには免疫力の向上など、さまざまな健康効果に期待できる「腸の救世主」です。短鎖脂肪酸を増やすには、小腸から大腸の各部位に必要な生きた善玉菌を配置し、活動させることが必要です。",
+        role: "answer"
       },
       {
         title: "「LUXURY PROBIOTICS+」による腸内フローラへの働き",
-        description: "腸全体に広がる腸内フローラの形成に、善玉菌の活性化が必要です。LUXURY PROBIOTICS+では、腸から大腸まで、腸内フローラ形成に必要な環境を作り、善玉菌を活性化させ、腸内環境を整える環境を作るために、59種の植物発酵エキス、植物性成分、食物繊維が配合され、腸内フローラの安定化を実現しています。",
-        fullWidthImage: "https://welabo.jp/msimg/LUXURY_PROBIOTICS/lp/lfflow02.png"
+        description: "腸全体に広がる腸内フローラの形成には善玉菌の活性化が必要です。LUXURY PROBIOTICS+では、小腸から大腸まで、腸内フローラ形成に必要な環境を作り、善玉菌を活性化させるために59種の植物発酵エキス、オリゴ糖、食物繊維が配合されており、腸内フローラの安定化を実現しています。",
+        fullWidthImage: "https://welabo.jp/msimg/LUXURY_PROBIOTICS/lp/lfflow02.png",
+        role: "answer"
       }
     ],
     ingredientsSections: [
@@ -644,49 +683,170 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Intro Sections (luxury-probiotics only) */}
-          {product.introSections && (
-            <section className="mb-12 md:mb-24 py-12 md:py-16 border-t border-gray-100">
-              <div>
-                {product.introSections.map((section: any, index: number) => (
-                  <div key={index} className={index > 0 ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
-                    <div className={index < product.introSections.length - 1 ? 'pb-12 md:pb-24' : ''}>
-                      {section.fullWidthImage ? (
-                        <div>
-                          <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
-                          <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-12">
-                            {section.description}
-                          </p>
-                          <div className="relative w-full max-w-2xl mx-auto bg-[#F5F5F5] overflow-hidden">
-                            <Image
-                              src={section.fullWidthImage}
-                              alt={section.title}
-                              width={800}
-                              height={1000}
-                              className="w-full h-auto object-contain"
-                              unoptimized
-                            />
+          {product.introSections && (() => {
+            const questionSection = product.introSections.find((s: any) => s.role === "question");
+            const answerSections = product.introSections.filter((s: any) => s.role === "answer");
+            return (
+              <section className="mb-12 md:mb-24 border-t border-gray-100">
+                {/* Question Section */}
+                {questionSection && (
+                  <div className="bg-[#F9F8F6] py-16 md:py-28 -mx-6 md:-mx-12 px-6 md:px-12">
+                    <div className="max-w-5xl mx-auto">
+                      {/* ① + 見出し */}
+                      <div className="flex items-start gap-4 md:gap-6 mb-10 md:mb-14">
+                        <span
+                          className="shrink-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#1A1A1A]/15 bg-white text-sm md:text-base font-light tracking-tight text-[#1A1A1A]"
+                          aria-hidden
+                        >
+                          {questionSection.stepLabel ?? "①"}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <h2 className="text-2xl md:text-4xl font-thin tracking-wide text-[#1A1A1A] mb-8 md:mb-10">
+                            {questionSection.title}
+                          </h2>
+                          <div className="grid gap-10 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
+                            {/* 左: 本文 */}
+                            <div className="space-y-6">
+                              {(questionSection.paragraphs ?? [questionSection.description]).map(
+                                (para: string, i: number) => (
+                                  <p
+                                    key={i}
+                                    className="text-sm md:text-[15px] leading-[2.2] text-gray-600 font-light text-justify"
+                                  >
+                                    {para}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                            {/* 右: 要因（トンマナ統一・線画アイコン） */}
+                            {questionSection.factors && (
+                              <div className="relative rounded-none border border-[#1A1A1A]/10 bg-white/60 p-6 md:p-8">
+                                <p className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-gray-400 mb-6">
+                                  バランスに影響しやすい要因
+                                </p>
+                                <div className="grid grid-cols-2 gap-4 md:gap-5">
+                                  {questionSection.factors.map((f: { label: string; icon: string }, i: number) => {
+                                    const Icon =
+                                      f.icon === "wine"
+                                        ? Wine
+                                        : f.icon === "food"
+                                          ? UtensilsCrossed
+                                          : f.icon === "age"
+                                            ? UserRound
+                                            : Brain;
+                                    return (
+                                      <div
+                                        key={i}
+                                        className="flex flex-col gap-3 border border-gray-100 bg-[#FAFAF9] p-4"
+                                      >
+                                        <Icon
+                                          className="h-5 w-5 text-[#1A1A1A]/55"
+                                          strokeWidth={1.25}
+                                          aria-hidden
+                                        />
+                                        <span className="text-xs md:text-sm font-light leading-snug text-[#1A1A1A]">
+                                          {f.label}
+                                        </span>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                                <div className="mt-8 flex flex-col items-center gap-4 border-t border-gray-100 pt-8">
+                                  <ArrowDown className="h-5 w-5 text-[#1A1A1A]/35" strokeWidth={1.25} aria-hidden />
+                                  <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6">
+                                    {questionSection.outcomeNotes?.map((note: string, j: number) => (
+                                      <p
+                                        key={j}
+                                        className="text-center text-[11px] md:text-xs font-light leading-relaxed text-gray-500"
+                                      >
+                                        {note}
+                                      </p>
+                                    ))}
+                                  </div>
+                                  <p className="text-center text-sm md:text-base font-light leading-relaxed text-[#1A1A1A]">
+                                    {questionSection.outcomeLead}
+                                    <span className="block sm:inline sm:pl-1">
+                                      <span className="font-normal text-[#2C5282]">{questionSection.outcomeEmphasis}</span>
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
-                      ) : (
-                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                          <div className="flex-1 lg:flex-[2]">
-                            <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
-                            <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
-                              {section.description}
+                      </div>
+
+                      {/* CTA 帯 */}
+                      <div className="mt-14 md:mt-20 border-t border-[#D4C5B0]/35 pt-12 md:pt-16">
+                        <div className="mx-auto max-w-3xl text-center">
+                          <div className="mb-6 inline-block w-full bg-[#1A1A1A] px-6 py-4 md:px-10 md:py-5">
+                            <p className="text-xs md:text-sm font-light tracking-wide text-white">
+                              {questionSection.ctaQuestion}
                             </p>
                           </div>
-                          <div className="w-full lg:w-1/2">
-                            <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
-                            </div>
-                          </div>
+                          <p className="text-[11px] md:text-xs tracking-[0.12em] text-gray-400 mb-5">
+                            {questionSection.ctaHint}
+                          </p>
+                          <p className="font-serif text-xl md:text-3xl font-thin leading-snug tracking-wide text-[#1A1A1A]">
+                            <span className="relative inline-block">
+                              <span className="relative z-[1] px-1">&ldquo;{questionSection.ctaHighlight}&rdquo;</span>
+                              <span
+                                className="absolute bottom-1 left-0 right-0 z-0 h-[0.45em] bg-[#E8D48A]/70"
+                                aria-hidden
+                              />
+                            </span>
+                          </p>
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </section>
-          )}
+                )}
+
+                {/* Answer Sections */}
+                {answerSections.length > 0 && (
+                  <div className="py-12 md:py-24">
+                    {answerSections.map((section: any, index: number) => (
+                      <div key={index} className={index > 0 ? 'border-t border-gray-100 pt-12 md:pt-24' : ''}>
+                        <div className={index < answerSections.length - 1 ? 'pb-12 md:pb-24' : ''}>
+                          {section.fullWidthImage ? (
+                            <div>
+                              <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
+                              <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify mb-12">
+                                {section.description}
+                              </p>
+                              <div className="relative w-full max-w-2xl mx-auto bg-[#F5F5F5] overflow-hidden">
+                                <Image
+                                  src={section.fullWidthImage}
+                                  alt={section.title}
+                                  width={800}
+                                  height={1000}
+                                  className="w-full h-auto object-contain"
+                                  unoptimized
+                                />
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                              <div className="flex-1 lg:flex-[2]">
+                                <h2 className="text-2xl md:text-3xl font-thin mb-6">{section.title}</h2>
+                                <p className="text-sm leading-[2.4] text-gray-600 font-light text-justify">
+                                  {section.description}
+                                </p>
+                              </div>
+                              <div className="w-full lg:w-1/2">
+                                <div className="relative w-full aspect-[3/2] bg-[#F5F5F5] overflow-hidden">
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </section>
+            );
+          })()}
 
           {/* Ingredient Sections (Common for both) */}
           {product.ingredientsSections && (

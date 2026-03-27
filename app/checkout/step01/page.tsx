@@ -1,14 +1,12 @@
 "use client";
 
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/lib/context/cart-context";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -25,7 +23,6 @@ export default function CheckoutStep01Page() {
   const [address2, setAddress2] = useState("");
   const [phone, setPhone] = useState("");
 
-  // Load saved data from localStorage
   useEffect(() => {
     const saved = localStorage.getItem("checkout_orderer_info");
     if (saved) {
@@ -74,9 +71,7 @@ export default function CheckoutStep01Page() {
       <main className="container mx-auto px-6 md:px-12 py-16">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
-          {/* Left Column: Forms */}
           <div className="flex-1">
-            {/* Breadcrumb / Steps */}
             <div className="flex items-center gap-4 text-xs tracking-widest mb-12">
               <span className="text-[#1A1A1A]">注文者情報入力</span>
               <ChevronRight className="w-3 h-3 text-gray-300" />
@@ -86,7 +81,6 @@ export default function CheckoutStep01Page() {
             </div>
 
             <div className="space-y-12">
-              {/* Contact Information */}
               <section>
                 <div className="flex justify-between items-baseline mb-6">
                   <h2 className="text-lg font-light">連絡先情報</h2>
@@ -122,7 +116,6 @@ export default function CheckoutStep01Page() {
                 </div>
               </section>
 
-              {/* Orderer Information */}
               <section>
                 <h2 className="text-lg font-light mb-6">注文者情報</h2>
                 <div className="space-y-6">
@@ -217,7 +210,6 @@ export default function CheckoutStep01Page() {
             </div>
           </div>
 
-          {/* Right Column: Order Summary */}
           <div className="lg:w-[400px] shrink-0">
             <div className="bg-[#F9F9F9] p-8 sticky top-8">
               <h3 className="text-sm font-medium uppercase tracking-widest mb-6 text-gray-500">ご注文内容</h3>
@@ -276,4 +268,3 @@ export default function CheckoutStep01Page() {
     </div>
   );
 }
-
