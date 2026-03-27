@@ -15,11 +15,6 @@ import {
   ExternalLink,
   ShoppingBag,
   ChevronRight,
-  Wine,
-  UtensilsCrossed,
-  UserRound,
-  Brain,
-  ArrowDown,
 } from "lucide-react";
 
 // Product Data
@@ -711,60 +706,9 @@ export default function ProductDetailPage() {
                                 )
                               )}
                             </div>
-                            {/* 右: 要因（トンマナ統一・線画アイコン） */}
-                            {questionSection.factors && (
-                              <div className="relative rounded-none border border-[#1A1A1A]/10 bg-white/60 p-6 md:p-8">
-                                <p className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-gray-400 mb-6">
-                                  バランスに影響しやすい要因
-                                </p>
-                                <div className="grid grid-cols-2 gap-4 md:gap-5">
-                                  {questionSection.factors.map((f: { label: string; icon: string }, i: number) => {
-                                    const Icon =
-                                      f.icon === "wine"
-                                        ? Wine
-                                        : f.icon === "food"
-                                          ? UtensilsCrossed
-                                          : f.icon === "age"
-                                            ? UserRound
-                                            : Brain;
-                                    return (
-                                      <div
-                                        key={i}
-                                        className="flex flex-col gap-3 border border-gray-100 bg-[#FAFAF9] p-4"
-                                      >
-                                        <Icon
-                                          className="h-5 w-5 text-[#1A1A1A]/55"
-                                          strokeWidth={1.25}
-                                          aria-hidden
-                                        />
-                                        <span className="text-xs md:text-sm font-light leading-snug text-[#1A1A1A]">
-                                          {f.label}
-                                        </span>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                                <div className="mt-8 flex flex-col items-center gap-4 border-t border-gray-100 pt-8">
-                                  <ArrowDown className="h-5 w-5 text-[#1A1A1A]/35" strokeWidth={1.25} aria-hidden />
-                                  <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6">
-                                    {questionSection.outcomeNotes?.map((note: string, j: number) => (
-                                      <p
-                                        key={j}
-                                        className="text-center text-[11px] md:text-xs font-light leading-relaxed text-gray-500"
-                                      >
-                                        {note}
-                                      </p>
-                                    ))}
-                                  </div>
-                                  <p className="text-center text-sm md:text-base font-light leading-relaxed text-[#1A1A1A]">
-                                    {questionSection.outcomeLead}
-                                    <span className="block sm:inline sm:pl-1">
-                                      <span className="font-normal text-[#2C5282]">{questionSection.outcomeEmphasis}</span>
-                                    </span>
-                                  </p>
-                                </div>
-                              </div>
-                            )}
+                            {/* 右: イラスト用プレースホルダー */}
+                            <div className="relative w-full aspect-[4/3] bg-[#F5F5F5] overflow-hidden">
+                            </div>
                           </div>
                         </div>
                       </div>
