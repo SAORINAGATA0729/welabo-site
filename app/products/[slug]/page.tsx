@@ -717,7 +717,7 @@ export default function ProductDetailPage() {
                       <div className="mt-14 md:mt-20 pt-12 md:pt-16">
                         <div className="mx-auto max-w-3xl text-center">
                           <div className="mb-6 inline-block w-full bg-[#1A1A1A] px-6 py-4 md:px-10 md:py-5">
-                            <p className="text-xs md:text-sm font-light tracking-wide text-white">
+                            <p className="text-sm md:text-lg font-light tracking-wide text-white">
                               {questionSection.ctaQuestion}
                             </p>
                           </div>
