@@ -694,9 +694,6 @@ export default function ProductDetailPage() {
                     <div className="max-w-5xl mx-auto">
                       <div className="mb-16 md:mb-24">
                         <div className="text-center mb-12 md:mb-16">
-                           <span className="text-[10px] tracking-[0.4em] text-[#8A8A8A] uppercase block mb-4">
-                              {questionSection.stepLabel} Aging Hallmarks
-                           </span>
                            <h2 className="text-3xl md:text-5xl font-thin tracking-wide text-[#1A1A1A]">
                              {questionSection.title}
                            </h2>
