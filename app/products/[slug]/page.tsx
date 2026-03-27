@@ -749,7 +749,7 @@ export default function ProductDetailPage() {
 
                       {/* CTA Section - Integrated Flow */}
                       <div className="max-w-3xl mx-auto">
-                        <div className="relative pt-12 text-center">
+                        <div className="relative pt-20 text-center">
                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gray-200" />
                           
                           <div className="mb-10">
