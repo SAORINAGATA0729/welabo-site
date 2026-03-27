@@ -692,15 +692,8 @@ export default function ProductDetailPage() {
                 {questionSection && (
                   <div className="bg-[#F9F8F6] py-16 md:py-28 -mx-6 md:-mx-12 px-6 md:px-12">
                     <div className="max-w-5xl mx-auto">
-                      {/* ① + 見出し */}
-                      <div className="flex items-start gap-4 md:gap-6 mb-10 md:mb-14">
-                        <span
-                          className="shrink-0 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#1A1A1A]/15 bg-white text-sm md:text-base font-light tracking-tight text-[#1A1A1A]"
-                          aria-hidden
-                        >
-                          {questionSection.stepLabel ?? "①"}
-                        </span>
-                        <div className="min-w-0 flex-1">
+                      <div className="mb-10 md:mb-14">
+                        <div>
                           <h2 className="text-2xl md:text-4xl font-thin tracking-wide text-[#1A1A1A] mb-8 md:mb-10">
                             {questionSection.title}
                           </h2>
