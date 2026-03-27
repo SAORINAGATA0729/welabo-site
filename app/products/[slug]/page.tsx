@@ -15,6 +15,11 @@ import {
   ExternalLink,
   ShoppingBag,
   ChevronRight,
+  Wine,
+  Utensils,
+  History,
+  Brain,
+  Info
 } from "lucide-react";
 
 // Product Data
@@ -685,54 +690,106 @@ export default function ProductDetailPage() {
               <section className="mb-12 md:mb-24 border-t border-gray-100">
                 {/* Question Section */}
                 {questionSection && (
-                  <div className="py-16 md:py-28 -mx-6 md:-mx-12 px-6 md:px-12">
+                  <div className="py-16 md:py-32 -mx-6 md:-mx-12 px-6 md:px-12 bg-[#FBFBFB] mb-12 md:mb-24">
                     <div className="max-w-5xl mx-auto">
-                      <div className="mb-10 md:mb-14">
-                        <div>
-                          <h2 className="text-2xl md:text-4xl font-thin tracking-wide text-[#1A1A1A] mb-8 md:mb-10">
-                            {questionSection.title}
-                          </h2>
-                          <div className="grid gap-10 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
-                            {/* 左: 本文 */}
+                      <div className="mb-16 md:mb-24">
+                        <div className="text-center mb-12 md:mb-16">
+                           <span className="text-[10px] tracking-[0.4em] text-[#8A8A8A] uppercase block mb-4">
+                              {questionSection.stepLabel} Aging Hallmarks
+                           </span>
+                           <h2 className="text-3xl md:text-5xl font-thin tracking-wide text-[#1A1A1A]">
+                             {questionSection.title}
+                           </h2>
+                        </div>
+                        
+                        <div className="grid gap-12 lg:gap-24 lg:grid-cols-[1fr_1fr] items-start">
+                          {/* 左: 本文と現代人の悩み */}
+                          <div className="space-y-10">
                             <div className="space-y-6">
                               {(questionSection.paragraphs ?? [questionSection.description]).map(
                                 (para: string, i: number) => (
                                   <p
                                     key={i}
-                                    className="text-sm md:text-[15px] leading-[2.2] text-gray-600 font-light text-justify"
+                                    className="text-[15px] md:text-lg leading-[2.2] text-[#333] font-light text-justify"
                                   >
                                     {para}
                                   </p>
                                 )
                               )}
                             </div>
-                            {/* 右: イラスト用プレースホルダー */}
-                            <div className="relative w-full aspect-[4/3] bg-[#F5F5F5] overflow-hidden">
-                            </div>
+                            
+                            {questionSection.outcomeNotes && (
+                              <div className="space-y-4 pt-4">
+                                {questionSection.outcomeNotes.map((note: string, i: number) => (
+                                  <div key={i} className="flex items-center gap-3 text-sm text-gray-500 font-light">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#D4C5B0]" />
+                                    <span>{note}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+
+                          {/* 右: 原因（要因）カード */}
+                          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
+                             <p className="text-xs tracking-[0.2em] text-[#8A8A8A] uppercase mb-8 border-b border-gray-100 pb-4">
+                                Causes / 乱れる要因
+                             </p>
+                             <div className="grid grid-cols-2 gap-x-8 gap-y-10">
+                                {questionSection.factors?.map((factor: any, i: number) => {
+                                   const Icon = factor.icon === "wine" ? Wine : 
+                                                factor.icon === "food" ? Utensils : 
+                                                factor.icon === "age" ? History : Brain;
+                                   return (
+                                     <div key={i} className="space-y-3">
+                                        <div className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#1A1A1A]">
+                                           <Icon className="w-5 h-5 font-light" strokeWidth={1} />
+                                        </div>
+                                        <p className="text-[13px] leading-relaxed text-[#1A1A1A] font-light">
+                                           {factor.label}
+                                        </p>
+                                     </div>
+                                   );
+                                })}
+                             </div>
+                             
+                             {(questionSection.outcomeLead || questionSection.outcomeEmphasis) && (
+                                <div className="mt-12 pt-8 border-t border-gray-50 text-center">
+                                   <p className="text-[13px] text-gray-400 mb-2 font-light">{questionSection.outcomeLead}</p>
+                                   <p className="text-lg md:text-xl font-thin tracking-widest text-[#1A1A1A]">
+                                      {questionSection.outcomeEmphasis}
+                                   </p>
+                                </div>
+                             )}
                           </div>
                         </div>
                       </div>
 
-                      {/* CTA 帯 */}
-                      <div className="mt-14 md:mt-20 pt-12 md:pt-16">
-                        <div className="mx-auto max-w-3xl text-center">
-                          <div className="mb-6 inline-block w-full bg-[#1A1A1A] px-6 py-4 md:px-10 md:py-5">
-                            <p className="text-sm md:text-lg font-light tracking-wide text-white">
+                      {/* CTA Section - Integrated Flow */}
+                      <div className="max-w-3xl mx-auto">
+                        <div className="relative pt-12 text-center">
+                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gray-200" />
+                          
+                          <div className="mb-10">
+                            <h3 className="text-lg md:text-2xl font-light tracking-wider text-[#1A1A1A] mb-4">
                               {questionSection.ctaQuestion}
-                            </p>
+                            </h3>
                           </div>
-                          <p className="text-[11px] md:text-xs tracking-[0.12em] text-gray-400 mb-5">
-                            {questionSection.ctaHint}
-                          </p>
-                          <p className="font-serif text-xl md:text-3xl font-thin leading-snug tracking-wide text-[#1A1A1A]">
-                            <span className="relative inline-block">
-                              <span className="relative z-[1] px-1">&ldquo;{questionSection.ctaHighlight}&rdquo;</span>
-                              <span
-                                className="absolute bottom-1 left-0 right-0 z-0 h-[0.45em] bg-[#E8D48A]/70"
-                                aria-hidden
-                              />
-                            </span>
-                          </p>
+                          
+                          <div className="space-y-6">
+                            <p className="text-[11px] md:text-xs tracking-[0.2em] text-gray-400">
+                              {questionSection.ctaHint}
+                            </p>
+                            <div className="inline-block relative">
+                               <p className="font-serif text-2xl md:text-4xl font-thin leading-snug tracking-[0.05em] text-[#1A1A1A] relative z-[1] px-4">
+                                 &ldquo;{questionSection.ctaHighlight}&rdquo;
+                               </p>
+                               <div 
+                                 className="absolute bottom-1 left-0 right-0 z-0 h-[0.5em] bg-[#D4C5B0]/30"
+                                 aria-hidden
+                               />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
