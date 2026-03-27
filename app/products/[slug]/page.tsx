@@ -685,7 +685,7 @@ export default function ProductDetailPage() {
               <section className="mb-12 md:mb-24 border-t border-gray-100">
                 {/* Question Section */}
                 {questionSection && (
-                  <div className="bg-[#F9F8F6] py-16 md:py-28 -mx-6 md:-mx-12 px-6 md:px-12">
+                  <div className="py-16 md:py-28 -mx-6 md:-mx-12 px-6 md:px-12">
                     <div className="max-w-5xl mx-auto">
                       <div className="mb-10 md:mb-14">
                         <div>
