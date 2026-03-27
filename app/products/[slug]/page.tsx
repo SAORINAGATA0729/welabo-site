@@ -142,10 +142,6 @@ const productData: Record<string, any> = {
           { label: "年齢（腸の運動、善玉菌の減少）", icon: "age" as const },
           { label: "ストレス", icon: "brain" as const },
         ],
-        outcomeNotes: [
-          "緊張でおなかが緩くなる",
-          "1回の飲酒でバランスが崩れる",
-        ],
         outcomeLead: "腸内環境バランスの崩れは",
         outcomeEmphasis: "現代人は誰にでも起こる",
         ctaQuestion: "「腸内細菌バランス崩れ」を整えるにはどうしたらいい？",
@@ -714,17 +710,6 @@ export default function ProductDetailPage() {
                                 )
                               )}
                             </div>
-                            
-                            {questionSection.outcomeNotes && (
-                              <div className="space-y-4 pt-4">
-                                {questionSection.outcomeNotes.map((note: string, i: number) => (
-                                  <div key={i} className="flex items-center gap-3 text-sm text-gray-500 font-light">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#D4C5B0]" />
-                                    <span>{note}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
                           </div>
 
                           {/* 右: 原因（要因）カード */}
